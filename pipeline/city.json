@@ -1,0 +1,19 @@
+{
+  "municipality": { "name": "City of Toronto", "short": "Toronto", "timezone": "America/Toronto" },
+  "documents": [
+    {
+      "id": "g1",
+      "title": "City of Toronto guidance on speaking and writing to committees (excerpts)",
+      "type": "guidance",
+      "url": "https://www.toronto.ca/legdocs/tmmis/have-your-say.htm",
+      "snapshot": "snapshots/toronto-guidance-excerpts.txt",
+      "retrieved": "2026-11-13"
+    }
+  ],
+  "lenses": [
+    { "key": "nearby", "label": "I live nearby" },
+    { "key": "rent", "label": "I rent" },
+    { "key": "drive", "label": "I drive or park" },
+    { "key": "business", "label": "I run a business" }
+  ]
+}

@@ -1,0 +1,109 @@
+# Text of the official City of Toronto item page, copied 13 Nov 2026 from
+# https://secure.toronto.ca/council/agenda-item.do?item=2024.NY15.4
+# The lists of people who wrote in or spoke are left out on purpose (no personal
+# information needed). Counts are recorded in pipeline/items/2024.NY15.4.json.
+Item - 2024.NY15.4
+Tracking Status
+City Council adopted this item on July 24 and 25, 2024 without amendments.
+This item was considered by North York Community Council on July 9, 2024 and was adopted with amendments. It will be considered by City Council on July 24 and 25, 2024.
+
+City Council consideration on July 24 and 25, 2024
+
+NY15.4 - 1875 Steeles Avenue West - Zoning By-law Amendment and Rental Housing Demolition and Conversion Applications - Decision Report - Approval
+Decision Type: ACTION
+Status: Adopted
+Ward: 6 - York Centre
+City Council Decision
+
+City Council on July 24 and 25, 2024, adopted the following:
+
+1. City Council refuse the application for 1875 Steeles Avenue West - Zoning By-law Amendment and Rental Housing Demolition and Conversion.
+
+Public Notice Given
+Statutory - Planning Act, RSO 1990
+
+Motions (City Council)
+Motion to Adopt Item (Carried)
+
+North York Community Council consideration on July 9, 2024
+
+NY15.4 - 1875 Steeles Avenue West - Zoning By-law Amendment and Rental Housing Demolition and Conversion Applications - Decision Report - Approval
+Decision Type: ACTION
+Status: Amended
+Ward: 6 - York Centre
+Public Notice Given
+Statutory - Planning Act, RSO 1990
+Community Council Recommendations
+
+North York Community Council recommends that:
+
+1. City Council refuse the application for 1875 Steeles Avenue West - Zoning By-law Amendment and Rental Housing Demolition and Conversion.
+
+Decision Advice and Other Information
+
+The North York Community Council held a statutory public meeting on July 9, 2024, and notice was given in accordance with the Planning Act.
+
+Origin
+(June 20, 2024) Report from the Director, Community Planning, North York District
+Summary
+
+This Zoning By-law Amendment application proposes to permit 39-storey (133.0 metre), 33-storey (115 metre) and 14-storey (53 metre) buildings on top of a shared 5-storey (21.5 metre) base building with a 6-storey (27 metre) component of the base building along Steeles Avenue West. The application proposes a total of 960 dwelling units, including the replacement of 120 existing rental units on-site at 1875 Steeles Avenue West.
+
+The proposed development is consistent with the Provincial Policy Statement (2020) and conforms with A Place to Grow: Growth Plan for the Greater Golden Horseshoe (2020). The proposed development also conforms to the City's Official Plan.
+
+This report reviews and recommends approval of the application to amend the Zoning By-law, with a holding provision. The application proposes an appropriate level of infill for a site designated Mixed Use Areas where it is separated from lower height Neighbourhoods by a combination of employment lands and ravine lands. The application proposes to replace all the existing rental units on-site, and provide additional rental units to make up the floor area of the existing development, along with a portion of a new public street and an on-site parkland dedication which is proposed to be combined with lands from the adjacent site at 1881 Steeles Avenue West to complete the street and create a larger park for the future residents of the development.
+
+This report reviews and recommends approval of the Rental Housing Demolition Application filed under Chapter 667 of the City of Toronto Municipal Code. The proposal includes 132 replacement rental units and a Tenant Relocation and Assistance Plan that addresses the right of existing eligible tenants to return to replacement rental units at similar rents and financial compensation to mitigate hardship.
+
+Motions
+Motion to Refer Item moved by Councillor Shelley Carroll (Lost)
+
+That North York Community Council:
+
+1. Refer item NY15.4 back to the Director, Community Planning, North York District, for further consideration, in consultation with other appropriate City divisions, to report on the following:
+
+a. Compatibility and mitigation policies of the Official Plan in relation to existing employment lands adjacent to the site;
+
+b. Further engagement with stakeholders from the existing employment lands adjacent to the site; and
+
+c. Further review of access and privacy conditions for employment lands adjacent to the site.
+
+Vote (Refer Item)
+Jul-09-2024
+Result: Lost	Majority Required
+
+Total members that voted
+Yes: 1
+Members that voted Yes are
+Shelley Carroll
+
+Total members that voted
+No: 4
+Members that voted No are
+Jon Burnside, Lily Cheng, Mike Colle, James Pasternak (Chair)
+
+Total members that were
+Absent: 0
+
+Motion to Adopt Item as Amended moved by Councillor James Pasternak (Carried)
+
+That North York Community Council recommend that:
+
+1. City Council refuse the application for 1875 Steeles Avenue West - Zoning By-law Amendment and Rental Housing Demolition and Conversion.
+
+Vote (Adopt Item as Amended)
+Jul-09-2024
+Result: Carried	Majority Required
+
+Total members that voted
+Yes: 4
+Members that voted Yes are
+Jon Burnside, Lily Cheng, Mike Colle, James Pasternak (Chair)
+
+Total members that voted
+No: 1
+Members that voted No are
+Shelley Carroll
+
+Total members that were
+Absent: 0

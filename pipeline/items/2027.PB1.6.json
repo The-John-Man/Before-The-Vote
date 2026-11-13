@@ -1,0 +1,234 @@
+{
+  "id": "2027.PB1.6",
+  "title_plain": "A taller base for the Parkdale Hub affordable housing building",
+  "title_official": "1337 Queen Street West - Demolition and New Construction on a Designated Heritage Property under Part V, Section 42 of the Ontario Heritage Act - Approval",
+  "topic": "Housing and heritage",
+  "ward": {
+    "code": "04",
+    "name": "Parkdale-High Park"
+  },
+  "place": {
+    "label": "1337 Queen Street West",
+    "lat": 43.64,
+    "lon": -79.433,
+    "approx": true
+  },
+  "official_url": "https://secure.toronto.ca/council/agenda-item.do?item=2027.PB1.6",
+  "drafted_by": "Claude (AI), 13 Nov 2026, from the item page snapshot",
+  "documents": [
+    {
+      "id": "d1",
+      "title": "Official item page, 2027.PB1.6",
+      "type": "item_page",
+      "url": "https://secure.toronto.ca/council/agenda-item.do?item=2027.PB1.6",
+      "snapshot": "snapshots/2027.PB1.6.txt",
+      "retrieved": "2026-11-13"
+    }
+  ],
+  "stages": [
+    {
+      "key": "staff",
+      "body": "staff",
+      "label": "Staff report",
+      "date": "2026-10-28",
+      "result": "recommend approval, with a condition",
+      "result_claim": "c1",
+      "can_speak": false
+    },
+    {
+      "key": "board",
+      "body": "committee",
+      "label": "Toronto Preservation Board",
+      "date": "2026-11-16",
+      "result": null,
+      "result_claim": null,
+      "can_speak": true
+    },
+    {
+      "key": "council",
+      "body": "council",
+      "label": "City Council",
+      "date": null,
+      "result": null,
+      "result_claim": null,
+      "can_speak": false
+    }
+  ],
+  "say": {
+    "deadline": null,
+    "deadline_claim": null,
+    "meeting": "2026-11-16",
+    "meeting_claim": "c8",
+    "guidance_claim": "c10",
+    "contact_email": null,
+    "methods": [
+      "Send written comments",
+      "Ask to speak to the Preservation Board, in person or by video"
+    ]
+  },
+  "claims": [
+    {
+      "id": "c1",
+      "section": "what",
+      "stage": "staff",
+      "lenses": [
+        "nearby"
+      ],
+      "text": "City staff recommend that Council allow the existing building at 1337 Queen Street West to be torn down and a new 16-storey building with homes and other uses to go up in its place.",
+      "fr": "Le personnel de la Ville recommande au Conseil d'autoriser la démolition de l'immeuble actuel du 1337, rue Queen Ouest et la construction, à sa place, d'un nouvel immeuble de 16 étages à usage mixte.",
+      "sources": [
+        {
+          "doc": "d1",
+          "quote": "City Council approve the demolition of the non-contributing building and the erection of a new 16-storey mixed-use building at 1337 Queen Street West"
+        }
+      ]
+    },
+    {
+      "id": "c2",
+      "section": "what",
+      "stage": "staff",
+      "lenses": [
+        "rent",
+        "nearby"
+      ],
+      "text": "The new building is part of the City-led Parkdale Hub project. It would include affordable housing built for that purpose, and the City would keep owning it.",
+      "fr": "Le nouvel immeuble fait partie du projet Parkdale Hub, mené par la Ville. Il comprendrait des logements abordables construits à cette fin et resterait la propriété de la Ville.",
+      "sources": [
+        {
+          "doc": "d1",
+          "quote": "erect a new 16-storey mixed-use tower with a 4-storey podium building that will include purpose-built affordable housing; and which will remain under ownership of the City"
+        }
+      ]
+    },
+    {
+      "id": "c3",
+      "section": "why",
+      "stage": "staff",
+      "lenses": [],
+      "text": "Council already approved a heritage permit for this project in June 2026. It is back because the design changed: the lower part of the building that faces the street is now 1.2 metres taller.",
+      "fr": "Le Conseil a déjà approuvé un permis patrimonial pour ce projet en juin 2026. Le dossier revient parce que la conception a changé : la partie basse de l'immeuble, côté rue, est maintenant plus haute de 1,2 mètre.",
+      "sources": [
+        {
+          "doc": "d1",
+          "quote": "A heritage permit for the project was previously approved on June 24 and 25, 2026, by City Council."
+        },
+        {
+          "doc": "d1",
+          "quote": "The street wall height of the new podium building has been increased by 1.2m"
+        }
+      ]
+    },
+    {
+      "id": "c4",
+      "section": "what",
+      "stage": "staff",
+      "lenses": [
+        "nearby"
+      ],
+      "text": "With this change the base no longer lines up with the older building next door at 1347 Queen Street West. It also leaves out a 5-metre step back that the heritage district plan asks for.",
+      "fr": "Avec ce changement, la base ne s'aligne plus sur l'immeuble plus ancien voisin, au 1347, rue Queen Ouest. Elle omet aussi le retrait de 5 mètres exigé par le plan du district patrimonial.",
+      "sources": [
+        {
+          "doc": "d1",
+          "quote": "it no longer matches the height of the adjacent contributing building at 1347 Queen Street West"
+        },
+        {
+          "doc": "d1",
+          "quote": "It also does not include the 5.0m step back required by the PHCD Plan for any parts of the new building that are taller than the adjacent contributing property."
+        }
+      ]
+    },
+    {
+      "id": "c5",
+      "section": "why",
+      "stage": "staff",
+      "lenses": [],
+      "text": "Staff say this is acceptable here because this stretch of Queen Street West does not have an even, unbroken row of building fronts to protect.",
+      "fr": "Le personnel juge cela acceptable ici parce que ce tronçon de la rue Queen Ouest ne présente pas un alignement de façades régulier et continu à protéger.",
+      "sources": [
+        {
+          "doc": "d1",
+          "quote": "this section of south side of Queen Street West has neither a consistent nor a continuous street wall"
+        }
+      ]
+    },
+    {
+      "id": "c6",
+      "section": "why",
+      "stage": "staff",
+      "lenses": [],
+      "text": "Staff attach one condition: the building must be built largely as shown in the architect's plans dated 25 September 2026.",
+      "fr": "Le personnel pose une condition : l'immeuble doit être construit essentiellement selon les plans de l'architecte datés du 25 septembre 2026.",
+      "sources": [
+        {
+          "doc": "d1",
+          "quote": "constructed substantially in accordance with the plans and elevations prepared by LGA Architectural Partners dated September 25, 2026"
+        }
+      ]
+    },
+    {
+      "id": "c7",
+      "section": "why",
+      "stage": "staff",
+      "lenses": [],
+      "text": "Staff report no cost to the City budget from this recommendation, this year or in future years.",
+      "fr": "Le personnel n'indique aucun coût pour le budget de la Ville découlant de cette recommandation, cette année ou les années suivantes.",
+      "sources": [
+        {
+          "doc": "d1",
+          "quote": "There are no financial implications resulting from the recommendations included in this report in the current budget year or in future years."
+        }
+      ]
+    },
+    {
+      "id": "c8",
+      "section": "say",
+      "stage": null,
+      "lenses": [],
+      "text": "The Toronto Preservation Board will consider this on 16 November 2026.",
+      "fr": "Le Toronto Preservation Board étudiera ce dossier le 16 novembre 2026.",
+      "sources": [
+        {
+          "doc": "d1",
+          "quote": "This item will be considered by Toronto Preservation Board on November 16, 2026."
+        }
+      ]
+    },
+    {
+      "id": "c9",
+      "section": "say",
+      "stage": null,
+      "lenses": [],
+      "text": "The official item page has buttons to send comments and to ask to speak.",
+      "fr": "La page officielle du dossier comporte des boutons pour envoyer des commentaires et pour demander à prendre la parole.",
+      "sources": [
+        {
+          "doc": "d1",
+          "quote": "E-mail Item Submit Comments Request to Speak Map"
+        }
+      ]
+    },
+    {
+      "id": "c10",
+      "section": "say",
+      "stage": null,
+      "lenses": [],
+      "text": "The item page gives no written deadline. The City's general guidance asks people who want to speak to register by 4:30 p.m. the day before the meeting.",
+      "fr": "La page du dossier n'indique aucune date limite. Les consignes générales de la Ville demandent aux personnes qui veulent prendre la parole de s'inscrire avant 16 h 30 la veille de la réunion.",
+      "sources": [
+        {
+          "doc": "g1",
+          "quote": "We request that you register by 4:30 p.m. the day before the meeting."
+        }
+      ]
+    }
+  ],
+  "votes": [],
+  "heard": [],
+  "unknowns": [
+    "The exact deadline to comment on this item. The item page does not state one.",
+    "What time the meeting starts, and the board's e-mail address. The item page gives only the date. Use the buttons on the official page.",
+    "Which committee hears this after the Preservation Board, and when City Council will vote. The item page does not say yet.",
+    "What the Preservation Board will advise. It has not met yet."
+  ]
+}

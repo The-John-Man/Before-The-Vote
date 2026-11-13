@@ -1,0 +1,64 @@
+// util.js — helpers shared by every screen.
+
+import { reached, countdown, formatWhen } from "./time.js";
+
+// Make text safe to place inside HTML. Everything from the data goes through this.
+export function esc(text) {
+  return String(text ?? "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;");
+}
+
+// How decided is this item at the moment `at`?
+// The brief asks us to keep three things apart: what staff recommend, what a
+// committee recommends, and what Council decides. We look at the latest stage
+// that has happened and say which of the three it is.
+export function statusAt(decision, at) {
+  const happened = decision.stages.filter((s) => reached(s.date, at));
+  const last = happened[happened.length - 1];
+  if (!last || last.body === "staff") {
+    const what = last?.result ? `City staff ${last.result}.` : "City staff have reported.";
+    return { level: "proposed", short: "Staff recommendation", text: `${what} Nothing is decided yet.` };
+  }
+  if (last.body === "committee") {
+    return last.result
+      ? { level: "committee", short: "Committee recommendation", text: `${last.label} ${last.result}. City Council has not voted.` }
+      : { level: "committee", short: "At committee", text: `${last.label} has met. The result is not loaded yet.` };
+  }
+  return last.result
+    ? { level: "decided", short: "Decided by Council", text: `City Council ${last.result}.` }
+    : { level: "decided", short: "At Council", text: "City Council has considered this. The result is not loaded yet." };
+}
+
+// The next moment a resident can act, and how sure we are about it.
+//   kind "deadline": a cut-off written in the City's own notice
+//   kind "meeting":  no written cut-off; this is when the meeting starts
+export function actBy(decision, now) {
+  const say = decision.say;
+  const value = say.deadline ?? say.meeting;
+  if (!value) return { open: false, big: "No date", small: "No date found in the record", kind: "none" };
+  const left = countdown(value, now);
+  const kind = say.deadline ? "deadline" : "meeting";
+  if (!left.open) return { ...left, kind, value, small: "since " + formatWhen(value) };
+  return {
+    ...left, kind, value,
+    small: kind === "deadline" ? "left to have your say" : (value.length === 10 ? "until the day of the meeting" : "until the meeting") + ". No written deadline posted",
+  };
+}
+
+// Only sentences that passed the quote check are ever shown to residents.
+export function shownClaims(decision, at) {
+  return decision.claims.filter((c) => {
+    if (!c.verified) return false;
+    if (!c.stage) return true;
+    const stage = decision.stages.find((s) => s.key === c.stage);
+    return !stage || reached(stage.date, at);
+  });
+}
+
+// The sentence in the chosen language, falling back to English.
+export function claimText(claim, lang) {
+  return lang === "fr" && claim.fr ? claim.fr : claim.text;
+}

@@ -1,0 +1,92 @@
+{
+  "id": "2024.NY15.4",
+  "title_plain": "Three towers and 960 homes proposed at 1875 Steeles Avenue West",
+  "title_official": "1875 Steeles Avenue West - Zoning By-law Amendment and Rental Housing Demolition and Conversion Applications - Decision Report - Approval",
+  "topic": "Housing and development",
+  "ward": { "code": "06", "name": "York Centre" },
+  "place": { "label": "1875 Steeles Avenue West", "lat": 43.785, "lon": -79.470, "approx": true },
+  "official_url": "https://secure.toronto.ca/council/agenda-item.do?item=2024.NY15.4",
+  "drafted_by": "Claude (AI), 13 Nov 2026, from the item page snapshot",
+  "documents": [
+    { "id": "d1", "title": "Official item page, 2024.NY15.4", "type": "item_page",
+      "url": "https://secure.toronto.ca/council/agenda-item.do?item=2024.NY15.4",
+      "snapshot": "snapshots/2024.NY15.4.txt", "retrieved": "2026-11-13" }
+  ],
+  "stages": [
+    { "key": "staff", "body": "staff", "label": "Staff report", "date": "2024-06-20",
+      "result": "recommended approval", "result_claim": "c3", "can_speak": false },
+    { "key": "committee", "body": "committee", "label": "North York Community Council", "date": "2024-07-09",
+      "result": "recommended refusal, by 4 votes to 1", "result_claim": "c4", "can_speak": true },
+    { "key": "council", "body": "council", "label": "City Council", "date": "2024-07-24",
+      "result": "refused the application", "result_claim": "c6", "can_speak": false }
+  ],
+  "say": {
+    "deadline": null, "deadline_claim": null,
+    "meeting": "2024-07-09", "meeting_claim": "c8",
+    "guidance_claim": null, "contact_email": null,
+    "methods": ["Written comments and speaking at the public meeting, both now closed"]
+  },
+  "claims": [
+    { "id": "c1", "section": "what", "stage": "staff", "lenses": ["nearby"],
+      "text": "The application asked to build three towers of 39, 33 and 14 storeys at 1875 Steeles Avenue West, with 960 homes in total.",
+      "sources": [
+        { "doc": "d1", "quote": "proposes to permit 39-storey (133.0 metre), 33-storey (115 metre) and 14-storey (53 metre) buildings" },
+        { "doc": "d1", "quote": "The application proposes a total of 960 dwelling units, including the replacement of 120 existing rental units on-site at 1875 Steeles Avenue West." } ] },
+    { "id": "c2", "section": "what", "stage": "staff", "lenses": ["rent"],
+      "text": "The existing rental homes on the site would be demolished. The proposal included 132 replacement rental units and a plan giving eligible tenants the right to return at similar rents, plus compensation.",
+      "sources": [ { "doc": "d1", "quote": "The proposal includes 132 replacement rental units and a Tenant Relocation and Assistance Plan that addresses the right of existing eligible tenants to return to replacement rental units at similar rents and financial compensation to mitigate hardship." } ] },
+    { "id": "c3", "section": "why", "stage": "staff", "lenses": [],
+      "text": "City planning staff recommended approving it, with a condition called a holding provision.",
+      "sources": [ { "doc": "d1", "quote": "This report reviews and recommends approval of the application to amend the Zoning By-law, with a holding provision." } ] },
+    { "id": "c4", "section": "changed", "stage": "committee", "lenses": [],
+      "text": "North York Community Council did not follow the staff advice. It changed the item and recommended that City Council refuse the application.",
+      "sources": [
+        { "doc": "d1", "quote": "This item was considered by North York Community Council on July 9, 2024 and was adopted with amendments." },
+        { "doc": "d1", "quote": "North York Community Council recommends that: 1. City Council refuse the application for 1875 Steeles Avenue West" } ] },
+    { "id": "c5", "section": "changed", "stage": "committee", "lenses": ["business"],
+      "text": "Before that vote, one councillor moved to send the item back to staff for more work on how it fits with the neighbouring employment lands. That motion lost.",
+      "sources": [
+        { "doc": "d1", "quote": "Motion to Refer Item moved by Councillor Shelley Carroll (Lost)" },
+        { "doc": "d1", "quote": "Further engagement with stakeholders from the existing employment lands adjacent to the site" } ] },
+    { "id": "c6", "section": "changed", "stage": "council", "lenses": [],
+      "text": "City Council refused the application on 24 and 25 July 2024.",
+      "sources": [ { "doc": "d1", "quote": "City Council on July 24 and 25, 2024, adopted the following: 1. City Council refuse the application for 1875 Steeles Avenue West" } ] },
+    { "id": "c7", "section": "changed", "stage": "council", "lenses": [],
+      "text": "Read the official record with care: its title still ends in \"Approval\" and its status reads \"Adopted\". What Council adopted was the recommendation to refuse.",
+      "sources": [ { "doc": "d1", "quote": "Decision Report - Approval Decision Type: ACTION Status: Adopted" } ] },
+    { "id": "c8", "section": "say", "stage": "committee", "lenses": [],
+      "text": "North York Community Council held the public meeting the Planning Act requires on 9 July 2024.",
+      "sources": [ { "doc": "d1", "quote": "The North York Community Council held a statutory public meeting on July 9, 2024, and notice was given in accordance with the Planning Act." } ] },
+    { "id": "v1", "section": "vote", "stage": "committee", "lenses": [],
+      "text": "Motion to send the item back to staff: lost, 1 yes and 4 no.",
+      "sources": [
+        { "doc": "d1", "quote": "Result: Lost Majority Required Total members that voted Yes: 1" },
+        { "doc": "d1", "quote": "No: 4 Members that voted No are Jon Burnside, Lily Cheng, Mike Colle, James Pasternak (Chair)" } ] },
+    { "id": "v2", "section": "vote", "stage": "committee", "lenses": [],
+      "text": "Motion to recommend refusal: carried, 4 yes and 1 no.",
+      "sources": [
+        { "doc": "d1", "quote": "Motion to Adopt Item as Amended moved by Councillor James Pasternak (Carried)" },
+        { "doc": "d1", "quote": "Result: Carried Majority Required Total members that voted Yes: 4" } ] },
+    { "id": "v3", "section": "vote", "stage": "council", "lenses": [],
+      "text": "City Council: motion to adopt the item carried. The item page shows no recorded count for this vote.",
+      "sources": [ { "doc": "d1", "quote": "Motions (City Council) Motion to Adopt Item (Carried)" } ] },
+    { "id": "x1", "section": "what", "stage": "council", "lenses": [], "planted": true,
+      "text": "City Council approved the application.",
+      "sources": [ { "doc": "d1", "quote": "City Council approve the application for 1875 Steeles Avenue West" } ] }
+  ],
+  "votes": [
+    { "stage": "committee", "motion": "Send the item back to staff for more study", "result": "Lost", "yes": 1, "no": 4, "claim": "v1" },
+    { "stage": "committee", "motion": "Recommend that Council refuse the application", "result": "Carried", "yes": 4, "no": 1, "claim": "v2" },
+    { "stage": "council", "motion": "Adopt the item (refuse the application)", "result": "Carried", "yes": null, "no": null, "claim": "v3" }
+  ],
+  "heard": [
+    { "stage": "committee", "written": 13, "speakers": 9 },
+    { "stage": "council", "written": 7, "speakers": null }
+  ],
+  "heard_note": "Counted by hand from the lists on the item page on 13 Nov 2026. Names are not stored.",
+  "unknowns": [
+    "Why the Community Council and City Council chose refusal. The item page records the votes, not the reasons.",
+    "How the letters and speakers affected the outcome. The record does not say.",
+    "Whether the applicant appealed the refusal. The item page does not say."
+  ]
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Before the Vote</title>
+  <meta name="description" content="What your city is deciding, how it affects you, and how long you still have to speak.">
+  <!-- Fonts: Atkinson Hyperlegible (Braille Institute) for reading, Bricolage Grotesque for headings. See CREDITS.md -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip" href="#view">Skip to content</a>
+
+  <p class="test-banner" id="test-banner" hidden>Test view: showing the site as of <span id="test-date"></span>. Remove ?asof from the address to return to today.</p>
+
+  <header class="site-header">
+    <a class="brand" href="#/">Before the Vote</a>
+    <nav aria-label="Main">
+      <a href="#/">Decisions</a>
+      <a href="#/method">How we check</a>
+    </nav>
+  </header>
+
+  <!-- app.js draws the current screen in here -->
+  <main id="view" tabindex="-1"></main>
+
+  <!-- One shared pop-up that shows where a sentence came from -->
+  <dialog id="receipt" aria-labelledby="receipt-title">
+    <form method="dialog"><button class="close">Close</button></form>
+    <h2 id="receipt-title">Where this comes from</h2>
+    <div id="receipt-body"></div>
+  </dialog>
+
+  <footer class="site-footer">
+    <p>Sentences are drafted with AI from public City of Toronto records, then checked word for word against those records.
+       This is not the official record and not legal advice. <a href="#/method">How we check</a>.</p>
+    <p>No accounts, no cookies, no tracking. Your ward, location and choices stay on this device.
+       Contains information licensed under the Open Government Licence – Toronto. Student prototype, CIVIC Hack 2026.</p>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
