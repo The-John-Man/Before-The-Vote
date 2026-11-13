@@ -10,6 +10,7 @@ export const state = {
   lens: null,        // "rent", "drive"... which sentences to bring forward
   lang: "en",        // "en" or "fr"
   data: null,        // decisions.json
+  status: null,      // status.json: when each item was last checked against the City's page (optional)
   wards: [],         // parsed wards.txt
 };
 

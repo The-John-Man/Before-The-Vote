@@ -87,6 +87,10 @@ button, select { font: inherit; color: inherit; }
 .board-stage { font-size: 0.85rem; font-weight: 700; justify-self: start; padding: 0.2rem 0.7rem; border-radius: 999px; }
 .board-foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem 1.5rem; margin: 0; padding: 0.9rem 1.5rem; border-top: 1px solid #2a3d5a; font-size: 0.9rem; color: #dbe4f0; }
 
+.board-flags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.35rem; }
+.board-flag { font-size: 0.78rem; font-weight: 700; padding: 0.05rem 0.55rem; border-radius: 4px; border: 1px solid #6f84a3; color: #dbe4f0; }
+.board-flag.is-new { border-color: var(--signal); color: var(--signal); }
+
 /* How decided is it? Same three looks on the board and on the decision page */
 .level-proposed { background: var(--signal); color: var(--ink); }
 .level-committee { background: #cfe0ff; color: var(--ink); }
@@ -101,6 +105,8 @@ button, select { font: inherit; color: inherit; }
 .replay-note .btn-plain { margin-left: 0.6rem; }
 .status { display: inline-block; margin: 1rem 0 0.75rem; padding: 0.3rem 0.9rem; border-radius: 999px; font-weight: 700; font-size: 0.95rem; }
 .official { color: var(--mute); font-size: 0.9rem; margin: 0.75rem 0 0; max-width: 70ch; }
+.checked { color: var(--go); font-size: 0.85rem; font-weight: 700; margin: 0.4rem 0 0; }
+.checked.is-stale { color: var(--stop); }
 
 /* The Decision Line: one stop per stage, joined by a rail */
 .line { list-style: none; margin: 2.25rem 0 0.4rem; padding: 0; display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; }
@@ -128,6 +134,11 @@ button.stop-btn:hover strong { text-decoration: underline; }
 .claim { max-width: 62ch; margin: 0 0 0.9rem; }
 .claim.is-lens { background: #fff6cc; box-shadow: -0.75rem 0 0 #fff6cc, 0.5rem 0 0 #fff6cc; border-radius: 2px; }
 .unknowns { border-left: 6px dashed var(--mute); padding-left: 1.1rem; }
+.updates { background: var(--card); border: 1px solid var(--hair); border-left: 6px solid var(--rail); border-radius: 8px; padding: 0.9rem 1.1rem; }
+.updates h2 { font-size: 1.1rem; }
+.facts-only { background: #fff6cc; border-left: 6px solid var(--signal); padding: 0.9rem 1.1rem; border-radius: 4px; }
+.facts-only h2 { font-size: 1.15rem; }
+.facts-only p { margin: 0; max-width: 62ch; }
 .decision-main ul { margin: 0; padding-left: 1.1rem; max-width: 60ch; }
 
 /* "I rent", "I live nearby": bring matching sentences forward */

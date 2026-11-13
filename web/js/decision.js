@@ -10,7 +10,7 @@
 //   Have your say      countdown, official link, calendar, print, share
 
 import { state } from "./state.js";
-import { esc, statusAt, actBy, shownClaims, claimText } from "./util.js";
+import { esc, statusAt, actBy, shownClaims, claimText, lastCheck } from "./util.js";
 import { formatWhen, reached, endOfDay } from "./time.js";
 import { downloadReminder } from "./ics.js";
 import { canSpeak, toggleSpeech } from "./speak.js";
@@ -105,13 +105,45 @@ function heard(decision, at) {
       <ul>
         ${shown.map((h) => {
           const stage = decision.stages.find((s) => s.key === h.stage);
-          const parts = [`${h.written} letters or e-mails`];
-          if (h.speakers !== null) parts.push(`${h.speakers} people spoke`);
+          const parts = [h.written === 1 ? "1 letter or e-mail" : `${h.written} letters or e-mails`];
+          if (h.speakers !== null) parts.push(h.speakers === 1 ? "1 person spoke" : `${h.speakers} people spoke`);
           return `<li>${esc(stage.label)}: ${esc(parts.join(", "))}.</li>`;
         }).join("")}
       </ul>
       <p class="small-note">${esc(decision.heard_note ?? "")}
         <a href="${esc(decision.official_url)}" target="_blank" rel="noopener">Read them on the official page</a>.</p>
+    </section>`;
+}
+
+// What changed on the City's page recently, written by refresh.py from plain rules.
+function updates(decision) {
+  if (!decision.updates?.length) return "";
+  return `
+    <section class="updates">
+      <h2>What changed recently</h2>
+      <ul>${decision.updates.slice(0, 3).map((u) =>
+        `<li><strong>${esc(formatWhen(u.date))}.</strong> ${u.notes.map(esc).join(" ")}</li>`).join("")}</ul>
+    </section>`;
+}
+
+// A card with no checked sentence yet. Say so plainly, then give what rules could read.
+function factsOnly(decision) {
+  if (!decision.facts_only) return "";
+  return `
+    <section class="facts-only">
+      <h2>The plain-language explanation is not written yet</h2>
+      <p>No sentence about this item has been written and checked yet. Everything on this page was read
+        straight from the City's page by fixed rules, without AI: the stops, dates, ward, documents and
+        how many people wrote in or spoke.</p>
+    </section>`;
+}
+
+function documentList(decision) {
+  const docs = decision.documents.filter((d) => d.type !== "guidance" && d.type !== "item_page");
+  if (!docs.length) return "";
+  return `
+    <section><h2>Documents on the City's page</h2>
+      <ul>${docs.map((d) => `<li><a href="${esc(d.url)}" target="_blank" rel="noopener">${esc(d.title)}</a></li>`).join("")}</ul>
     </section>`;
 }
 
@@ -125,7 +157,8 @@ function sayPanel(decision) {
       <p class="say-big">${esc(act.big)}</p>
       <p class="say-small">${esc(act.small)}</p>
       ${act.value ? `<p>${act.kind === "deadline" ? "Deadline in the City's notice" : "Meeting"}:
-        <strong>${esc(formatWhen(act.value))}</strong> ${sourceId ? sourceButton(sourceId, true) : ""}</p>` : ""}
+        <strong>${esc(formatWhen(act.value))}</strong> ${sourceId ? sourceButton(sourceId, true) : ""}
+        ${decision.say.meeting_from === "page" && act.kind === "meeting" ? `<br><small>Date as listed on the City's page. The time is not posted.</small>` : ""}</p>` : ""}
       ${act.open && guidance ? `<p class="say-guidance">${esc(claimText(guidance, state.lang))} ${sourceButton(guidance.id, true)}</p>` : ""}
       ${act.open ? `<ul>${decision.say.methods.map((m) => `<li>${esc(m)}</li>`).join("")}</ul>` : ""}
       <a class="btn" href="${esc(decision.official_url)}" target="_blank" rel="noopener">
@@ -175,6 +208,7 @@ export function renderDecision(view, decision) {
   const status = statusAt(decision, at);
   const claims = shownClaims(decision, at);
   const hasFrench = decision.claims.some((c) => c.fr);
+  const check = lastCheck(decision);
 
   view.innerHTML = `
     <article class="decision">
@@ -193,12 +227,15 @@ export function renderDecision(view, decision) {
       <h1>${esc(decision.title_plain)}</h1>
       <p class="official">Official title: ${esc(decision.title_official)} (item ${esc(decision.id)}).
         ${decision.place ? `${esc(decision.place.label)}, ` : ""}${decision.ward ? `Ward ${Number(decision.ward.code)} ${esc(decision.ward.name)}` : "All of Toronto"}.</p>
+      ${check ? `<p class="checked ${check.ok ? "" : "is-stale"}">${esc(check.text)}</p>` : ""}
 
       ${line(decision, at)}
       <p class="line-hint">Press a stop that has passed to see what was known then.</p>
 
       <div class="decision-grid">
         <div class="decision-main">
+          ${factsOnly(decision)}
+          ${updates(decision)}
           ${lensChips(claims)}
           ${SECTIONS.map((section) => {
             const list = claims.filter((c) => c.section === section.key);
@@ -206,10 +243,11 @@ export function renderDecision(view, decision) {
           }).join("")}
           ${votes(decision, at)}
           ${heard(decision, at)}
-          <section class="unknowns">
+          ${documentList(decision)}
+          ${decision.unknowns.length ? `<section class="unknowns">
             <h2>What the record does not say</h2>
             <ul>${decision.unknowns.map((u) => `<li>${esc(u)}</li>`).join("")}</ul>
-          </section>
+          </section>` : ""}
         </div>
         ${sayPanel(decision)}
       </div>

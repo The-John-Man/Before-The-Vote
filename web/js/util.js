@@ -1,5 +1,6 @@
 // util.js — helpers shared by every screen.
 
+import { state } from "./state.js";
 import { reached, countdown, formatWhen } from "./time.js";
 
 // Make text safe to place inside HTML. Everything from the data goes through this.
@@ -56,6 +57,25 @@ export function shownClaims(decision, at) {
     const stage = decision.stages.find((s) => s.key === c.stage);
     return !stage || reached(stage.date, at);
   });
+}
+
+// When this item was last compared with the City's page, from status.json.
+// Returns null when no automatic check has run (for example, a local build).
+export function lastCheck(decision) {
+  const check = state.status?.items?.[decision.id];
+  if (!check) return null;
+  const when = formatWhen(check.checked_at).replace(/\.$/, ""); // "6:34 p.m." would end in two dots
+  return check.ok
+    ? { ok: true, text: `Checked against the City's page ${when}.` }
+    : { ok: false, text: `The latest automatic check could not reach the City's page (${when}). What you see is from the last copy that worked.` };
+}
+
+// The newest "what changed" entry, if it is from the last 7 days.
+export function recentUpdate(decision, now) {
+  const latest = decision.updates?.[0];
+  if (!latest) return null;
+  const days = (now - new Date(latest.date + "T12:00:00-05:00")) / 86400000;
+  return days <= 7 && days >= -1 ? latest : null;
 }
 
 // The sentence in the chosen language, falling back to English.

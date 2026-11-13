@@ -38,6 +38,8 @@
 | Name-publication warning before the link to comment | what residents should know |
 | `new_item.py`: item number in, dated record copy and starter file out, names of residents dropped | municipal users; privacy |
 
+Built Friday evening: **live updates.** A scheduled job copies the City's pages again every 3 hours, notes what changed, re-checks every sentence, and publishes. New item numbers become "facts only" cards. See "Live updates" in the README.
+
 ## What is left, in order
 
 | # | Task | Why |

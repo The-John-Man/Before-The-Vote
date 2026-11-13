@@ -13,7 +13,10 @@ For every item it:
          (a time of day is dropped too unless the record states one)
        - a stage result ("refused", "adopted") whose sentence failed
        - a vote whose sentence failed
-  4. writes web/data/decisions.json and web/data/calendar.ics
+  4. marks an item with no checked sentence as "facts only"
+  5. writes web/data/decisions.json and web/data/calendar.ics
+
+refresh.py runs this after copying the City's pages again.
 
 Sentences that fail stay in the file marked verified=false. The public pages hide
 them; the "How we check" page lists them so staff can fix or delete them.
@@ -37,8 +40,11 @@ def is_verified(claim: dict) -> bool:
 
 def build_card(item: dict, city: dict) -> dict:
     # 1. text of every document this item may quote (its own plus city-wide guidance)
+    # Only documents a sentence actually quotes are opened, so a new item with many
+    # background PDFs does not download them all.
     documents = item["documents"] + city["documents"]
-    pages = {doc["id"]: load_pages(doc) for doc in documents}
+    quoted = {source["doc"] for claim in item["claims"] for source in claim["sources"]}
+    pages = {doc["id"]: load_pages(doc) for doc in documents if doc["id"] in quoted}
 
     # 2. check each sentence
     for claim in item["claims"]:
@@ -57,9 +63,16 @@ def build_card(item: dict, city: dict) -> dict:
     # The meeting date needs the same proof. A time of day is kept only if the record states one.
     meeting_claim = good.get(say.get("meeting_claim"))
     quote = " ".join(s["quote"] for s in meeting_claim["sources"]) if meeting_claim else ""
-    say["meeting"] = supported_moment(say["meeting"], quote) if say.get("meeting") else None
+    wanted = say.get("meeting")
+    say["meeting"] = supported_moment(wanted, quote) if wanted else None
+    say["meeting_from"] = "sentence" if say["meeting"] else None
     if not say["meeting"]:
         say["meeting_claim"] = None
+        # No checked sentence states the meeting, but the City's page lists it as the date of a
+        # stop where residents can speak (read by rules in btv/timeline.py, no AI). Show that day,
+        # without a time. This is the meeting, never a deadline.
+        if wanted and any(s.get("can_speak") and s.get("date") == wanted[:10] for s in item["stages"]):
+            say["meeting"], say["meeting_from"] = wanted[:10], "page"
     if say.get("guidance_claim") not in good:
         say["guidance_claim"] = None
 
@@ -69,6 +82,14 @@ def build_card(item: dict, city: dict) -> dict:
             stage["result"], stage["result_claim"] = None, None
     item["votes"] = [vote for vote in item.get("votes", []) if vote.get("claim") in good]
 
+    # 4. a card with no checked sentence yet is "facts only": the site shows what rules
+    #    read from the City's page and says the explanation is not written yet.
+    item["facts_only"] = not any(claim["verified"] for claim in item["claims"])
+    if not item.get("title_plain"):
+        item["title_plain"] = item["title_official"]
+    if not item.get("topic"):
+        item["topic"] = "Not sorted yet"
+    item.pop("record_facts", None)   # used by refresh.py only
     item["documents"] = documents
     return item
 

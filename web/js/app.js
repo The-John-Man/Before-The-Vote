@@ -1,7 +1,8 @@
 // app.js — starting point. Loads the data once, then shows the right screen.
 //
-// The site is static: it reads two files made by the Python pipeline
-// (data/decisions.json and data/wards.txt). There is no server and no database.
+// The site is static: it reads files made by the Python pipeline
+// (data/decisions.json, data/wards.txt, and data/status.json when the scheduled
+// refresh has run). There is no server and no database.
 //
 // Screens are chosen by the part of the address after "#":
 //   #/              the board of decisions and the ward map
@@ -42,11 +43,13 @@ function route() {
 
 async function start() {
   try {
-    const [data, wardsText] = await Promise.all([
+    const [data, wardsText, status] = await Promise.all([
       fetch("data/decisions.json").then((r) => r.json()),
       fetch("data/wards.txt").then((r) => (r.ok ? r.text() : "")), // the map is optional
+      fetch("data/status.json").then((r) => (r.ok ? r.json() : null)).catch(() => null), // only after a refresh
     ]);
     state.data = data;
+    state.status = status;
     state.wards = wardsText ? parseWards(wardsText) : [];
     if (state.testDate) {
       document.getElementById("test-banner").hidden = false;

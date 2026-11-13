@@ -1,0 +1,75 @@
+# Keeps Before the Vote in step with the City of Toronto's record, then publishes the site.
+#
+# When it runs:
+#   - every 3 hours (times are UTC; 17 minutes past, to avoid the busy top of the hour)
+#   - on demand: Actions tab > "Refresh from the City and publish" > Run workflow
+#   - after every push to main, so the published site always matches the code
+#
+# What it does: run the tests, re-copy every tracked item (pipeline/refresh.py), save the
+# new copies to the repo ONLY if the City's record changed, then publish web/ to GitHub Pages.
+#
+# One-time setup: Settings > Pages > Build and deployment > Source: "GitHub Actions".
+# No API key or secret is needed. Nothing here uses AI.
+
+name: Refresh from the City and publish
+
+on:
+  schedule:
+    - cron: "17 */3 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write   # to save changed records back to the repo
+  pages: write      # to publish the site
+  id-token: write   # required by GitHub Pages
+
+concurrency:
+  group: refresh-and-publish
+  cancel-in-progress: false
+
+jobs:
+  refresh-and-publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install the download libraries
+        run: pip install -r pipeline/requirements.txt
+
+      - name: Run the tests
+        working-directory: pipeline
+        run: python -m unittest -v
+
+      - name: Re-copy every tracked item from the City and rebuild
+        working-directory: pipeline
+        run: python refresh.py
+
+      - name: Save to the repo if the City's record changed
+        run: |
+          if [ -z "$(git status --porcelain pipeline/items pipeline/snapshots)" ]; then
+            echo "The City's pages have not changed. Nothing to save."
+          else
+            git config user.name "before-the-vote-refresh"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add pipeline/items pipeline/snapshots web/data/decisions.json web/data/calendar.ics
+            git commit -m "Refresh from the City of Toronto's pages"
+            git push
+          fi
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: web
+
+      - id: deploy
+        uses: actions/deploy-pages@v4

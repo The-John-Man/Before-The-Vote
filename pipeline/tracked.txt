@@ -1,0 +1,7 @@
+# Items for the scheduled refresh to follow, one City of Toronto item number per line.
+# Every item that already has a file in items/ is followed anyway.
+# Add a new number here to bring an item onto the site as a "facts only" card;
+# its plain-language explanation can be written and checked afterwards.
+2027.PB1.6
+2024.NY15.4
+2026.PH31.6

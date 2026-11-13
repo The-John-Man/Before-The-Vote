@@ -4,6 +4,31 @@
 
 import { state } from "./state.js";
 import { esc } from "./util.js";
+import { formatWhen } from "./time.js";
+
+// One row per tracked item: when the City's page was last read, and what changed.
+function checks() {
+  const items = state.status?.items;
+  if (!items) return "";
+  const rows = state.data.decisions.map((d) => {
+    const check = items[d.id];
+    const latest = d.updates?.[0];
+    return `<tr class="${check && !check.ok ? "needs-check" : ""}">
+      <td>${esc(d.id)}</td>
+      <td>${check ? esc(formatWhen(check.checked_at)) : "Not checked"}</td>
+      <td>${check?.ok ? "Read the page" : esc(check?.error ?? "")}</td>
+      <td>${latest ? `${esc(formatWhen(latest.date))}: ${latest.notes.map(esc).join(" ")}` : "No change noted"}</td>
+    </tr>`;
+  }).join("");
+  return `
+    <h2>Automatic checks against the City's pages</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Item</th><th>Last checked</th><th>Result</th><th>Latest change</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>`;
+}
 
 export function renderMethod(view) {
   const all = state.data.decisions.flatMap((d) => d.claims.map((c) => ({ ...c, item: d.id })));
@@ -38,10 +63,12 @@ export function renderMethod(view) {
       <ul>
         <li>The check proves the quoted words exist. It cannot prove a sentence is a fair or complete reading of them. A person should still review each one.</li>
         <li>These pages are not the official record. If they differ from the City's page, the City's page is right.</li>
-        <li>Records are copied on a date. Later changes are not picked up until the record is copied again.</li>
+        <li>Records are copied on a date. A scheduled job copies each tracked page again every few hours and re-runs the check; each decision shows when it was last checked. Between checks, the City's page may already have changed.</li>
         <li>French sentences are machine translations and have not been reviewed.</li>
         <li>Ward outlines on the map are simplified. Near a boundary, check your ward with the City.</li>
       </ul>
+
+      ${checks()}
 
       <h2>Every sentence, for staff review</h2>
       <div class="table-wrap">

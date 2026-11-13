@@ -54,7 +54,7 @@ Summit attendees cast 30 votes; this challenge got 13. The slides call the event
 | Impact and practical value; how other cities adapt | 5 | One `city.json` and item files per city; `new_item.py` shows the import path |
 | Requirements and design (UML) | 5 | `03-ARCHITECTURE.md` |
 | Architecture rationale and scalability | 5 | `03-ARCHITECTURE.md` |
-| Source code awareness | 5 | Small commented files, 29 tests; you can walk through each |
+| Source code awareness | 5 | Small commented files, 44 tests; you can walk through each |
 | References for code, libraries, algorithms, AI | 5 | `CREDITS.md` |
 | Municipal Readiness Report | 20 | Draft in `05-SUBMISSION-KIT.md` |
 | Demo video | 20 | Script in `05-SUBMISSION-KIT.md` |

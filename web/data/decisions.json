@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T23:14:26+00:00",
+  "generated_at": "2026-11-13T18:36:28-05:00",
   "municipality": {
     "name": "City of Toronto",
     "short": "Toronto",
@@ -97,7 +97,8 @@
         "contact_email": null,
         "methods": [
           "Written comments and speaking at the public meeting, both now closed"
-        ]
+        ],
+        "meeting_from": "sentence"
       },
       "claims": [
         {
@@ -373,7 +374,8 @@
         "Why the Community Council and City Council chose refusal. The item page records the votes, not the reasons.",
         "How the letters and speakers affected the outcome. The record does not say.",
         "Whether the applicant appealed the refusal. The item page does not say."
-      ]
+      ],
+      "facts_only": false
     },
     {
       "id": "2026.PH31.6",
@@ -448,7 +450,8 @@
         "contact_email": null,
         "methods": [
           "Written comments and speaking to the committee, both now closed"
-        ]
+        ],
+        "meeting_from": "sentence"
       },
       "claims": [
         {
@@ -574,7 +577,8 @@
         "Which addresses are on the new list. The item page does not list them. It points to By-law 621-2026.",
         "Why the City made this change. The staff report has not been loaded.",
         "Whether anyone spoke at the committee meeting. That part of the record has not been loaded."
-      ]
+      ],
+      "facts_only": false
     },
     {
       "id": "2027.PB1.6",
@@ -650,7 +654,8 @@
         "methods": [
           "Send written comments",
           "Ask to speak to the Preservation Board, in person or by video"
-        ]
+        ],
+        "meeting_from": "sentence"
       },
       "claims": [
         {
@@ -850,7 +855,8 @@
         "What time the meeting starts, and the board's e-mail address. The item page gives only the date. Use the buttons on the official page.",
         "Which committee hears this after the Preservation Board, and when City Council will vote. The item page does not say yet.",
         "What the Preservation Board will advise. It has not met yet."
-      ]
+      ],
+      "facts_only": false
     }
   ]
 }

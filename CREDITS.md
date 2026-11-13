@@ -19,6 +19,8 @@ Team changes after the AI draft: (list them here as you make them)
 | Python standard library (`html.parser`, `re`, `unicodedata`, `json`, `unittest`, `urllib`) | all of `pipeline/` for checking and building | PSF |
 | [requests](https://pypi.org/project/requests/) | downloads in `btv/tmmis.py`, `btv/sources.py`, `btv/summarize.py` | Apache-2.0 |
 | [pypdf](https://pypi.org/project/pypdf/) | PDF text in `btv/sources.py` | BSD-3 |
+| [tzdata](https://pypi.org/project/tzdata/) | Toronto time zone for `refresh.py` on Windows | Apache-2.0 |
+| GitHub Actions: `actions/checkout`, `actions/setup-python`, `actions/configure-pages`, `actions/upload-pages-artifact`, `actions/deploy-pages` | `.github/workflows/refresh-and-publish.yml` | MIT |
 | No JavaScript libraries or frameworks | `web/` uses browser features only: ES modules, `fetch`, `<dialog>`, SVG, Geolocation, Web Speech, Web Share | n/a |
 
 ## Fonts

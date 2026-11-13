@@ -3,7 +3,8 @@
 // long residents still have to speak, and can narrow to one ward.
 
 import { state } from "./state.js";
-import { esc, statusAt, actBy } from "./util.js";
+import { esc, statusAt, actBy, recentUpdate } from "./util.js";
+import { formatWhen } from "./time.js";
 import { wardAt, distanceKm } from "./geo.js";
 import { mapSvg, wireMap } from "./map.js";
 
@@ -25,6 +26,11 @@ function whereText(decision) {
 function row(decision) {
   const act = actBy(decision, state.now);
   const status = statusAt(decision, state.now);
+  const update = recentUpdate(decision, state.now);
+  const flags = [
+    update ? `<span class="board-flag is-new">Updated ${esc(formatWhen(update.date))}</span>` : "",
+    decision.facts_only ? `<span class="board-flag">Facts only. Explanation being written</span>` : "",
+  ].join("");
   return `
     <li>
       <a class="board-row ${act.open ? "is-open" : "is-closed"}" href="#/d/${encodeURIComponent(decision.id)}">
@@ -32,6 +38,7 @@ function row(decision) {
         <span class="board-what">
           <strong>${esc(decision.title_plain)}</strong>
           <small>${esc(decision.topic)}. ${esc(whereText(decision))}</small>
+          ${flags ? `<span class="board-flags">${flags}</span>` : ""}
         </span>
         <span class="board-stage level-${status.level}">${esc(status.short)}</span>
       </a>
@@ -96,7 +103,9 @@ export function renderBoard(view) {
       </ol>
       <p class="board-foot">
         <a href="data/calendar.ics">Add every open date to my calendar</a>
-        <span>Updated ${esc(new Date(data.generated_at).toLocaleDateString("en-CA", { day: "numeric", month: "long", year: "numeric" }))}</span>
+        <span>${state.status
+          ? `Checked against the City's pages ${esc(formatWhen(state.status.checked_at))}`
+          : `Updated ${esc(formatWhen(data.generated_at.slice(0, 10)))}`}</span>
       </p>
     </section>`;
 

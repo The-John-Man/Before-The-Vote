@@ -61,6 +61,9 @@ flowchart TB
     FORM[Comment / speak form]
   end
   subgraph Pipeline["pipeline/ (Python, run by staff)"]
+    GHA[GitHub Actions, every 3 hours] --> REF[refresh.py: re-copy, note changes]
+    REF --> TM
+    REF --> BUILD
     NEW[new_item.py] --> TM[btv/tmmis.py: read page, drop names]
     NEW --> TL[btv/timeline.py: stops, ward, documents, counts]
     NEW --> SNAP[(snapshots/*.txt, dated)]
@@ -161,14 +164,15 @@ sequenceDiagram
 | Visitors | Static files on a CDN | No change needed |
 | Items | One JSON file, fine into the low hundreds | One file per item plus a small index |
 | Staff effort | Minutes per item to draft and review | Model drafts by default; staff review only what the check or a reviewer flags |
-| Freshness | Staff run two commands | Scheduled job on agenda publishing days: re-copy each open item, rebuild, and alert staff when a previously passing sentence fails (the record changed) |
+| Freshness | Built: a scheduled GitHub Actions job re-copies every tracked item every 3 hours, notes what changed, hides sentences that stop matching, and republishes | Find new items automatically from meeting agendas; alert staff by e-mail when a sentence is hidden |
 | Cities | Toronto reader in `tmmis.py` | One reader per agenda system (eSCRIBE, Legistar, CivicWeb) producing the same record shape; everything after that is shared |
 | Languages | English, unreviewed French | Reviewed translations stored per sentence; quotes stay in the original language |
 
 ## Known limits
 
 - The check passes a real quote attached to a misleading sentence. A person must still review.
-- Record copies were made by hand through a browser on 13 Nov 2026; the download code has not yet run against the live site.
+- Record copies were made by hand through a browser on 13 Nov 2026. The download code is tested on a saved sample page; the first scheduled run is its first live test.
+- New items must be added to `tracked.txt` by hand. Finding them from meeting agendas is future work.
 - Vote counts and place coordinates are typed by hand.
 - Ward outlines are simplified; location-to-ward can be wrong near a boundary.
 - Only item pages and one notice excerpt are used. Long staff reports (PDF) are linked but not yet summarised.
