@@ -1,0 +1,135 @@
+{
+  "id": "notice-8022",
+  "source": "opendata",
+  "notice_id": "8022",
+  "notice_date": "2026-11-13",
+  "title_plain": "Proposal to allow athletic facility construction",
+  "title_official": "Notice of Intention to Remove a Holding Symbol (H) from Zoning By-law 992-2026 - 701 Fleet Street",
+  "topic": "Planning",
+  "ward": {
+    "code": "10",
+    "name": "Spadina-Fort York"
+  },
+  "place": {
+    "label": "701 Fleet Street",
+    "lat": 43.636011014,
+    "lon": -79.408310316,
+    "approx": false
+  },
+  "official_url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=8014",
+  "drafted_by": "openrouter deepseek/deepseek-chat (AI), 2026-11-14, every quote checked word for word",
+  "application_numbers": [
+    "26 257610 STE 10 OZ "
+  ],
+  "documents": [
+    {
+      "id": "n1",
+      "type": "notice",
+      "notice_id": "8022",
+      "title": "Notice of Intention to Remove a Holding Symbol (H) from Zoning By-law 992-2026 - 701 Fleet Street",
+      "url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=8014",
+      "snapshot": "snapshots/notice-8022.txt",
+      "retrieved": "2026-11-14"
+    }
+  ],
+  "stages": [
+    {
+      "key": "notice",
+      "body": "staff",
+      "label": "City notice",
+      "date": "2026-11-13",
+      "result": null,
+      "result_claim": null,
+      "can_speak": false
+    }
+  ],
+  "say": {
+    "deadline": "2026-11-27",
+    "deadline_claim": "r1",
+    "meeting": null,
+    "meeting_claim": null,
+    "guidance_claim": null,
+    "contact_email": null,
+    "methods": []
+  },
+  "claims": [
+    {
+      "id": "r1",
+      "section": "say",
+      "stage": "notice",
+      "lenses": [],
+      "text": "The City's notice gives this deadline to comment or ask to speak.",
+      "drafted_by": "rule",
+      "sources": [
+        {
+          "doc": "n1",
+          "quote": "Your written comments must be submitted no later than November 27, 2026 to be considered by the Executive Director, Development Review or their designate, Director, Community Planning, Toronto and East York District."
+        }
+      ]
+    },
+    {
+      "id": "c1",
+      "section": "what",
+      "stage": "notice",
+      "lenses": [
+        "nearby"
+      ],
+      "text": "The City has received an application to remove a holding symbol (H) from the zoning by-law to allow building a three-storey athletic training facility.",
+      "sources": [
+        {
+          "doc": "n1",
+          "quote": "The application to amend Zoning By-law 992-2026 to remove the holding symbol (H) to permit the construction of a three-storey athletic training facility"
+        }
+      ],
+      "ai_drafted": true
+    },
+    {
+      "id": "c2",
+      "section": "why",
+      "stage": null,
+      "lenses": [],
+      "text": "The holding symbol (H) removal is proposed to enable the construction of the facility.",
+      "sources": [
+        {
+          "doc": "n1",
+          "quote": "to permit the construction of a three-storey athletic training facility"
+        }
+      ],
+      "ai_drafted": true
+    },
+    {
+      "id": "c3",
+      "section": "changed",
+      "stage": "notice",
+      "lenses": [],
+      "text": "A decision on whether to remove the holding symbol (H) will be made no earlier than December 15, 2026.",
+      "sources": [
+        {
+          "doc": "n1",
+          "quote": "A decision by the Executive Director, Development Review or their designate as to whether to remove the holding symbol (H) will occur no earlier than December 15, 2026"
+        }
+      ],
+      "ai_drafted": true
+    }
+  ],
+  "votes": [],
+  "heard": [],
+  "heard_note": "",
+  "unknowns": [
+    "This notice is not linked to a Council agenda item number, so later decisions and votes are not added to this page automatically.",
+    "What specific conditions must be met for the holding symbol to be removed?",
+    "How will the facility impact traffic or parking in the area?",
+    "What are the exact dimensions or design details of the proposed facility?"
+  ],
+  "notice_excerpt": "Detailed information about the proposal, including background information and materials may be made available for review by contacting the Planner noted above or by visiting the City of Toronto’s Application Information Centre.",
+  "updates": [
+    {
+      "date": "2026-11-14",
+      "notes": [
+        "Added from the City's public notices (Open Data).",
+        "Plain-language explanation drafted by AI: 3 of 3 sentences passed the word-for-word check."
+      ]
+    }
+  ],
+  "ai_drafted_on": "2026-11-14"
+}
