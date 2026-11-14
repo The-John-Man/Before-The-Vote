@@ -61,24 +61,39 @@ Start a new decision from the City's item number (needs internet and `pip instal
 python new_item.py 2027.PB1.6
 ```
 
-Copy every tracked item from the City again, note what changed, and rebuild (needs internet):
+Read the City's Open Data again, note what changed, and rebuild (needs internet, no key):
 
 ```
-python refresh.py
+python refresh.py --source opendata
+```
+
+Re-read agenda item pages that a person saved from their own browser as `<id>.html`:
+
+```
+python refresh.py --source tmmis --html-dir saved_pages
 ```
 
 ## Live updates
 
-`.github/workflows/refresh-and-publish.yml` runs `refresh.py` every 3 hours, on demand, and after every push to `main`, then publishes `web/` to GitHub Pages. It saves new copies of the City's pages to the repo only when the record actually changed. No API key or AI is involved.
+`.github/workflows/refresh-and-publish.yml` runs `python refresh.py --source opendata` every 3 hours, on demand, and after every push to `main`, then publishes `web/` to GitHub Pages. It saves changed cards to the repo only when the City's data actually changed, including removing old notice cards. No API key or AI is involved in fetching, selecting, matching, extracting, checking or writing change notes.
+
+The City's agenda item pages (secure.toronto.ca) block automated downloads. We do not get around that: no fake browser headers, no headless browser. Toronto's Open Data portal is built for programs and needs no key, so that is what the scheduled job reads.
+
+| Source | What we take | How often | Shown as |
+|---|---|---|---|
+| [Public notices](https://open.toronto.ca/dataset/public-notices/) (City open data) | Notices of public meetings and applications from the last 45 days, at most 40: title, date, the notice's words, address, application numbers, notice link. Contact person and signer are left out | Every 3 hours, one read | A card per notice, `items/notice-<id>.json` |
+| [Members of Toronto City Council voting record](https://open.toronto.ca/dataset/members-of-toronto-city-council-voting-record/), 2022 to 2026 (City open data) | For items with an agenda item number: committee, date, motion, result, yes and no counts. Councillors' names are never kept | Every 3 hours, one read filtered to our items | "Recorded votes (City open data)" on the decision page |
+| Saved City page (agenda item page) | Stops, dates, ward, documents, counts of letters and speakers | Only when a person saves the page from their browser and runs `--source tmmis --html-dir` | The hand-made cards |
 
 | Step | What happens |
 |---|---|
-| Re-copy | Each item page is downloaded once, with a 3-second pause between items |
-| Update facts | Stops, dates, ward, documents and counts of letters and speakers are read by rules (`btv/timeline.py`). Human-written results such as "refused the application" are never overwritten |
-| Note changes | Plain notes such as "City Council was added to the item" or "2 more letters or e-mails from the public". The City's status word ("Adopted") is never repeated as a result, because of the Steeles case |
-| Re-check | Every sentence is checked against the newest copy. One that no longer matches is hidden, and a note says so |
-| New items | An item number added to `pipeline/tracked.txt` appears as a "facts only" card: what the rules read, plus a clear note that the explanation is not written yet. The meeting day it shows comes from the stop listed on the City's page, never turned into a deadline |
-| Status | `web/data/status.json` records when each item was last read and any error. A failed download keeps the last good copy and says so on the page |
+| Choose notices | Last 45 days, and the title starts with "Notice of Public Meeting", "Notice of Application", "Notice of a request" or "Notice of Intention", or a topic starts with "Meetings" (`btv/notices.py`) |
+| Read by rules | Exact pin and ward from the notice's address (`btv/geo.py`), the City's own "proposes" sentence, and the deadline and meeting sentences (`btv/extract.py`). A deadline comes only from a sentence that states it, never from a meeting date |
+| Merge | A notice joins an existing item only if exactly one item shares its planning application number. Otherwise it gets its own card |
+| Note changes | Plain notes such as "A vote was recorded on July 9, 2024 at North York Community Council: Adopt Item as Amended, Carried, 4-1." The City's result words are kept: "Carried" is never turned into "approved", because of the Steeles case |
+| Re-check | Every sentence, including the rule-read deadline sentences, is checked against the saved copy by `btv/verify.py`. One that no longer matches is hidden, and a note says so |
+| Forget | A notice card is deleted 120 days after its notice unless a person has written sentences for it |
+| Status | `web/data/status.json` records when each source and each item was last read, from which source, and any error. If the portal cannot be reached, the error is recorded, the last data is kept, and the run still succeeds |
 
 To turn it on: **Settings → Pages → Build and deployment → Source: GitHub Actions**, then **Actions → Refresh from the City and publish → Run workflow** once and read the report it writes on the run page.
 
@@ -91,7 +106,8 @@ To turn it on: **Settings → Pages → Build and deployment → Source: GitHub 
 | Record copies in `pipeline/snapshots/` | Copied by hand from the live pages through a browser on 13 Nov. The 2026.PH31.6 deadline rests on **one sentence** copied from the notice PDF. Download the PDF and confirm it |
 | Quote check, deadline guard, calendar feed, page parser, timeline rules | Work |
 | `new_item.py` and `refresh.py` download step, `fetch_wards.py`, PDF reading | Written and tested on a saved sample page, **not yet run against the live sites** (the build machine had no internet access to them). The first scheduled run is the real test |
-| Scheduled refresh, change notes, facts-only cards | Work offline; 44 tests pass. The first live run replaces the hand-made copies; any sentence that stops matching will be hidden and listed in the run report |
+| Scheduled refresh, change notes, facts-only cards | Work offline; 83 tests pass. Item pages can no longer be downloaded automatically (the City blocks it), so they refresh only from pages a person saves |
+| Open Data feed (notices and recorded votes) | Run live on 13 Nov 2026 evening: 10 notice cards, 1 with a checked deadline; 2 recorded votes attached to 2024.NY15.4 |
 | `btv/summarize.py` (local model drafting through Ollama) | Written, **never run against a model**. The three items were drafted with Claude |
 | Vote counts, place coordinates | Typed by hand. Coordinates are approximate and marked so |
 | Meeting time and committee e-mail for the open item | Left out: the item page gives only the date, and the build now drops any time of day the record does not state |
@@ -101,5 +117,5 @@ To turn it on: **Settings → Pages → Build and deployment → Source: GitHub 
 ## Do these first
 
 1. Commit as you go. The organisers check commit history.
-2. Turn on GitHub Pages (see "Live updates") and run the workflow once by hand. Read its report: it shows whether GitHub's servers can reach the City's site and whether any sentence stopped matching the live page.
+2. Turn on GitHub Pages (see "Live updates") and run the workflow once by hand. Read its report: it shows whether GitHub's servers can reach the City's Open Data portal, which notice cards were added, which votes were attached, and whether any sentence stopped matching.
 3. Read every file in `web/js/` and `pipeline/`. The rubric penalises generated code the team cannot explain.
