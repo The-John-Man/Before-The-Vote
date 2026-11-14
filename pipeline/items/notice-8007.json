@@ -56,34 +56,6 @@
   },
   "claims": [
     {
-      "id": "r1",
-      "section": "say",
-      "stage": "notice",
-      "lenses": [],
-      "text": "The City's notice gives this deadline to comment or ask to speak.",
-      "drafted_by": "rule",
-      "sources": [
-        {
-          "doc": "n1",
-          "quote": "If you wish to address the Scarborough Community Council directly, please register by e-mail to scc@toronto.ca or by phone at 416-397-4579 , no later than 12:00 p.m. on November 24, 2026 ."
-        }
-      ]
-    },
-    {
-      "id": "r2",
-      "section": "say",
-      "stage": "notice",
-      "lenses": [],
-      "text": "The City's notice gives this date for the public meeting.",
-      "drafted_by": "rule",
-      "sources": [
-        {
-          "doc": "n1",
-          "quote": "Date: November 25, 2026 Time: 9:30 a.m., or as soon as possible thereafter"
-        }
-      ]
-    },
-    {
       "id": "c1",
       "section": "what",
       "stage": null,
@@ -176,6 +148,34 @@
         }
       ],
       "ai_drafted": true
+    },
+    {
+      "id": "r1",
+      "section": "say",
+      "stage": "notice",
+      "lenses": [],
+      "text": "The City's notice gives this deadline to comment or ask to speak.",
+      "drafted_by": "rule",
+      "sources": [
+        {
+          "doc": "n1",
+          "quote": "If you wish to address the Scarborough Community Council directly, please register by e-mail to scc@toronto.ca or by phone at 416-397-4579 , no later than 12:00 p.m. on November 24, 2026 ."
+        }
+      ]
+    },
+    {
+      "id": "r2",
+      "section": "say",
+      "stage": "notice",
+      "lenses": [],
+      "text": "The City's notice gives this date for the public meeting.",
+      "drafted_by": "rule",
+      "sources": [
+        {
+          "doc": "n1",
+          "quote": "Date: November 25, 2026 Time: 9:30 a.m., or as soon as possible thereafter"
+        }
+      ]
     }
   ],
   "votes": [],

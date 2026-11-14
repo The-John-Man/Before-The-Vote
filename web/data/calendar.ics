@@ -4,7 +4,7 @@ PRODID:-//Before the Vote//CIVIC Hack 2026//EN
 X-WR-CALNAME:Before the Vote: dates to have your say
 BEGIN:VEVENT
 UID:2027.PB1.6@before-the-vote
-DTSTAMP:20261114T015052Z
+DTSTAMP:20261114T020839Z
 DTSTART;VALUE=DATE:20261116
 DTEND;VALUE=DATE:20261117
 SUMMARY:Meeting day (no written deadline posted\, comment before this day): A taller base for the Parkdale Hub affordable housing building
@@ -12,7 +12,7 @@ DESCRIPTION:Official record: https://secure.toronto.ca/council/agenda-item.do?it
 END:VEVENT
 BEGIN:VEVENT
 UID:notice-8007@before-the-vote
-DTSTAMP:20261114T015052Z
+DTSTAMP:20261114T020839Z
 DTSTART:20261124T160000Z
 DTEND:20261124T170000Z
 SUMMARY:Deadline to comment: Meeting about plan to replace rental units with a tall building
