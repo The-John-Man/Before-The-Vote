@@ -11,7 +11,8 @@
 # web/ to GitHub Pages. It never downloads secure.toronto.ca pages.
 #
 # One-time setup: Settings > Pages > Build and deployment > Source: "GitHub Actions".
-# No API key or secret is needed. Nothing here uses AI.
+# Optional: Settings > Secrets and variables > Actions > OPENROUTER_API_KEY, to draft plain
+# sentences for new cards. Fetching, choosing, matching, extracting and checking never use AI.
 
 name: Refresh from the City and publish
 
@@ -53,6 +54,10 @@ jobs:
 
       - name: Read the City's Open Data and rebuild
         working-directory: pipeline
+        env:
+          # Optional. With this secret set, cards with no explanation get AI drafts, shown only
+          # if every quote passes the word-for-word check. Without it, drafting is skipped.
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
         run: python refresh.py --source opendata
 
       - name: Save to the repo if the City's data changed

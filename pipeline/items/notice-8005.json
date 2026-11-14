@@ -3,7 +3,7 @@
   "source": "opendata",
   "notice_id": "8005",
   "notice_date": "2026-11-06",
-  "title_plain": "",
+  "title_plain": "Proposal for a six-storey apartment building on Bayview",
   "title_official": "Notice of Application - Under the Planning Act - 3057-3067 Bayview Avenue and 1 Burleigh Heights Drive",
   "topic": "Planning",
   "ward": {
@@ -17,7 +17,7 @@
     "approx": false
   },
   "official_url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7996",
-  "drafted_by": "Rules, no AI: read from the City's public notice (Open Data)",
+  "drafted_by": "openrouter deepseek/deepseek-chat (AI), 2026-11-13, every quote checked word for word",
   "application_numbers": [
     "26 185171 NNY 17 OZ"
   ],
@@ -52,20 +52,77 @@
     "contact_email": null,
     "methods": []
   },
-  "claims": [],
+  "claims": [
+    {
+      "id": "c1",
+      "section": "what",
+      "stage": "notice",
+      "lenses": [
+        "nearby",
+        "rent"
+      ],
+      "text": "A developer has applied to build a six-storey apartment building with 155 units of one, two, and three bedrooms at 3057-3067 Bayview Avenue and 1 Burleigh Heights Drive.",
+      "sources": [
+        {
+          "doc": "n1",
+          "quote": "The application proposes to amend the Zoning By-law to permit a six-storey (22 metres) residential building. The proposal includes a total of 155 residential units being a mix of one-bedroom, two-bedroom, and three-bedrooms."
+        }
+      ],
+      "ai_drafted": true
+    },
+    {
+      "id": "c2",
+      "section": "why",
+      "stage": null,
+      "lenses": [
+        "nearby"
+      ],
+      "text": "The application asks the City to change the zoning rules to allow this building.",
+      "sources": [
+        {
+          "doc": "n1",
+          "quote": "The application proposes to amend the Zoning By-law to permit a six-storey (22 metres) residential building."
+        }
+      ],
+      "ai_drafted": true,
+      "edited_by_person": true
+    },
+    {
+      "id": "c3",
+      "section": "changed",
+      "stage": null,
+      "lenses": [
+        "nearby"
+      ],
+      "text": "If approved, the zoning rules would change to allow the six-storey building with 155 units.",
+      "sources": [
+        {
+          "doc": "n1",
+          "quote": "The application proposes to amend the Zoning By-law to permit a six-storey (22 metres) residential building. The proposal includes a total of 155 residential units being a mix of one-bedroom, two-bedroom, and three-bedrooms."
+        }
+      ],
+      "ai_drafted": true
+    }
+  ],
   "votes": [],
   "heard": [],
   "heard_note": "",
   "unknowns": [
-    "This notice is not linked to a Council agenda item number, so later decisions and votes are not added to this page automatically."
+    "This notice is not linked to a Council agenda item number, so later decisions and votes are not added to this page automatically.",
+    "When the decision will be made",
+    "How this will affect traffic or parking in the area",
+    "What the new building will look like",
+    "When construction might start if approved"
   ],
   "notice_excerpt": "The application proposes to amend the Zoning By-law to permit a six-storey (22 metres) residential building.",
   "updates": [
     {
       "date": "2026-11-13",
       "notes": [
-        "Added from the City's public notices (Open Data). The plain-language explanation is not written yet."
+        "Added from the City's public notices (Open Data). The plain-language explanation is not written yet.",
+        "Plain-language explanation drafted by AI: 3 of 3 sentences passed the word-for-word check."
       ]
     }
-  ]
+  ],
+  "ai_drafted_on": "2026-11-13"
 }

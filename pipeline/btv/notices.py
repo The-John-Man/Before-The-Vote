@@ -14,7 +14,7 @@ share a planning application number. If two items share it, we cannot tell which
 right, so the notice gets its own card (when unsure, do not merge).
 
 A notice card is deleted 120 days after its notice date, unless a person has written
-sentences for it.
+sentences for it (sentences drafted by AI do not keep a card).
 """
 
 import copy
@@ -125,6 +125,7 @@ def matching_item(notice: dict, items: list[dict]) -> str | None:
 
 
 def is_handwritten(claim: dict) -> bool:
+    """Written by a person or drafted by AI, not read by rules. Kept when a card is updated."""
     return claim.get("drafted_by") != "rule"
 
 
@@ -133,7 +134,7 @@ def can_forget(item: dict, today: date) -> bool:
     if not item["id"].startswith("notice-") or not item.get("notice_date"):
         return False
     old = (today - date.fromisoformat(item["notice_date"])).days > FORGET_DAYS
-    return old and not any(is_handwritten(c) for c in item["claims"])
+    return old and not any(is_handwritten(c) and not c.get("ai_drafted") for c in item["claims"])
 
 
 RULE_OWNED = ("title_official", "topic", "ward", "place", "official_url", "application_numbers",

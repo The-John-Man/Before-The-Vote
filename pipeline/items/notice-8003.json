@@ -3,7 +3,7 @@
   "source": "opendata",
   "notice_id": "8003",
   "notice_date": "2026-11-06",
-  "title_plain": "",
+  "title_plain": "Proposal for 30-storey building with hotel and homes",
   "title_official": "Notice of Application - Under the Planning Act - 689 King Street West",
   "topic": "Planning",
   "ward": {
@@ -17,7 +17,7 @@
     "approx": false
   },
   "official_url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7994",
-  "drafted_by": "Rules, no AI: read from the City's public notice (Open Data)",
+  "drafted_by": "openrouter deepseek/deepseek-chat (AI), 2026-11-13, every quote checked word for word",
   "application_numbers": [
     "26 247458 STE 10 OZ"
   ],
@@ -52,20 +52,61 @@
     "contact_email": null,
     "methods": []
   },
-  "claims": [],
+  "claims": [
+    {
+      "id": "c1",
+      "section": "what",
+      "stage": "notice",
+      "lenses": [
+        "nearby",
+        "rent"
+      ],
+      "text": "A developer wants to build a 30-storey building with a hotel and 160 homes at 689 King Street West.",
+      "sources": [
+        {
+          "doc": "n1",
+          "quote": "The application proposes to amend the Official Plan and Zoning By-law 569-2013 to allow for a 30-storey mixed use building containing a hotel use and 160 residential dwelling units."
+        }
+      ],
+      "ai_drafted": true
+    },
+    {
+      "id": "c2",
+      "section": "why",
+      "stage": "notice",
+      "lenses": [
+        "nearby",
+        "business"
+      ],
+      "text": "The city is reviewing changes to planning rules to allow this project.",
+      "sources": [
+        {
+          "doc": "n1",
+          "quote": "The City has received the following application under the Planning Act"
+        }
+      ],
+      "ai_drafted": true
+    }
+  ],
   "votes": [],
   "heard": [],
   "heard_note": "",
   "unknowns": [
-    "This notice is not linked to a Council agenda item number, so later decisions and votes are not added to this page automatically."
+    "This notice is not linked to a Council agenda item number, so later decisions and votes are not added to this page automatically.",
+    "When the city will decide on this application",
+    "How this might affect traffic or local services",
+    "What the building will look like",
+    "If there will be any community meetings about the proposal"
   ],
   "notice_excerpt": "The application proposes to amend the Official Plan and Zoning By-law 569-2013 to allow for a 30-storey mixed use building containing a hotel use and 160 residential dwelling units.",
   "updates": [
     {
       "date": "2026-11-13",
       "notes": [
-        "Added from the City's public notices (Open Data). The plain-language explanation is not written yet."
+        "Added from the City's public notices (Open Data). The plain-language explanation is not written yet.",
+        "Plain-language explanation drafted by AI: 2 of 2 sentences passed the word-for-word check."
       ]
     }
-  ]
+  ],
+  "ai_drafted_on": "2026-11-13"
 }

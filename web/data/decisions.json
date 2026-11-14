@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T20:41:39-05:00",
+  "generated_at": "2026-11-13T20:50:52-05:00",
   "municipality": {
     "name": "City of Toronto",
     "short": "Toronto",
@@ -901,7 +901,7 @@
       "source": "opendata",
       "notice_id": "7962",
       "notice_date": "2026-10-09",
-      "title_plain": "Notice of Application - Under the Planning Act - 1333 Neilson Road",
+      "title_plain": "New apartment building proposed near Neilson Road",
       "title_official": "Notice of Application - Under the Planning Act - 1333 Neilson Road",
       "topic": "Planning",
       "ward": {
@@ -915,7 +915,7 @@
         "approx": false
       },
       "official_url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7953",
-      "drafted_by": "Rules, no AI: read from the City's public notice (Open Data)",
+      "drafted_by": "openrouter deepseek/deepseek-chat (AI), 2026-11-13, every quote checked word for word",
       "application_numbers": [
         "26 116598 ESC 25 OZ"
       ],
@@ -959,30 +959,74 @@
         "methods": [],
         "meeting_from": null
       },
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "section": "what",
+          "stage": "notice",
+          "lenses": [
+            "nearby",
+            "rent"
+          ],
+          "text": "A developer wants to build a six-story apartment building behind an existing medical office at 1333 Neilson Road.",
+          "sources": [
+            {
+              "doc": "n1",
+              "quote": "develop a six-storey L-shaped residential building plus a rooftop mechanical penthouse on the rear portion of the lands, while maintaining the existing three-storey medical building in the front portion.",
+              "page": 1,
+              "verified": true
+            }
+          ],
+          "ai_drafted": true,
+          "verified": true
+        },
+        {
+          "id": "c2",
+          "section": "why",
+          "stage": null,
+          "lenses": [],
+          "text": "The developer needs a zoning change to allow the new building.",
+          "sources": [
+            {
+              "doc": "n1",
+              "quote": "Application to Amend the Zoning By-law to develop a six-storey L-shaped residential building",
+              "page": 1,
+              "verified": true
+            }
+          ],
+          "ai_drafted": true,
+          "verified": true
+        }
+      ],
       "votes": [],
       "heard": [],
       "heard_note": "",
       "unknowns": [
-        "This notice is not linked to a Council agenda item number, so later decisions and votes are not added to this page automatically."
+        "This notice is not linked to a Council agenda item number, so later decisions and votes are not added to this page automatically.",
+        "How many apartments the new building would have",
+        "When construction might start if approved",
+        "If there will be parking for residents",
+        "How tall the rooftop mechanical penthouse will be"
       ],
       "notice_excerpt": "Background information and materials regarding the above-listed proposals are available at www.toronto.ca/city-government/planning-development/application-information-centre/ .",
       "updates": [
         {
           "date": "2026-11-13",
           "notes": [
-            "Added from the City's public notices (Open Data). The plain-language explanation is not written yet."
+            "Added from the City's public notices (Open Data). The plain-language explanation is not written yet.",
+            "Plain-language explanation drafted by AI: 2 of 2 sentences passed the word-for-word check."
           ]
         }
       ],
-      "facts_only": true
+      "ai_drafted_on": "2026-11-13",
+      "facts_only": false
     },
     {
       "id": "notice-7963",
       "source": "opendata",
       "notice_id": "7963",
       "notice_date": "2026-10-09",
-      "title_plain": "Notice of Application - Under the Planning Act - 1956-1986 Weston Road and 1-5 Little Avenue",
+      "title_plain": "Plan to combine lots for two towers on Weston Road",
       "title_official": "Notice of Application - Under the Planning Act - 1956-1986 Weston Road and 1-5 Little Avenue",
       "topic": "Planning",
       "ward": {
@@ -996,7 +1040,7 @@
         "approx": false
       },
       "official_url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7954",
-      "drafted_by": "Rules, no AI: read from the City's public notice (Open Data)",
+      "drafted_by": "openrouter deepseek/deepseek-chat (AI), 2026-11-13, every quote checked word for word",
       "application_numbers": [
         "21 220069 WET 05 SB"
       ],
@@ -1040,30 +1084,95 @@
         "methods": [],
         "meeting_from": null
       },
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "section": "what",
+          "stage": "notice",
+          "lenses": [
+            "nearby",
+            "rent"
+          ],
+          "text": "The city has received an application to combine several lots into one block for a mixed-use development with two towers on a shared base.",
+          "sources": [
+            {
+              "doc": "n1",
+              "quote": "Application to Amend the Draft Plan of Subdivision to consolidate existing lots into one consolidated block to implement a mixed-use development containing two towers on a shared podium.",
+              "page": 1,
+              "verified": true
+            }
+          ],
+          "ai_drafted": true,
+          "verified": true
+        },
+        {
+          "id": "c2",
+          "section": "what",
+          "stage": "notice",
+          "lenses": [
+            "nearby"
+          ],
+          "text": "The proposed development is for the properties at 1956-1986 Weston Road and 1-5 Little Avenue in Ward 5.",
+          "sources": [
+            {
+              "doc": "n1",
+              "quote": "1956-1986 Weston Road and 1-5 Little Avenue Ward 5 – York South-Weston",
+              "page": 1,
+              "verified": true
+            }
+          ],
+          "ai_drafted": true,
+          "verified": true
+        },
+        {
+          "id": "c3",
+          "section": "why",
+          "stage": null,
+          "lenses": [
+            "business"
+          ],
+          "text": "Residents can ask to be notified about future steps in the application process, which may include changes to zoning rules or official plans.",
+          "sources": [
+            {
+              "doc": "n1",
+              "quote": "If you wish to receive notice regarding the progression of any of the proposed applications above, which include Official Plan amendment, proposed Draft Plan of Subdivision, Draft Plan of Common Elements Condominium, Vacant Land Condominium Application and/or proposed Zoning By-law amendment, you may make a request to the City Clerk",
+              "page": 1,
+              "verified": true
+            }
+          ],
+          "ai_drafted": true,
+          "verified": true
+        }
+      ],
       "votes": [],
       "heard": [],
       "heard_note": "",
       "unknowns": [
-        "This notice is not linked to a Council agenda item number, so later decisions and votes are not added to this page automatically."
+        "This notice is not linked to a Council agenda item number, so later decisions and votes are not added to this page automatically.",
+        "When the decision about this application will be made",
+        "How tall the towers will be",
+        "What types of businesses or housing will be in the development",
+        "How this will affect traffic or parking in the area"
       ],
       "notice_excerpt": "Background information and materials regarding the above-listed proposals are available at www.toronto.ca/city-government/planning-development/application-information-centre/ .",
       "updates": [
         {
           "date": "2026-11-13",
           "notes": [
-            "Added from the City's public notices (Open Data). The plain-language explanation is not written yet."
+            "Added from the City's public notices (Open Data). The plain-language explanation is not written yet.",
+            "Plain-language explanation drafted by AI: 3 of 3 sentences passed the word-for-word check."
           ]
         }
       ],
-      "facts_only": true
+      "ai_drafted_on": "2026-11-13",
+      "facts_only": false
     },
     {
       "id": "notice-7983",
       "source": "opendata",
       "notice_id": "7983",
       "notice_date": "2026-10-23",
-      "title_plain": "Notice of Application - Under the Planning Act - 1605 Queen Street West",
+      "title_plain": "Proposal for entertainment venue at 1605 Queen West",
       "title_official": "Notice of Application - Under the Planning Act - 1605 Queen Street West",
       "topic": "Planning",
       "ward": {
@@ -1077,7 +1186,7 @@
         "approx": false
       },
       "official_url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7974",
-      "drafted_by": "Rules, no AI: read from the City's public notice (Open Data)",
+      "drafted_by": "openrouter deepseek/deepseek-chat (AI), 2026-11-13, every quote checked word for word",
       "application_numbers": [
         "26 150790 STE 04 OZ"
       ],
@@ -1121,30 +1230,57 @@
         "methods": [],
         "meeting_from": null
       },
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "section": "what",
+          "stage": "notice",
+          "lenses": [
+            "nearby",
+            "business"
+          ],
+          "text": "The city received an application to allow an entertainment venue at 1605 Queen Street West by changing the zoning rules.",
+          "sources": [
+            {
+              "doc": "n1",
+              "quote": "The application proposes to amend Zoning By-law 569-2013 to permit an entertainment place of assembly.",
+              "page": 1,
+              "verified": true
+            }
+          ],
+          "ai_drafted": true,
+          "verified": true
+        }
+      ],
       "votes": [],
       "heard": [],
       "heard_note": "",
       "unknowns": [
-        "This notice is not linked to a Council agenda item number, so later decisions and votes are not added to this page automatically."
+        "This notice is not linked to a Council agenda item number, so later decisions and votes are not added to this page automatically.",
+        "What type of entertainment is proposed?",
+        "What are the operating hours?",
+        "How will parking or noise be managed?",
+        "When will a decision be made?"
       ],
       "notice_excerpt": "The application proposes to amend Zoning By-law 569-2013 to permit an entertainment place of assembly.",
       "updates": [
         {
           "date": "2026-11-13",
           "notes": [
-            "Added from the City's public notices (Open Data). The plain-language explanation is not written yet."
+            "Added from the City's public notices (Open Data). The plain-language explanation is not written yet.",
+            "Plain-language explanation drafted by AI: 1 of 1 sentences passed the word-for-word check."
           ]
         }
       ],
-      "facts_only": true
+      "ai_drafted_on": "2026-11-13",
+      "facts_only": false
     },
     {
       "id": "notice-7984",
       "source": "opendata",
       "notice_id": "7984",
       "notice_date": "2026-10-23",
-      "title_plain": "Notice of Application - Under the Planning Act - 207, 209, 211, 213, 215, 217, and 219 Jarvis Street",
+      "title_plain": "Proposed tall building on Jarvis Street",
       "title_official": "Notice of Application - Under the Planning Act - 207, 209, 211, 213, 215, 217, and 219 Jarvis Street",
       "topic": "Planning",
       "ward": {
@@ -1158,7 +1294,7 @@
         "approx": false
       },
       "official_url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7975",
-      "drafted_by": "Rules, no AI: read from the City's public notice (Open Data)",
+      "drafted_by": "openrouter deepseek/deepseek-chat (AI), 2026-11-13, every quote checked word for word",
       "application_numbers": [
         "26 136937 STE 13 OZ"
       ],
@@ -1202,30 +1338,78 @@
         "methods": [],
         "meeting_from": null
       },
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "section": "what",
+          "stage": "notice",
+          "lenses": [
+            "nearby",
+            "rent"
+          ],
+          "text": "A developer wants to build a 102.8-meter mixed-use building with mostly residential units and some commercial space at 207-219 Jarvis Street.",
+          "sources": [
+            {
+              "doc": "n1",
+              "quote": "amend the Official Plan and Zoning By-law 569-2013 to allow for a 102.8-metre mixed-use building containing 23,000 square metres of gross floor area comprising a maximum of 22,800 square metres of residential gross floor area and a minimum of 200 square metres of non-residential gross floor area.",
+              "page": 1,
+              "verified": true
+            }
+          ],
+          "ai_drafted": true,
+          "verified": true
+        },
+        {
+          "id": "c2",
+          "section": "why",
+          "stage": null,
+          "lenses": [
+            "nearby"
+          ],
+          "text": "The application asks the City to change its Official Plan and zoning rules for this site.",
+          "sources": [
+            {
+              "doc": "n1",
+              "quote": "amend the Official Plan and Zoning By-law 569-2013",
+              "page": 1,
+              "verified": true
+            }
+          ],
+          "ai_drafted": true,
+          "edited_by_person": true,
+          "verified": true
+        }
+      ],
       "votes": [],
       "heard": [],
       "heard_note": "",
       "unknowns": [
-        "This notice is not linked to a Council agenda item number, so later decisions and votes are not added to this page automatically."
+        "This notice is not linked to a Council agenda item number, so later decisions and votes are not added to this page automatically.",
+        "How many residential units the building will have",
+        "When construction might start if approved",
+        "How the building will look (design details)",
+        "What specific types of businesses might occupy the commercial space",
+        "How this will affect traffic or parking in the area"
       ],
       "notice_excerpt": "Background information and materials regarding the above-listed proposals are available at www.toronto.ca/city-government/planning-development/application-information-centre/ .",
       "updates": [
         {
           "date": "2026-11-13",
           "notes": [
-            "Added from the City's public notices (Open Data). The plain-language explanation is not written yet."
+            "Added from the City's public notices (Open Data). The plain-language explanation is not written yet.",
+            "Plain-language explanation drafted by AI: 2 of 2 sentences passed the word-for-word check."
           ]
         }
       ],
-      "facts_only": true
+      "ai_drafted_on": "2026-11-13",
+      "facts_only": false
     },
     {
       "id": "notice-8002",
       "source": "opendata",
       "notice_id": "8002",
       "notice_date": "2026-11-06",
-      "title_plain": "Notice of Application - Under the Planning Act - 7 Labatt Avenue and 77 River Street",
+      "title_plain": "Proposal for two tall apartment buildings and shops",
       "title_official": "Notice of Application - Under the Planning Act - 7 Labatt Avenue and 77 River Street",
       "topic": "Planning",
       "ward": {
@@ -1239,7 +1423,7 @@
         "approx": false
       },
       "official_url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7993",
-      "drafted_by": "Rules, no AI: read from the City's public notice (Open Data)",
+      "drafted_by": "openrouter deepseek/deepseek-chat (AI), 2026-11-13, every quote checked word for word",
       "application_numbers": [
         "26 246687 STE 13 OZ"
       ],
@@ -1283,30 +1467,78 @@
         "methods": [],
         "meeting_from": null
       },
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "section": "what",
+          "stage": "notice",
+          "lenses": [
+            "nearby",
+            "rent"
+          ],
+          "text": "A developer wants to build two 46-floor apartment buildings with 1,170 homes and a two-floor building with shops at 7 Labatt Avenue and 77 River Street.",
+          "sources": [
+            {
+              "doc": "n1",
+              "quote": "permit two, 46-storey residential buildings containing 1,170 dwelling units and a two-storey building containing 1,111 square metres of non-residential space",
+              "page": null,
+              "verified": false
+            }
+          ],
+          "ai_drafted": true,
+          "verified": false
+        },
+        {
+          "id": "c2",
+          "section": "why",
+          "stage": "notice",
+          "lenses": [
+            "nearby"
+          ],
+          "text": "The city is reviewing changes to planning rules to allow this project.",
+          "sources": [
+            {
+              "doc": "n1",
+              "quote": "The application proposes to amend the Official Plan and Zoning By-law 569-2013",
+              "page": 1,
+              "verified": true
+            }
+          ],
+          "ai_drafted": true,
+          "verified": true
+        }
+      ],
       "votes": [],
       "heard": [],
       "heard_note": "",
       "unknowns": [
-        "This notice is not linked to a Council agenda item number, so later decisions and votes are not added to this page automatically."
+        "This notice is not linked to a Council agenda item number, so later decisions and votes are not added to this page automatically.",
+        "When construction might start if approved",
+        "How much parking will be included",
+        "What types of shops might open",
+        "How this might affect local traffic",
+        "What the buildings will look like",
+        "How much rent might cost in the new buildings"
       ],
       "notice_excerpt": "The application proposes to amend the Official Plan and Zoning By-law 569-2013 to permit two, 46-storey residential buildings containing 1,170 dwelling units and a two-storey building. containing 1,111 square metres of non-residential space",
       "updates": [
         {
           "date": "2026-11-13",
           "notes": [
-            "Added from the City's public notices (Open Data). The plain-language explanation is not written yet."
+            "Added from the City's public notices (Open Data). The plain-language explanation is not written yet.",
+            "Plain-language explanation drafted by AI: 1 of 2 sentences passed the word-for-word check, 1 held back."
           ]
         }
       ],
-      "facts_only": true
+      "ai_drafted_on": "2026-11-13",
+      "facts_only": false
     },
     {
       "id": "notice-8003",
       "source": "opendata",
       "notice_id": "8003",
       "notice_date": "2026-11-06",
-      "title_plain": "Notice of Application - Under the Planning Act - 689 King Street West",
+      "title_plain": "Proposal for 30-storey building with hotel and homes",
       "title_official": "Notice of Application - Under the Planning Act - 689 King Street West",
       "topic": "Planning",
       "ward": {
@@ -1320,7 +1552,7 @@
         "approx": false
       },
       "official_url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7994",
-      "drafted_by": "Rules, no AI: read from the City's public notice (Open Data)",
+      "drafted_by": "openrouter deepseek/deepseek-chat (AI), 2026-11-13, every quote checked word for word",
       "application_numbers": [
         "26 247458 STE 10 OZ"
       ],
@@ -1364,30 +1596,77 @@
         "methods": [],
         "meeting_from": null
       },
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "section": "what",
+          "stage": "notice",
+          "lenses": [
+            "nearby",
+            "rent"
+          ],
+          "text": "A developer wants to build a 30-storey building with a hotel and 160 homes at 689 King Street West.",
+          "sources": [
+            {
+              "doc": "n1",
+              "quote": "The application proposes to amend the Official Plan and Zoning By-law 569-2013 to allow for a 30-storey mixed use building containing a hotel use and 160 residential dwelling units.",
+              "page": 1,
+              "verified": true
+            }
+          ],
+          "ai_drafted": true,
+          "verified": true
+        },
+        {
+          "id": "c2",
+          "section": "why",
+          "stage": "notice",
+          "lenses": [
+            "nearby",
+            "business"
+          ],
+          "text": "The city is reviewing changes to planning rules to allow this project.",
+          "sources": [
+            {
+              "doc": "n1",
+              "quote": "The City has received the following application under the Planning Act",
+              "page": 1,
+              "verified": true
+            }
+          ],
+          "ai_drafted": true,
+          "verified": true
+        }
+      ],
       "votes": [],
       "heard": [],
       "heard_note": "",
       "unknowns": [
-        "This notice is not linked to a Council agenda item number, so later decisions and votes are not added to this page automatically."
+        "This notice is not linked to a Council agenda item number, so later decisions and votes are not added to this page automatically.",
+        "When the city will decide on this application",
+        "How this might affect traffic or local services",
+        "What the building will look like",
+        "If there will be any community meetings about the proposal"
       ],
       "notice_excerpt": "The application proposes to amend the Official Plan and Zoning By-law 569-2013 to allow for a 30-storey mixed use building containing a hotel use and 160 residential dwelling units.",
       "updates": [
         {
           "date": "2026-11-13",
           "notes": [
-            "Added from the City's public notices (Open Data). The plain-language explanation is not written yet."
+            "Added from the City's public notices (Open Data). The plain-language explanation is not written yet.",
+            "Plain-language explanation drafted by AI: 2 of 2 sentences passed the word-for-word check."
           ]
         }
       ],
-      "facts_only": true
+      "ai_drafted_on": "2026-11-13",
+      "facts_only": false
     },
     {
       "id": "notice-8004",
       "source": "opendata",
       "notice_id": "8004",
       "notice_date": "2026-11-06",
-      "title_plain": "Notice of Application - Under the Planning Act - 309 and 311 Augusta Avenue",
+      "title_plain": "Hotel and restaurant zoning change proposed",
       "title_official": "Notice of Application - Under the Planning Act - 309 and 311 Augusta Avenue",
       "topic": "Planning",
       "ward": {
@@ -1401,7 +1680,7 @@
         "approx": false
       },
       "official_url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7995",
-      "drafted_by": "Rules, no AI: read from the City's public notice (Open Data)",
+      "drafted_by": "openrouter deepseek/deepseek-chat (AI), 2026-11-13, every quote checked word for word",
       "application_numbers": [
         "26 206718 STE 11 OZ"
       ],
@@ -1445,30 +1724,93 @@
         "methods": [],
         "meeting_from": null
       },
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "section": "what",
+          "stage": "notice",
+          "lenses": [
+            "business",
+            "nearby"
+          ],
+          "text": "A developer has applied to change the zoning rules to allow a six-storey hotel with a restaurant at 309 and 311 Augusta Avenue.",
+          "sources": [
+            {
+              "doc": "n1",
+              "quote": "amend Zoning By-law 569-2013 to allow a six-storey hotel with a restaurant component",
+              "page": 1,
+              "verified": true
+            }
+          ],
+          "ai_drafted": true,
+          "verified": true
+        },
+        {
+          "id": "c2",
+          "section": "what",
+          "stage": "notice",
+          "lenses": [
+            "business"
+          ],
+          "text": "The hotel would have 2,194 square metres of space for non-residential use.",
+          "sources": [
+            {
+              "doc": "n1",
+              "quote": "containing 2,194 square metres of non-residential gross floor area",
+              "page": 1,
+              "verified": true
+            }
+          ],
+          "ai_drafted": true,
+          "verified": true
+        },
+        {
+          "id": "c3",
+          "section": "why",
+          "stage": null,
+          "lenses": [],
+          "text": "The city has received the application, but no decision has been made yet.",
+          "sources": [
+            {
+              "doc": "n1",
+              "quote": "The City has received the following application under the Planning Act",
+              "page": 1,
+              "verified": true
+            }
+          ],
+          "ai_drafted": true,
+          "verified": true
+        }
+      ],
       "votes": [],
       "heard": [],
       "heard_note": "",
       "unknowns": [
-        "This notice is not linked to a Council agenda item number, so later decisions and votes are not added to this page automatically."
+        "This notice is not linked to a Council agenda item number, so later decisions and votes are not added to this page automatically.",
+        "When the decision will be made",
+        "How the hotel will affect traffic or parking in the area",
+        "What the restaurant will be like",
+        "How the community can give input on the proposal"
       ],
       "notice_excerpt": "The application proposes to amend Zoning By-law 569-2013 to allow a six-storey hotel with a restaurant component, containing 2,194 square metres of non-residential gross floor area.",
       "updates": [
         {
           "date": "2026-11-13",
           "notes": [
-            "Added from the City's public notices (Open Data). The plain-language explanation is not written yet."
+            "Added from the City's public notices (Open Data). The plain-language explanation is not written yet.",
+            "Plain-language explanation drafted by AI: 3 of 3 sentences passed the word-for-word check."
           ]
         }
       ],
-      "facts_only": true
+      "ai_drafted_on": "2026-11-13",
+      "facts_only": false
     },
     {
       "id": "notice-8005",
       "source": "opendata",
       "notice_id": "8005",
       "notice_date": "2026-11-06",
-      "title_plain": "Notice of Application - Under the Planning Act - 3057-3067 Bayview Avenue and 1 Burleigh Heights Drive",
+      "title_plain": "Proposal for a six-storey apartment building on Bayview",
       "title_official": "Notice of Application - Under the Planning Act - 3057-3067 Bayview Avenue and 1 Burleigh Heights Drive",
       "topic": "Planning",
       "ward": {
@@ -1482,7 +1824,7 @@
         "approx": false
       },
       "official_url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7996",
-      "drafted_by": "Rules, no AI: read from the City's public notice (Open Data)",
+      "drafted_by": "openrouter deepseek/deepseek-chat (AI), 2026-11-13, every quote checked word for word",
       "application_numbers": [
         "26 185171 NNY 17 OZ"
       ],
@@ -1526,30 +1868,96 @@
         "methods": [],
         "meeting_from": null
       },
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "section": "what",
+          "stage": "notice",
+          "lenses": [
+            "nearby",
+            "rent"
+          ],
+          "text": "A developer has applied to build a six-storey apartment building with 155 units of one, two, and three bedrooms at 3057-3067 Bayview Avenue and 1 Burleigh Heights Drive.",
+          "sources": [
+            {
+              "doc": "n1",
+              "quote": "The application proposes to amend the Zoning By-law to permit a six-storey (22 metres) residential building. The proposal includes a total of 155 residential units being a mix of one-bedroom, two-bedroom, and three-bedrooms.",
+              "page": 1,
+              "verified": true
+            }
+          ],
+          "ai_drafted": true,
+          "verified": true
+        },
+        {
+          "id": "c2",
+          "section": "why",
+          "stage": null,
+          "lenses": [
+            "nearby"
+          ],
+          "text": "The application asks the City to change the zoning rules to allow this building.",
+          "sources": [
+            {
+              "doc": "n1",
+              "quote": "The application proposes to amend the Zoning By-law to permit a six-storey (22 metres) residential building.",
+              "page": 1,
+              "verified": true
+            }
+          ],
+          "ai_drafted": true,
+          "edited_by_person": true,
+          "verified": true
+        },
+        {
+          "id": "c3",
+          "section": "changed",
+          "stage": null,
+          "lenses": [
+            "nearby"
+          ],
+          "text": "If approved, the zoning rules would change to allow the six-storey building with 155 units.",
+          "sources": [
+            {
+              "doc": "n1",
+              "quote": "The application proposes to amend the Zoning By-law to permit a six-storey (22 metres) residential building. The proposal includes a total of 155 residential units being a mix of one-bedroom, two-bedroom, and three-bedrooms.",
+              "page": 1,
+              "verified": true
+            }
+          ],
+          "ai_drafted": true,
+          "verified": true
+        }
+      ],
       "votes": [],
       "heard": [],
       "heard_note": "",
       "unknowns": [
-        "This notice is not linked to a Council agenda item number, so later decisions and votes are not added to this page automatically."
+        "This notice is not linked to a Council agenda item number, so later decisions and votes are not added to this page automatically.",
+        "When the decision will be made",
+        "How this will affect traffic or parking in the area",
+        "What the new building will look like",
+        "When construction might start if approved"
       ],
       "notice_excerpt": "The application proposes to amend the Zoning By-law to permit a six-storey (22 metres) residential building.",
       "updates": [
         {
           "date": "2026-11-13",
           "notes": [
-            "Added from the City's public notices (Open Data). The plain-language explanation is not written yet."
+            "Added from the City's public notices (Open Data). The plain-language explanation is not written yet.",
+            "Plain-language explanation drafted by AI: 3 of 3 sentences passed the word-for-word check."
           ]
         }
       ],
-      "facts_only": true
+      "ai_drafted_on": "2026-11-13",
+      "facts_only": false
     },
     {
       "id": "notice-8006",
       "source": "opendata",
       "notice_id": "8006",
       "notice_date": "2026-11-06",
-      "title_plain": "Notice of Application - Under the Planning Act - 10, 20 and 36 York Mills Road",
+      "title_plain": "Proposal for two tall mixed-use towers at York Mills",
       "title_official": "Notice of Application - Under the Planning Act - 10, 20 and 36 York Mills Road",
       "topic": "Planning",
       "ward": {
@@ -1563,7 +1971,7 @@
         "approx": false
       },
       "official_url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7997",
-      "drafted_by": "Rules, no AI: read from the City's public notice (Open Data)",
+      "drafted_by": "openrouter deepseek/deepseek-chat (AI), 2026-11-13, every quote checked word for word",
       "application_numbers": [
         "26 215914 NNY 15 OZ"
       ],
@@ -1607,36 +2015,81 @@
         "methods": [],
         "meeting_from": null
       },
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "section": "what",
+          "stage": "notice",
+          "lenses": [
+            "nearby"
+          ],
+          "text": "The city has received an application to build two mixed-use towers, one 55 and one 40 storeys tall, at 10, 20, and 36 York Mills Road.",
+          "sources": [
+            {
+              "doc": "n1",
+              "quote": "The application proposes to amend the Official Plan and Zoning By-law 569-2013 to facilitate the development of two mixed-use towers with heights of 55 and 40 storeys.",
+              "page": 1,
+              "verified": true
+            }
+          ],
+          "ai_drafted": true,
+          "verified": true
+        },
+        {
+          "id": "c2",
+          "section": "what",
+          "stage": "notice",
+          "lenses": [
+            "nearby"
+          ],
+          "text": "The application asks to change the Official Plan and Zoning By-law to allow the towers.",
+          "sources": [
+            {
+              "doc": "n1",
+              "quote": "The application proposes to amend the Official Plan and Zoning By-law 569-2013 to facilitate the development of two mixed-use towers with heights of 55 and 40 storeys.",
+              "page": 1,
+              "verified": true
+            }
+          ],
+          "ai_drafted": true,
+          "verified": true
+        }
+      ],
       "votes": [],
       "heard": [],
       "heard_note": "",
       "unknowns": [
-        "This notice is not linked to a Council agenda item number, so later decisions and votes are not added to this page automatically."
+        "This notice is not linked to a Council agenda item number, so later decisions and votes are not added to this page automatically.",
+        "What the towers will be used for (e.g., how much housing, retail, office space)",
+        "When construction might start if approved",
+        "How this might affect traffic or local services",
+        "What the next steps are in the approval process"
       ],
       "notice_excerpt": "The application proposes to amend the Official Plan and Zoning By-law 569-2013 to facilitate the development of two mixed-use towers with heights of 55 and 40 storeys.",
       "updates": [
         {
           "date": "2026-11-13",
           "notes": [
-            "Added from the City's public notices (Open Data). The plain-language explanation is not written yet."
+            "Added from the City's public notices (Open Data). The plain-language explanation is not written yet.",
+            "Plain-language explanation drafted by AI: 2 of 2 sentences passed the word-for-word check."
           ]
         }
       ],
-      "facts_only": true
+      "ai_drafted_on": "2026-11-13",
+      "facts_only": false
     },
     {
       "id": "notice-8007",
       "source": "opendata",
       "notice_id": "8007",
       "notice_date": "2026-11-03",
-      "title_plain": "Notice of Public Meeting - Rental Housing Demolition - 411 and 415 Kennedy Road and 636-646 Danforth Road",
+      "title_plain": "Meeting about plan to replace rental units with a tall building",
       "title_official": "Notice of Public Meeting - Rental Housing Demolition - 411 and 415 Kennedy Road and 636-646 Danforth Road",
       "topic": "Meetings",
       "ward": null,
       "place": null,
       "official_url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7998",
-      "drafted_by": "Rules, no AI: read from the City's public notice (Open Data)",
+      "drafted_by": "openrouter deepseek/deepseek-chat (AI), 2026-11-13, every quote checked word for word",
       "application_numbers": [
         "20 211279 ECS 20 OZ",
         "20 211505 ESC 20 RH"
@@ -1724,6 +2177,118 @@
             }
           ],
           "verified": true
+        },
+        {
+          "id": "c1",
+          "section": "what",
+          "stage": null,
+          "lenses": [
+            "rent",
+            "nearby"
+          ],
+          "text": "A developer wants to tear down 8 rental units and build a 23-storey building with 276 homes, including 8 replacement rental units.",
+          "sources": [
+            {
+              "doc": "n1",
+              "quote": "demolish eight existing rental dwelling units at 636-646 Danforth Road and build a 23-storey mixed-use building with 276 residential units, including eight replacement rental dwelling units",
+              "page": 1,
+              "verified": true
+            }
+          ],
+          "ai_drafted": true,
+          "verified": true
+        },
+        {
+          "id": "c2",
+          "section": "what",
+          "stage": null,
+          "lenses": [
+            "rent"
+          ],
+          "text": "The application proposes help for the tenants who would have to move.",
+          "sources": [
+            {
+              "doc": "n1",
+              "quote": "Tenant relocation and assistance is proposed to lessen hardship for impacted tenants",
+              "page": 1,
+              "verified": true
+            }
+          ],
+          "ai_drafted": true,
+          "edited_by_person": true,
+          "verified": true
+        },
+        {
+          "id": "c3",
+          "section": "why",
+          "stage": null,
+          "lenses": [
+            "rent"
+          ],
+          "text": "The city must approve tearing down rental buildings with 6 or more units.",
+          "sources": [
+            {
+              "doc": "n1",
+              "quote": "Under the City of Toronto Act, 2006, the demolition of a rental property with six or more dwelling units is prohibited without obtaining a permit from the City",
+              "page": 1,
+              "verified": true
+            }
+          ],
+          "ai_drafted": true,
+          "verified": true
+        },
+        {
+          "id": "c4",
+          "section": "changed",
+          "stage": null,
+          "lenses": [
+            "nearby"
+          ],
+          "text": "Part of this project already got approval for zoning changes from a provincial tribunal.",
+          "sources": [
+            {
+              "doc": "n1",
+              "quote": "A related Zoning By-law Amendment application (20 211279 ECS 20 OZ) has been approved by the Ontario Land Tribunal for the lands at 646-646 Danforth Road and 411 and 415 Kennedy Road",
+              "page": 1,
+              "verified": true
+            }
+          ],
+          "ai_drafted": true,
+          "verified": true
+        },
+        {
+          "id": "c5",
+          "section": "what",
+          "stage": "meeting",
+          "lenses": [],
+          "text": "A public meeting will be held on November 25, 2026, where residents can share their views.",
+          "sources": [
+            {
+              "doc": "n1",
+              "quote": "Date: November 25, 2026 Time: 9:30 a.m., or as soon as possible thereafter",
+              "page": 1,
+              "verified": true
+            }
+          ],
+          "ai_drafted": true,
+          "verified": true
+        },
+        {
+          "id": "c6",
+          "section": "what",
+          "stage": "meeting",
+          "lenses": [],
+          "text": "You can speak at the meeting if you register by noon on November 24, 2026.",
+          "sources": [
+            {
+              "doc": "n1",
+              "quote": "please register by e-mail to scc@toronto.ca or by phone at 416-397-4579 , no later than 12:00 p.m. on November 24, 2026",
+              "page": 1,
+              "verified": true
+            }
+          ],
+          "ai_drafted": true,
+          "verified": true
         }
       ],
       "votes": [],
@@ -1731,18 +2296,24 @@
       "heard_note": "",
       "unknowns": [
         "This notice is not linked to a Council agenda item number, so later decisions and votes are not added to this page automatically.",
-        "The address in the City's data is outside the area of the community council named in the notice, so this card shows no map pin or ward."
+        "The address in the City's data is outside the area of the community council named in the notice, so this card shows no map pin or ward.",
+        "What will the new rental units cost?",
+        "How long will current tenants have to move out?",
+        "What exact help will tenants get to move?",
+        "When will construction start if approved?"
       ],
       "notice_excerpt": "The application proposes to demolish eight existing rental dwelling units at 636-646 Danforth Road and build a 23-storey mixed-use building with 276 residential units, including eight replacement rental dwelling units.",
       "updates": [
         {
           "date": "2026-11-13",
           "notes": [
-            "Added from the City's public notices (Open Data). The plain-language explanation is not written yet."
+            "Added from the City's public notices (Open Data). The plain-language explanation is not written yet.",
+            "Plain-language explanation drafted by AI: 6 of 6 sentences passed the word-for-word check."
           ]
         }
       ],
-      "facts_only": true
+      "ai_drafted_on": "2026-11-13",
+      "facts_only": false
     }
   ]
 }

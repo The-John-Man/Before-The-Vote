@@ -9,6 +9,7 @@ The rubric gives 5 points for crediting code, frameworks, libraries, algorithms 
 | Claude (Anthropic), model Claude Fable 5.2, in the Claude app | Reading the brief, research, planning documents, and first versions of the code in `web/` and `pipeline/`, all on 13 Nov 2026 after launch | Team reads, runs and can explain every file. Note below what you changed yourselves |
 | Claude (Anthropic) in Cursor, 13 Nov 2026 evening | Code for the Open Data feed: `btv/opendata.py`, `btv/notices.py`, `btv/extract.py`, `btv/geo.py`, the new `refresh.py` and the website changes, with their tests | Team to read and explain each file. The feed itself uses no AI |
 | Claude, same sessions | Drafting the plain-language sentences and French translations in `pipeline/items/*.json` from the saved City records | Every sentence is checked word for word by `btv/verify.py`. French is labelled as unreviewed machine translation |
+| DeepSeek Chat (`deepseek/deepseek-chat`) through OpenRouter, 13 Nov 2026 evening | Drafting the plain sentences, titles and "not in the record" lists of the 10 notice cards (`ai_drafted: true`) | Checked word for word by `btv/verify.py` (25 of 26 passed). On review, Claude in Cursor reworded 3 that went beyond the notice's words (`edited_by_person: true`). The team should still read every one |
 | Ollama with a local model (fill in if used) | Optional drafting route in `btv/summarize.py` | Same check. Not yet run |
 
 Team changes after the AI draft: (list them here as you make them)

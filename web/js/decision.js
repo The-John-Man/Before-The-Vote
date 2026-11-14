@@ -275,6 +275,8 @@ export function renderDecision(view, decision) {
           ? `Ward ${Number(decision.ward.code)} ${esc(decision.ward.name)}`
           : isNotice(decision) ? "Ward not known" : "All of Toronto"}.</p>
       ${check ? `<p class="checked ${check.ok ? "" : "is-stale"}">${esc(check.text)}</p>` : ""}
+      ${decision.claims.some((c) => c.ai_drafted && c.verified)
+        ? `<p class="official">The plain-language sentences were drafted by AI. Each one was checked word for word against the City's ${isNotice(decision) ? "notice" : "page"}: use its Source button to see the City's words.</p>` : ""}
 
       ${line(decision, at)}
       <p class="line-hint">Press a stop that has passed to see what was known then.</p>

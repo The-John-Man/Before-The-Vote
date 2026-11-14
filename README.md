@@ -77,6 +77,8 @@ python refresh.py --source tmmis --html-dir saved_pages
 
 `.github/workflows/refresh-and-publish.yml` runs `python refresh.py --source opendata` every 3 hours, on demand, and after every push to `main`, then publishes `web/` to GitHub Pages. It saves changed cards to the repo only when the City's data actually changed, including removing old notice cards. No API key or AI is involved in fetching, selecting, matching, extracting, checking or writing change notes.
 
+Plain-language explanations: a card with no explanation is drafted once by an AI model if a key is set up (`OPENROUTER_API_KEY` in `pipeline/.env` locally, or as a GitHub Actions secret for the scheduled job; see `pipeline/.env.example`). Only sentences whose quotes pass the word-for-word check are shown, and the page says they were drafted by AI. A person should still read them: the check proves the words exist, not that the sentence is a fair reading.
+
 The City's agenda item pages (secure.toronto.ca) block automated downloads. We do not get around that: no fake browser headers, no headless browser. Toronto's Open Data portal is built for programs and needs no key, so that is what the scheduled job reads.
 
 | Source | What we take | How often | Shown as |

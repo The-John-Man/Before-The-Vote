@@ -3,7 +3,7 @@
   "source": "opendata",
   "notice_id": "7983",
   "notice_date": "2026-10-23",
-  "title_plain": "",
+  "title_plain": "Proposal for entertainment venue at 1605 Queen West",
   "title_official": "Notice of Application - Under the Planning Act - 1605 Queen Street West",
   "topic": "Planning",
   "ward": {
@@ -17,7 +17,7 @@
     "approx": false
   },
   "official_url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7974",
-  "drafted_by": "Rules, no AI: read from the City's public notice (Open Data)",
+  "drafted_by": "openrouter deepseek/deepseek-chat (AI), 2026-11-13, every quote checked word for word",
   "application_numbers": [
     "26 150790 STE 04 OZ"
   ],
@@ -52,20 +52,44 @@
     "contact_email": null,
     "methods": []
   },
-  "claims": [],
+  "claims": [
+    {
+      "id": "c1",
+      "section": "what",
+      "stage": "notice",
+      "lenses": [
+        "nearby",
+        "business"
+      ],
+      "text": "The city received an application to allow an entertainment venue at 1605 Queen Street West by changing the zoning rules.",
+      "sources": [
+        {
+          "doc": "n1",
+          "quote": "The application proposes to amend Zoning By-law 569-2013 to permit an entertainment place of assembly."
+        }
+      ],
+      "ai_drafted": true
+    }
+  ],
   "votes": [],
   "heard": [],
   "heard_note": "",
   "unknowns": [
-    "This notice is not linked to a Council agenda item number, so later decisions and votes are not added to this page automatically."
+    "This notice is not linked to a Council agenda item number, so later decisions and votes are not added to this page automatically.",
+    "What type of entertainment is proposed?",
+    "What are the operating hours?",
+    "How will parking or noise be managed?",
+    "When will a decision be made?"
   ],
   "notice_excerpt": "The application proposes to amend Zoning By-law 569-2013 to permit an entertainment place of assembly.",
   "updates": [
     {
       "date": "2026-11-13",
       "notes": [
-        "Added from the City's public notices (Open Data). The plain-language explanation is not written yet."
+        "Added from the City's public notices (Open Data). The plain-language explanation is not written yet.",
+        "Plain-language explanation drafted by AI: 1 of 1 sentences passed the word-for-word check."
       ]
     }
-  ]
+  ],
+  "ai_drafted_on": "2026-11-13"
 }

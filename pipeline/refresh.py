@@ -1,4 +1,8 @@
-"""refresh.py - keep Before the Vote in step with the City's own record. No AI anywhere.
+"""refresh.py - keep Before the Vote in step with the City's own record.
+
+No AI in fetching, choosing, matching, extracting, checking or change notes. The one
+optional AI step is at the end: drafting plain sentences for cards that have none
+(btv/summarize.py), and those are shown only if their quotes pass the check.
 
 Two sources, chosen with --source:
 
@@ -43,6 +47,7 @@ from btv import opendata
 from btv.geo import load_wards
 from btv.notices import attach_notice, can_forget, card_id, matching_item, notice_card, select, update_card
 from btv.notices import snapshot_text as notice_snapshot
+from btv.summarize import draft_item, needs_draft
 from btv.timeline import build_stages, documents as rule_documents, wards as rule_wards
 from btv.tmmis import parse_item
 from new_item import snapshot_text, starter_item
@@ -467,8 +472,35 @@ def refresh_open_data(run: Run, fetch):
     refresh_votes(run, rows, items, agenda_ids)
 
 
-def main(argv: list[str] | None = None, fetch=None) -> list[str]:
-    """`fetch` replaces opendata.fetch_rows in tests, so they need no network."""
+def draft_explanations(run: Run, draft):
+    """Cards with no explanation yet are drafted by an AI model, if a key is set up
+    (pipeline/.env, or GitHub secrets for the scheduled job). Each card is asked once.
+    The model is not trusted: build_cards.py shows only sentences whose quotes pass the
+    word-for-word check. Rule-read facts (dates, deadlines, votes) never come from the model."""
+    for path in sorted(ITEMS.glob("*.json")):
+        item = json.loads(path.read_text(encoding="utf-8"))
+        if not needs_draft(item):
+            continue
+        try:
+            drafted = draft(item, run.today)
+        except Exception as error:     # no network, bad key, unusable answer: try again next run
+            run.report.append(f"{path.stem}: AI drafting failed ({short_error(error)}). The card stays facts only.")
+            continue
+        if drafted is None:
+            run.report.append("AI drafting skipped: no AI key is set up.")
+            return
+        card = build_cards.build_card(copy.deepcopy(item), run.city)
+        passed = sum(1 for c in card["claims"] if c.get("ai_drafted") and c["verified"])
+        note = (f"Plain-language explanation drafted by AI: {passed} of {drafted} sentences passed "
+                f"the word-for-word check" + (f", {drafted - passed} held back." if drafted > passed else "."))
+        add_note(item, run.today, note)
+        save_json(path, item)
+        run.report.append(f"{path.stem}: {note}")
+
+
+def main(argv: list[str] | None = None, fetch=None, draft=None) -> list[str]:
+    """`fetch` replaces opendata.fetch_rows and `draft` replaces the AI call in tests,
+    so they need no network and no key."""
     parser = argparse.ArgumentParser(description="Bring Before the Vote in step with the City's record and rebuild the site.")
     parser.add_argument("ids", nargs="*", help="with --source tmmis: only these item ids (default: all tracked items)")
     parser.add_argument("--source", choices=["opendata", "tmmis"], default="opendata",
@@ -491,6 +523,7 @@ def main(argv: list[str] | None = None, fetch=None) -> list[str]:
         refresh_saved_pages(run, args.ids or tracked_ids(), args.html_dir)
     else:
         refresh_open_data(run, fetch or opendata.fetch_rows)
+    draft_explanations(run, draft or draft_item)
 
     build_cards.main()
     status = {"checked_at": run.checked_at, "source": args.source,

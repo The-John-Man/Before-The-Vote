@@ -60,7 +60,7 @@ class RefreshFromOpenDataTests(unittest.TestCase):
 
     def run_refresh(self, fetch=fake_fetch, argv=()):
         with contextlib.redirect_stdout(io.StringIO()):
-            return refresh.main(list(argv), fetch=fetch)
+            return refresh.main(list(argv), fetch=fetch, draft=lambda item, today: None)   # no AI in tests
 
     def read(self, relative):
         return json.loads((self.root / relative).read_text(encoding="utf-8"))
