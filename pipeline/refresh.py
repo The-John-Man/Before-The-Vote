@@ -192,6 +192,9 @@ def refresh_item(item: dict, record: dict, today: str) -> tuple[dict, list[str]]
     if item.get("ward") is None and len(rule_wards(record)) == 1:
         item["ward"] = rule_wards(record)[0]
 
+    # Drop links an older parser wrongly kept from the page footer; keep only agenda documents.
+    item["documents"] = [d for d in item["documents"]
+                         if d.get("type") != "background" or "/legdocs/" in d.get("url", "")]
     known = {d["url"] for d in item["documents"]}
     for doc in rule_documents(record):
         if doc["url"] not in known:

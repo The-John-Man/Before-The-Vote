@@ -102,6 +102,11 @@ class RefreshItemTests(unittest.TestCase):
         self.assertEqual([s["result"] for s in item["stages"]], [s["result"] for s in self.item["stages"]])
         self.assertEqual(item["claims"], self.item["claims"])
 
+    def test_footer_links_saved_by_the_old_parser_are_removed(self):
+        self.item["documents"].append({"id": "b9", "type": "background", "title": "|", "url": "https://www.toronto.ca/home/jobs/"})
+        item, _ = refresh_item(self.item, sample_record(), "2026-11-14")
+        self.assertNotIn("https://www.toronto.ca/home/jobs/", [d["url"] for d in item["documents"]])
+
     def test_counts_come_from_the_page(self):
         item, _ = refresh_item(self.item, sample_record(), "2026-11-14")
         committee = next(h for h in item["heard"] if h["stage"] == "committee")
