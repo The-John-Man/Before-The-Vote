@@ -6,8 +6,6 @@ CIVIC Hack 2026, Challenge 1: *How might we help residents understand a proposed
 
 Why that matters: Toronto item 2024.NY15.4 is titled "...Decision Report - **Approval**" and its status reads "**Adopted**". City Council **refused** it. A summary written from the title gets the decision backwards. Ours cannot, and `pipeline/tests/test_real_items.py` proves it.
 
-Submission deadline: **Saturday 14 November 2026, 10:00 am ET. All building stops then.**
-
 ## What it does
 
 | For residents | For staff |
@@ -26,12 +24,6 @@ Submission deadline: **Saturday 14 November 2026, 10:00 am ET. All building stop
 
 | Path | What it is |
 |---|---|
-| `docs/00-COMPETITION-BRIEF.md` | Rules, deadlines, what to submit, the 100-point rubric |
-| `docs/01-RESEARCH.md` | Problem evidence, how having a say works in Toronto, data sources, existing tools |
-| `docs/02-PRODUCT-PLAN.md` | The idea, users, features, what is left, hour-by-hour schedule |
-| `docs/03-ARCHITECTURE.md` | Requirements, UML diagrams, why this design, how it scales |
-| `docs/04-UI-DESIGN.md` | Visual direction, screens, accessibility checklist |
-| `docs/05-SUBMISSION-KIT.md` | Checkpoint posts, video script, Readiness Report draft, Devpost text |
 | `CREDITS.md` | Every library, dataset and AI tool used |
 | `pipeline/` | Python: records in, checked decision cards out |
 | `web/` | The website: plain HTML, CSS and JavaScript, no build step, no libraries |
@@ -116,8 +108,3 @@ To turn it on: **Settings → Pages → Build and deployment → Source: GitHub 
 | French | Machine translation, not reviewed, labelled as such in the interface |
 | Ward outlines | Simplified. Near a boundary the "use my location" answer can be wrong |
 
-## Do these first
-
-1. Commit as you go. The organisers check commit history.
-2. Turn on GitHub Pages (see "Live updates") and run the workflow once by hand. Read its report: it shows whether GitHub's servers can reach the City's Open Data portal, which notice cards were added, which votes were attached, and whether any sentence stopped matching.
-3. Read every file in `web/js/` and `pipeline/`. The rubric penalises generated code the team cannot explain.
