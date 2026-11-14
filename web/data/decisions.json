@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T13:37:33+00:00",
+  "generated_at": "2026-11-14T19:57:46+00:00",
   "municipality": {
     "name": "City of Toronto",
     "short": "Toronto",
@@ -2380,23 +2380,6 @@
       },
       "claims": [
         {
-          "id": "r1",
-          "section": "say",
-          "stage": "notice",
-          "lenses": [],
-          "text": "The City's notice gives this deadline to comment or ask to speak.",
-          "drafted_by": "rule",
-          "sources": [
-            {
-              "doc": "n1",
-              "quote": "Your written comments must be submitted no later than November 27, 2026 to be considered by the Executive Director, Development Review or their designate, Director, Community Planning, Toronto and East York District.",
-              "page": 1,
-              "verified": true
-            }
-          ],
-          "verified": true
-        },
-        {
           "id": "c1",
           "section": "what",
           "stage": "notice",
@@ -2447,6 +2430,23 @@
             }
           ],
           "ai_drafted": true,
+          "verified": true
+        },
+        {
+          "id": "r1",
+          "section": "say",
+          "stage": "notice",
+          "lenses": [],
+          "text": "The City's notice gives this deadline to comment or ask to speak.",
+          "drafted_by": "rule",
+          "sources": [
+            {
+              "doc": "n1",
+              "quote": "Your written comments must be submitted no later than November 27, 2026 to be considered by the Executive Director, Development Review or their designate, Director, Community Planning, Toronto and East York District.",
+              "page": 1,
+              "verified": true
+            }
+          ],
           "verified": true
         }
       ],
@@ -2537,23 +2537,6 @@
       },
       "claims": [
         {
-          "id": "r1",
-          "section": "say",
-          "stage": "notice",
-          "lenses": [],
-          "text": "The City's notice gives this deadline to comment or ask to speak.",
-          "drafted_by": "rule",
-          "sources": [
-            {
-              "doc": "n1",
-              "quote": "Your written comments must be submitted no later than November 27, 2026 to be considered by the Executive Director, Development Review or their designate, Director, Community Planning, Scarborough District.",
-              "page": 1,
-              "verified": true
-            }
-          ],
-          "verified": true
-        },
-        {
           "id": "c1",
           "section": "what",
           "stage": "notice",
@@ -2606,6 +2589,23 @@
             }
           ],
           "ai_drafted": true,
+          "verified": true
+        },
+        {
+          "id": "r1",
+          "section": "say",
+          "stage": "notice",
+          "lenses": [],
+          "text": "The City's notice gives this deadline to comment or ask to speak.",
+          "drafted_by": "rule",
+          "sources": [
+            {
+              "doc": "n1",
+              "quote": "Your written comments must be submitted no later than November 27, 2026 to be considered by the Executive Director, Development Review or their designate, Director, Community Planning, Scarborough District.",
+              "page": 1,
+              "verified": true
+            }
+          ],
           "verified": true
         }
       ],
