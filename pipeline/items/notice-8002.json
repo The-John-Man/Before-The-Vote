@@ -1,0 +1,71 @@
+{
+  "id": "notice-8002",
+  "source": "opendata",
+  "notice_id": "8002",
+  "notice_date": "2026-11-06",
+  "title_plain": "",
+  "title_official": "Notice of Application - Under the Planning Act - 7 Labatt Avenue and 77 River Street",
+  "topic": "Planning",
+  "ward": {
+    "code": "13",
+    "name": "Toronto Centre"
+  },
+  "place": {
+    "label": "7 Labatt Avenue",
+    "lat": 43.6596011182,
+    "lon": -79.3565743378,
+    "approx": false
+  },
+  "official_url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7993",
+  "drafted_by": "Rules, no AI: read from the City's public notice (Open Data)",
+  "application_numbers": [
+    "26 246687 STE 13 OZ"
+  ],
+  "documents": [
+    {
+      "id": "n1",
+      "type": "notice",
+      "notice_id": "8002",
+      "title": "Notice of Application - Under the Planning Act - 7 Labatt Avenue and 77 River Street",
+      "url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7993",
+      "snapshot": "snapshots/notice-8002.txt",
+      "retrieved": "2026-11-13"
+    }
+  ],
+  "stages": [
+    {
+      "key": "notice",
+      "body": "staff",
+      "label": "City notice",
+      "date": "2026-11-06",
+      "result": null,
+      "result_claim": null,
+      "can_speak": false
+    }
+  ],
+  "say": {
+    "deadline": null,
+    "deadline_claim": null,
+    "meeting": null,
+    "meeting_claim": null,
+    "guidance_claim": null,
+    "contact_email": null,
+    "methods": []
+  },
+  "claims": [],
+  "votes": [],
+  "heard": [],
+  "heard_note": "",
+  "unknowns": [
+    "This notice is not linked to a Council agenda item number, so later decisions and votes are not added to this page automatically."
+  ],
+  "notice_excerpt": "The application proposes to amend the Official Plan and Zoning By-law 569-2013 to permit two, 46-storey residential buildings containing 1,170 dwelling units and a two-storey building. containing 1,111 square metres of non-residential space",
+  "updates": [
+    {
+      "date": "2026-11-13",
+      "notes": [
+        "Added from the City's public notices (Open Data). The plain-language explanation is not written yet."
+      ]
+    }
+  ]
+}

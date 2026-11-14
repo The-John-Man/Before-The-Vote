@@ -4,10 +4,18 @@ PRODID:-//Before the Vote//CIVIC Hack 2026//EN
 X-WR-CALNAME:Before the Vote: dates to have your say
 BEGIN:VEVENT
 UID:2027.PB1.6@before-the-vote
-DTSTAMP:20261114T004321Z
+DTSTAMP:20261114T014139Z
 DTSTART;VALUE=DATE:20261116
 DTEND;VALUE=DATE:20261117
 SUMMARY:Meeting day (no written deadline posted\, comment before this day): A taller base for the Parkdale Hub affordable housing building
 DESCRIPTION:Official record: https://secure.toronto.ca/council/agenda-item.do?item=2027.PB1.6
+END:VEVENT
+BEGIN:VEVENT
+UID:notice-8007@before-the-vote
+DTSTAMP:20261114T014139Z
+DTSTART:20261124T160000Z
+DTEND:20261124T170000Z
+SUMMARY:Deadline to comment: Notice of Public Meeting - Rental Housing Demolition - 411 and 415 Kennedy Road and 636-646 Danforth Road
+DESCRIPTION:Official record: https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7998
 END:VEVENT
 END:VCALENDAR

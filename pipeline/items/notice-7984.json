@@ -1,0 +1,71 @@
+{
+  "id": "notice-7984",
+  "source": "opendata",
+  "notice_id": "7984",
+  "notice_date": "2026-10-23",
+  "title_plain": "",
+  "title_official": "Notice of Application - Under the Planning Act - 207, 209, 211, 213, 215, 217, and 219 Jarvis Street",
+  "topic": "Planning",
+  "ward": {
+    "code": "13",
+    "name": "Toronto Centre"
+  },
+  "place": {
+    "label": "207 Jarvis Street",
+    "lat": 43.655781263,
+    "lon": -79.373791102,
+    "approx": false
+  },
+  "official_url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7975",
+  "drafted_by": "Rules, no AI: read from the City's public notice (Open Data)",
+  "application_numbers": [
+    "26 136937 STE 13 OZ"
+  ],
+  "documents": [
+    {
+      "id": "n1",
+      "type": "notice",
+      "notice_id": "7984",
+      "title": "Notice of Application - Under the Planning Act - 207, 209, 211, 213, 215, 217, and 219 Jarvis Street",
+      "url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7975",
+      "snapshot": "snapshots/notice-7984.txt",
+      "retrieved": "2026-11-13"
+    }
+  ],
+  "stages": [
+    {
+      "key": "notice",
+      "body": "staff",
+      "label": "City notice",
+      "date": "2026-10-23",
+      "result": null,
+      "result_claim": null,
+      "can_speak": false
+    }
+  ],
+  "say": {
+    "deadline": null,
+    "deadline_claim": null,
+    "meeting": null,
+    "meeting_claim": null,
+    "guidance_claim": null,
+    "contact_email": null,
+    "methods": []
+  },
+  "claims": [],
+  "votes": [],
+  "heard": [],
+  "heard_note": "",
+  "unknowns": [
+    "This notice is not linked to a Council agenda item number, so later decisions and votes are not added to this page automatically."
+  ],
+  "notice_excerpt": "Background information and materials regarding the above-listed proposals are available at www.toronto.ca/city-government/planning-development/application-information-centre/ .",
+  "updates": [
+    {
+      "date": "2026-11-13",
+      "notes": [
+        "Added from the City's public notices (Open Data). The plain-language explanation is not written yet."
+      ]
+    }
+  ]
+}

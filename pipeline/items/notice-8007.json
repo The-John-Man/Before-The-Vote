@@ -1,0 +1,103 @@
+{
+  "id": "notice-8007",
+  "source": "opendata",
+  "notice_id": "8007",
+  "notice_date": "2026-11-03",
+  "title_plain": "",
+  "title_official": "Notice of Public Meeting - Rental Housing Demolition - 411 and 415 Kennedy Road and 636-646 Danforth Road",
+  "topic": "Meetings",
+  "ward": null,
+  "place": null,
+  "official_url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7998",
+  "drafted_by": "Rules, no AI: read from the City's public notice (Open Data)",
+  "application_numbers": [
+    "20 211279 ECS 20 OZ",
+    "20 211505 ESC 20 RH"
+  ],
+  "documents": [
+    {
+      "id": "n1",
+      "type": "notice",
+      "notice_id": "8007",
+      "title": "Notice of Public Meeting - Rental Housing Demolition - 411 and 415 Kennedy Road and 636-646 Danforth Road",
+      "url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7998",
+      "snapshot": "snapshots/notice-8007.txt",
+      "retrieved": "2026-11-13"
+    }
+  ],
+  "stages": [
+    {
+      "key": "notice",
+      "body": "staff",
+      "label": "City notice",
+      "date": "2026-11-03",
+      "result": null,
+      "result_claim": null,
+      "can_speak": false
+    },
+    {
+      "key": "meeting",
+      "body": "committee",
+      "label": "Scarborough Community Council",
+      "date": "2026-11-25",
+      "result": null,
+      "result_claim": null,
+      "can_speak": true
+    }
+  ],
+  "say": {
+    "deadline": "2026-11-24T12:00:00-05:00",
+    "deadline_claim": "r1",
+    "meeting": "2026-11-25T09:30:00-05:00",
+    "meeting_claim": "r2",
+    "guidance_claim": null,
+    "contact_email": null,
+    "methods": []
+  },
+  "claims": [
+    {
+      "id": "r1",
+      "section": "say",
+      "stage": "notice",
+      "lenses": [],
+      "text": "The City's notice gives this deadline to comment or ask to speak.",
+      "drafted_by": "rule",
+      "sources": [
+        {
+          "doc": "n1",
+          "quote": "If you wish to address the Scarborough Community Council directly, please register by e-mail to scc@toronto.ca or by phone at 416-397-4579 , no later than 12:00 p.m. on November 24, 2026 ."
+        }
+      ]
+    },
+    {
+      "id": "r2",
+      "section": "say",
+      "stage": "notice",
+      "lenses": [],
+      "text": "The City's notice gives this date for the public meeting.",
+      "drafted_by": "rule",
+      "sources": [
+        {
+          "doc": "n1",
+          "quote": "Date: November 25, 2026 Time: 9:30 a.m., or as soon as possible thereafter"
+        }
+      ]
+    }
+  ],
+  "votes": [],
+  "heard": [],
+  "heard_note": "",
+  "unknowns": [
+    "This notice is not linked to a Council agenda item number, so later decisions and votes are not added to this page automatically.",
+    "The address in the City's data is outside the area of the community council named in the notice, so this card shows no map pin or ward."
+  ],
+  "notice_excerpt": "The application proposes to demolish eight existing rental dwelling units at 636-646 Danforth Road and build a 23-storey mixed-use building with 276 residential units, including eight replacement rental dwelling units.",
+  "updates": [
+    {
+      "date": "2026-11-13",
+      "notes": [
+        "Added from the City's public notices (Open Data). The plain-language explanation is not written yet."
+      ]
+    }
+  ]
+}

@@ -230,5 +230,12 @@
     "What time the meeting starts, and the board's e-mail address. The item page gives only the date. Use the buttons on the official page.",
     "Which committee hears this after the Preservation Board, and when City Council will vote. The item page does not say yet.",
     "What the Preservation Board will advise. It has not met yet."
-  ]
+  ],
+  "votes_from_record": {
+    "dataset": "members-of-toronto-city-council-voting-record",
+    "resource": "member-voting-record-2022-2026",
+    "url": "https://open.toronto.ca/dataset/members-of-toronto-city-council-voting-record/",
+    "retrieved": "2026-11-13",
+    "motions": []
+  }
 }

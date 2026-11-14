@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T19:43:21-05:00",
+  "generated_at": "2026-11-13T20:41:39-05:00",
   "municipality": {
     "name": "City of Toronto",
     "short": "Toronto",
@@ -375,6 +375,30 @@
         "How the letters and speakers affected the outcome. The record does not say.",
         "Whether the applicant appealed the refusal. The item page does not say."
       ],
+      "votes_from_record": {
+        "dataset": "members-of-toronto-city-council-voting-record",
+        "resource": "member-voting-record-2022-2026",
+        "url": "https://open.toronto.ca/dataset/members-of-toronto-city-council-voting-record/",
+        "retrieved": "2026-11-13",
+        "motions": [
+          {
+            "committee": "North York Community Council",
+            "date": "2024-07-09",
+            "motion": "Refer Item",
+            "result": "Lost, 1-4",
+            "yes": 1,
+            "no": 4
+          },
+          {
+            "committee": "North York Community Council",
+            "date": "2024-07-09",
+            "motion": "Adopt Item as Amended",
+            "result": "Carried, 4-1",
+            "yes": 4,
+            "no": 1
+          }
+        ]
+      },
       "facts_only": false
     },
     {
@@ -578,6 +602,13 @@
         "Why the City made this change. The staff report has not been loaded.",
         "Whether anyone spoke at the committee meeting. That part of the record has not been loaded."
       ],
+      "votes_from_record": {
+        "dataset": "members-of-toronto-city-council-voting-record",
+        "resource": "member-voting-record-2022-2026",
+        "url": "https://open.toronto.ca/dataset/members-of-toronto-city-council-voting-record/",
+        "retrieved": "2026-11-13",
+        "motions": []
+      },
       "facts_only": false
     },
     {
@@ -856,7 +887,862 @@
         "Which committee hears this after the Preservation Board, and when City Council will vote. The item page does not say yet.",
         "What the Preservation Board will advise. It has not met yet."
       ],
+      "votes_from_record": {
+        "dataset": "members-of-toronto-city-council-voting-record",
+        "resource": "member-voting-record-2022-2026",
+        "url": "https://open.toronto.ca/dataset/members-of-toronto-city-council-voting-record/",
+        "retrieved": "2026-11-13",
+        "motions": []
+      },
       "facts_only": false
+    },
+    {
+      "id": "notice-7962",
+      "source": "opendata",
+      "notice_id": "7962",
+      "notice_date": "2026-10-09",
+      "title_plain": "Notice of Application - Under the Planning Act - 1333 Neilson Road",
+      "title_official": "Notice of Application - Under the Planning Act - 1333 Neilson Road",
+      "topic": "Planning",
+      "ward": {
+        "code": "25",
+        "name": "Scarborough-Rouge Park"
+      },
+      "place": {
+        "label": "1333 Neilson Road",
+        "lat": 43.808497212,
+        "lon": -79.219626949,
+        "approx": false
+      },
+      "official_url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7953",
+      "drafted_by": "Rules, no AI: read from the City's public notice (Open Data)",
+      "application_numbers": [
+        "26 116598 ESC 25 OZ"
+      ],
+      "documents": [
+        {
+          "id": "n1",
+          "type": "notice",
+          "notice_id": "7962",
+          "title": "Notice of Application - Under the Planning Act - 1333 Neilson Road",
+          "url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7953",
+          "snapshot": "snapshots/notice-7962.txt",
+          "retrieved": "2026-11-13"
+        },
+        {
+          "id": "g1",
+          "title": "City of Toronto guidance on speaking and writing to committees (excerpts)",
+          "type": "guidance",
+          "url": "https://www.toronto.ca/legdocs/tmmis/have-your-say.htm",
+          "snapshot": "snapshots/toronto-guidance-excerpts.txt",
+          "retrieved": "2026-11-13"
+        }
+      ],
+      "stages": [
+        {
+          "key": "notice",
+          "body": "staff",
+          "label": "City notice",
+          "date": "2026-10-09",
+          "result": null,
+          "result_claim": null,
+          "can_speak": false
+        }
+      ],
+      "say": {
+        "deadline": null,
+        "deadline_claim": null,
+        "meeting": null,
+        "meeting_claim": null,
+        "guidance_claim": null,
+        "contact_email": null,
+        "methods": [],
+        "meeting_from": null
+      },
+      "claims": [],
+      "votes": [],
+      "heard": [],
+      "heard_note": "",
+      "unknowns": [
+        "This notice is not linked to a Council agenda item number, so later decisions and votes are not added to this page automatically."
+      ],
+      "notice_excerpt": "Background information and materials regarding the above-listed proposals are available at www.toronto.ca/city-government/planning-development/application-information-centre/ .",
+      "updates": [
+        {
+          "date": "2026-11-13",
+          "notes": [
+            "Added from the City's public notices (Open Data). The plain-language explanation is not written yet."
+          ]
+        }
+      ],
+      "facts_only": true
+    },
+    {
+      "id": "notice-7963",
+      "source": "opendata",
+      "notice_id": "7963",
+      "notice_date": "2026-10-09",
+      "title_plain": "Notice of Application - Under the Planning Act - 1956-1986 Weston Road and 1-5 Little Avenue",
+      "title_official": "Notice of Application - Under the Planning Act - 1956-1986 Weston Road and 1-5 Little Avenue",
+      "topic": "Planning",
+      "ward": {
+        "code": "05",
+        "name": "York South-Weston"
+      },
+      "place": {
+        "label": "1956 Weston Road",
+        "lat": 43.700474895,
+        "lon": -79.518505404,
+        "approx": false
+      },
+      "official_url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7954",
+      "drafted_by": "Rules, no AI: read from the City's public notice (Open Data)",
+      "application_numbers": [
+        "21 220069 WET 05 SB"
+      ],
+      "documents": [
+        {
+          "id": "n1",
+          "type": "notice",
+          "notice_id": "7963",
+          "title": "Notice of Application - Under the Planning Act - 1956-1986 Weston Road and 1-5 Little Avenue",
+          "url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7954",
+          "snapshot": "snapshots/notice-7963.txt",
+          "retrieved": "2026-11-13"
+        },
+        {
+          "id": "g1",
+          "title": "City of Toronto guidance on speaking and writing to committees (excerpts)",
+          "type": "guidance",
+          "url": "https://www.toronto.ca/legdocs/tmmis/have-your-say.htm",
+          "snapshot": "snapshots/toronto-guidance-excerpts.txt",
+          "retrieved": "2026-11-13"
+        }
+      ],
+      "stages": [
+        {
+          "key": "notice",
+          "body": "staff",
+          "label": "City notice",
+          "date": "2026-10-09",
+          "result": null,
+          "result_claim": null,
+          "can_speak": false
+        }
+      ],
+      "say": {
+        "deadline": null,
+        "deadline_claim": null,
+        "meeting": null,
+        "meeting_claim": null,
+        "guidance_claim": null,
+        "contact_email": null,
+        "methods": [],
+        "meeting_from": null
+      },
+      "claims": [],
+      "votes": [],
+      "heard": [],
+      "heard_note": "",
+      "unknowns": [
+        "This notice is not linked to a Council agenda item number, so later decisions and votes are not added to this page automatically."
+      ],
+      "notice_excerpt": "Background information and materials regarding the above-listed proposals are available at www.toronto.ca/city-government/planning-development/application-information-centre/ .",
+      "updates": [
+        {
+          "date": "2026-11-13",
+          "notes": [
+            "Added from the City's public notices (Open Data). The plain-language explanation is not written yet."
+          ]
+        }
+      ],
+      "facts_only": true
+    },
+    {
+      "id": "notice-7983",
+      "source": "opendata",
+      "notice_id": "7983",
+      "notice_date": "2026-10-23",
+      "title_plain": "Notice of Application - Under the Planning Act - 1605 Queen Street West",
+      "title_official": "Notice of Application - Under the Planning Act - 1605 Queen Street West",
+      "topic": "Planning",
+      "ward": {
+        "code": "04",
+        "name": "Parkdale-High Park"
+      },
+      "place": {
+        "label": "1605 Queen Street West",
+        "lat": 43.638869297,
+        "lon": -79.444080894,
+        "approx": false
+      },
+      "official_url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7974",
+      "drafted_by": "Rules, no AI: read from the City's public notice (Open Data)",
+      "application_numbers": [
+        "26 150790 STE 04 OZ"
+      ],
+      "documents": [
+        {
+          "id": "n1",
+          "type": "notice",
+          "notice_id": "7983",
+          "title": "Notice of Application - Under the Planning Act - 1605 Queen Street West",
+          "url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7974",
+          "snapshot": "snapshots/notice-7983.txt",
+          "retrieved": "2026-11-13"
+        },
+        {
+          "id": "g1",
+          "title": "City of Toronto guidance on speaking and writing to committees (excerpts)",
+          "type": "guidance",
+          "url": "https://www.toronto.ca/legdocs/tmmis/have-your-say.htm",
+          "snapshot": "snapshots/toronto-guidance-excerpts.txt",
+          "retrieved": "2026-11-13"
+        }
+      ],
+      "stages": [
+        {
+          "key": "notice",
+          "body": "staff",
+          "label": "City notice",
+          "date": "2026-10-23",
+          "result": null,
+          "result_claim": null,
+          "can_speak": false
+        }
+      ],
+      "say": {
+        "deadline": null,
+        "deadline_claim": null,
+        "meeting": null,
+        "meeting_claim": null,
+        "guidance_claim": null,
+        "contact_email": null,
+        "methods": [],
+        "meeting_from": null
+      },
+      "claims": [],
+      "votes": [],
+      "heard": [],
+      "heard_note": "",
+      "unknowns": [
+        "This notice is not linked to a Council agenda item number, so later decisions and votes are not added to this page automatically."
+      ],
+      "notice_excerpt": "The application proposes to amend Zoning By-law 569-2013 to permit an entertainment place of assembly.",
+      "updates": [
+        {
+          "date": "2026-11-13",
+          "notes": [
+            "Added from the City's public notices (Open Data). The plain-language explanation is not written yet."
+          ]
+        }
+      ],
+      "facts_only": true
+    },
+    {
+      "id": "notice-7984",
+      "source": "opendata",
+      "notice_id": "7984",
+      "notice_date": "2026-10-23",
+      "title_plain": "Notice of Application - Under the Planning Act - 207, 209, 211, 213, 215, 217, and 219 Jarvis Street",
+      "title_official": "Notice of Application - Under the Planning Act - 207, 209, 211, 213, 215, 217, and 219 Jarvis Street",
+      "topic": "Planning",
+      "ward": {
+        "code": "13",
+        "name": "Toronto Centre"
+      },
+      "place": {
+        "label": "207 Jarvis Street",
+        "lat": 43.655781263,
+        "lon": -79.373791102,
+        "approx": false
+      },
+      "official_url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7975",
+      "drafted_by": "Rules, no AI: read from the City's public notice (Open Data)",
+      "application_numbers": [
+        "26 136937 STE 13 OZ"
+      ],
+      "documents": [
+        {
+          "id": "n1",
+          "type": "notice",
+          "notice_id": "7984",
+          "title": "Notice of Application - Under the Planning Act - 207, 209, 211, 213, 215, 217, and 219 Jarvis Street",
+          "url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7975",
+          "snapshot": "snapshots/notice-7984.txt",
+          "retrieved": "2026-11-13"
+        },
+        {
+          "id": "g1",
+          "title": "City of Toronto guidance on speaking and writing to committees (excerpts)",
+          "type": "guidance",
+          "url": "https://www.toronto.ca/legdocs/tmmis/have-your-say.htm",
+          "snapshot": "snapshots/toronto-guidance-excerpts.txt",
+          "retrieved": "2026-11-13"
+        }
+      ],
+      "stages": [
+        {
+          "key": "notice",
+          "body": "staff",
+          "label": "City notice",
+          "date": "2026-10-23",
+          "result": null,
+          "result_claim": null,
+          "can_speak": false
+        }
+      ],
+      "say": {
+        "deadline": null,
+        "deadline_claim": null,
+        "meeting": null,
+        "meeting_claim": null,
+        "guidance_claim": null,
+        "contact_email": null,
+        "methods": [],
+        "meeting_from": null
+      },
+      "claims": [],
+      "votes": [],
+      "heard": [],
+      "heard_note": "",
+      "unknowns": [
+        "This notice is not linked to a Council agenda item number, so later decisions and votes are not added to this page automatically."
+      ],
+      "notice_excerpt": "Background information and materials regarding the above-listed proposals are available at www.toronto.ca/city-government/planning-development/application-information-centre/ .",
+      "updates": [
+        {
+          "date": "2026-11-13",
+          "notes": [
+            "Added from the City's public notices (Open Data). The plain-language explanation is not written yet."
+          ]
+        }
+      ],
+      "facts_only": true
+    },
+    {
+      "id": "notice-8002",
+      "source": "opendata",
+      "notice_id": "8002",
+      "notice_date": "2026-11-06",
+      "title_plain": "Notice of Application - Under the Planning Act - 7 Labatt Avenue and 77 River Street",
+      "title_official": "Notice of Application - Under the Planning Act - 7 Labatt Avenue and 77 River Street",
+      "topic": "Planning",
+      "ward": {
+        "code": "13",
+        "name": "Toronto Centre"
+      },
+      "place": {
+        "label": "7 Labatt Avenue",
+        "lat": 43.6596011182,
+        "lon": -79.3565743378,
+        "approx": false
+      },
+      "official_url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7993",
+      "drafted_by": "Rules, no AI: read from the City's public notice (Open Data)",
+      "application_numbers": [
+        "26 246687 STE 13 OZ"
+      ],
+      "documents": [
+        {
+          "id": "n1",
+          "type": "notice",
+          "notice_id": "8002",
+          "title": "Notice of Application - Under the Planning Act - 7 Labatt Avenue and 77 River Street",
+          "url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7993",
+          "snapshot": "snapshots/notice-8002.txt",
+          "retrieved": "2026-11-13"
+        },
+        {
+          "id": "g1",
+          "title": "City of Toronto guidance on speaking and writing to committees (excerpts)",
+          "type": "guidance",
+          "url": "https://www.toronto.ca/legdocs/tmmis/have-your-say.htm",
+          "snapshot": "snapshots/toronto-guidance-excerpts.txt",
+          "retrieved": "2026-11-13"
+        }
+      ],
+      "stages": [
+        {
+          "key": "notice",
+          "body": "staff",
+          "label": "City notice",
+          "date": "2026-11-06",
+          "result": null,
+          "result_claim": null,
+          "can_speak": false
+        }
+      ],
+      "say": {
+        "deadline": null,
+        "deadline_claim": null,
+        "meeting": null,
+        "meeting_claim": null,
+        "guidance_claim": null,
+        "contact_email": null,
+        "methods": [],
+        "meeting_from": null
+      },
+      "claims": [],
+      "votes": [],
+      "heard": [],
+      "heard_note": "",
+      "unknowns": [
+        "This notice is not linked to a Council agenda item number, so later decisions and votes are not added to this page automatically."
+      ],
+      "notice_excerpt": "The application proposes to amend the Official Plan and Zoning By-law 569-2013 to permit two, 46-storey residential buildings containing 1,170 dwelling units and a two-storey building. containing 1,111 square metres of non-residential space",
+      "updates": [
+        {
+          "date": "2026-11-13",
+          "notes": [
+            "Added from the City's public notices (Open Data). The plain-language explanation is not written yet."
+          ]
+        }
+      ],
+      "facts_only": true
+    },
+    {
+      "id": "notice-8003",
+      "source": "opendata",
+      "notice_id": "8003",
+      "notice_date": "2026-11-06",
+      "title_plain": "Notice of Application - Under the Planning Act - 689 King Street West",
+      "title_official": "Notice of Application - Under the Planning Act - 689 King Street West",
+      "topic": "Planning",
+      "ward": {
+        "code": "10",
+        "name": "Spadina-Fort York"
+      },
+      "place": {
+        "label": "689 King Street West",
+        "lat": 43.643532697,
+        "lon": -79.403487669,
+        "approx": false
+      },
+      "official_url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7994",
+      "drafted_by": "Rules, no AI: read from the City's public notice (Open Data)",
+      "application_numbers": [
+        "26 247458 STE 10 OZ"
+      ],
+      "documents": [
+        {
+          "id": "n1",
+          "type": "notice",
+          "notice_id": "8003",
+          "title": "Notice of Application - Under the Planning Act - 689 King Street West",
+          "url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7994",
+          "snapshot": "snapshots/notice-8003.txt",
+          "retrieved": "2026-11-13"
+        },
+        {
+          "id": "g1",
+          "title": "City of Toronto guidance on speaking and writing to committees (excerpts)",
+          "type": "guidance",
+          "url": "https://www.toronto.ca/legdocs/tmmis/have-your-say.htm",
+          "snapshot": "snapshots/toronto-guidance-excerpts.txt",
+          "retrieved": "2026-11-13"
+        }
+      ],
+      "stages": [
+        {
+          "key": "notice",
+          "body": "staff",
+          "label": "City notice",
+          "date": "2026-11-06",
+          "result": null,
+          "result_claim": null,
+          "can_speak": false
+        }
+      ],
+      "say": {
+        "deadline": null,
+        "deadline_claim": null,
+        "meeting": null,
+        "meeting_claim": null,
+        "guidance_claim": null,
+        "contact_email": null,
+        "methods": [],
+        "meeting_from": null
+      },
+      "claims": [],
+      "votes": [],
+      "heard": [],
+      "heard_note": "",
+      "unknowns": [
+        "This notice is not linked to a Council agenda item number, so later decisions and votes are not added to this page automatically."
+      ],
+      "notice_excerpt": "The application proposes to amend the Official Plan and Zoning By-law 569-2013 to allow for a 30-storey mixed use building containing a hotel use and 160 residential dwelling units.",
+      "updates": [
+        {
+          "date": "2026-11-13",
+          "notes": [
+            "Added from the City's public notices (Open Data). The plain-language explanation is not written yet."
+          ]
+        }
+      ],
+      "facts_only": true
+    },
+    {
+      "id": "notice-8004",
+      "source": "opendata",
+      "notice_id": "8004",
+      "notice_date": "2026-11-06",
+      "title_plain": "Notice of Application - Under the Planning Act - 309 and 311 Augusta Avenue",
+      "title_official": "Notice of Application - Under the Planning Act - 309 and 311 Augusta Avenue",
+      "topic": "Planning",
+      "ward": {
+        "code": "11",
+        "name": "University-Rosedale"
+      },
+      "place": {
+        "label": "309 Augusta Avenue",
+        "lat": 43.656760386,
+        "lon": -79.402494753,
+        "approx": false
+      },
+      "official_url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7995",
+      "drafted_by": "Rules, no AI: read from the City's public notice (Open Data)",
+      "application_numbers": [
+        "26 206718 STE 11 OZ"
+      ],
+      "documents": [
+        {
+          "id": "n1",
+          "type": "notice",
+          "notice_id": "8004",
+          "title": "Notice of Application - Under the Planning Act - 309 and 311 Augusta Avenue",
+          "url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7995",
+          "snapshot": "snapshots/notice-8004.txt",
+          "retrieved": "2026-11-13"
+        },
+        {
+          "id": "g1",
+          "title": "City of Toronto guidance on speaking and writing to committees (excerpts)",
+          "type": "guidance",
+          "url": "https://www.toronto.ca/legdocs/tmmis/have-your-say.htm",
+          "snapshot": "snapshots/toronto-guidance-excerpts.txt",
+          "retrieved": "2026-11-13"
+        }
+      ],
+      "stages": [
+        {
+          "key": "notice",
+          "body": "staff",
+          "label": "City notice",
+          "date": "2026-11-06",
+          "result": null,
+          "result_claim": null,
+          "can_speak": false
+        }
+      ],
+      "say": {
+        "deadline": null,
+        "deadline_claim": null,
+        "meeting": null,
+        "meeting_claim": null,
+        "guidance_claim": null,
+        "contact_email": null,
+        "methods": [],
+        "meeting_from": null
+      },
+      "claims": [],
+      "votes": [],
+      "heard": [],
+      "heard_note": "",
+      "unknowns": [
+        "This notice is not linked to a Council agenda item number, so later decisions and votes are not added to this page automatically."
+      ],
+      "notice_excerpt": "The application proposes to amend Zoning By-law 569-2013 to allow a six-storey hotel with a restaurant component, containing 2,194 square metres of non-residential gross floor area.",
+      "updates": [
+        {
+          "date": "2026-11-13",
+          "notes": [
+            "Added from the City's public notices (Open Data). The plain-language explanation is not written yet."
+          ]
+        }
+      ],
+      "facts_only": true
+    },
+    {
+      "id": "notice-8005",
+      "source": "opendata",
+      "notice_id": "8005",
+      "notice_date": "2026-11-06",
+      "title_plain": "Notice of Application - Under the Planning Act - 3057-3067 Bayview Avenue and 1 Burleigh Heights Drive",
+      "title_official": "Notice of Application - Under the Planning Act - 3057-3067 Bayview Avenue and 1 Burleigh Heights Drive",
+      "topic": "Planning",
+      "ward": {
+        "code": "17",
+        "name": "Don Valley North"
+      },
+      "place": {
+        "label": "1 Burleigh Heights Drive",
+        "lat": 43.77924698,
+        "lon": -79.390478486,
+        "approx": false
+      },
+      "official_url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7996",
+      "drafted_by": "Rules, no AI: read from the City's public notice (Open Data)",
+      "application_numbers": [
+        "26 185171 NNY 17 OZ"
+      ],
+      "documents": [
+        {
+          "id": "n1",
+          "type": "notice",
+          "notice_id": "8005",
+          "title": "Notice of Application - Under the Planning Act - 3057-3067 Bayview Avenue and 1 Burleigh Heights Drive",
+          "url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7996",
+          "snapshot": "snapshots/notice-8005.txt",
+          "retrieved": "2026-11-13"
+        },
+        {
+          "id": "g1",
+          "title": "City of Toronto guidance on speaking and writing to committees (excerpts)",
+          "type": "guidance",
+          "url": "https://www.toronto.ca/legdocs/tmmis/have-your-say.htm",
+          "snapshot": "snapshots/toronto-guidance-excerpts.txt",
+          "retrieved": "2026-11-13"
+        }
+      ],
+      "stages": [
+        {
+          "key": "notice",
+          "body": "staff",
+          "label": "City notice",
+          "date": "2026-11-06",
+          "result": null,
+          "result_claim": null,
+          "can_speak": false
+        }
+      ],
+      "say": {
+        "deadline": null,
+        "deadline_claim": null,
+        "meeting": null,
+        "meeting_claim": null,
+        "guidance_claim": null,
+        "contact_email": null,
+        "methods": [],
+        "meeting_from": null
+      },
+      "claims": [],
+      "votes": [],
+      "heard": [],
+      "heard_note": "",
+      "unknowns": [
+        "This notice is not linked to a Council agenda item number, so later decisions and votes are not added to this page automatically."
+      ],
+      "notice_excerpt": "The application proposes to amend the Zoning By-law to permit a six-storey (22 metres) residential building.",
+      "updates": [
+        {
+          "date": "2026-11-13",
+          "notes": [
+            "Added from the City's public notices (Open Data). The plain-language explanation is not written yet."
+          ]
+        }
+      ],
+      "facts_only": true
+    },
+    {
+      "id": "notice-8006",
+      "source": "opendata",
+      "notice_id": "8006",
+      "notice_date": "2026-11-06",
+      "title_plain": "Notice of Application - Under the Planning Act - 10, 20 and 36 York Mills Road",
+      "title_official": "Notice of Application - Under the Planning Act - 10, 20 and 36 York Mills Road",
+      "topic": "Planning",
+      "ward": {
+        "code": "15",
+        "name": "Don Valley West"
+      },
+      "place": {
+        "label": "10 York Mills Road",
+        "lat": 43.744498916,
+        "lon": -79.406014636,
+        "approx": false
+      },
+      "official_url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7997",
+      "drafted_by": "Rules, no AI: read from the City's public notice (Open Data)",
+      "application_numbers": [
+        "26 215914 NNY 15 OZ"
+      ],
+      "documents": [
+        {
+          "id": "n1",
+          "type": "notice",
+          "notice_id": "8006",
+          "title": "Notice of Application - Under the Planning Act - 10, 20 and 36 York Mills Road",
+          "url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7997",
+          "snapshot": "snapshots/notice-8006.txt",
+          "retrieved": "2026-11-13"
+        },
+        {
+          "id": "g1",
+          "title": "City of Toronto guidance on speaking and writing to committees (excerpts)",
+          "type": "guidance",
+          "url": "https://www.toronto.ca/legdocs/tmmis/have-your-say.htm",
+          "snapshot": "snapshots/toronto-guidance-excerpts.txt",
+          "retrieved": "2026-11-13"
+        }
+      ],
+      "stages": [
+        {
+          "key": "notice",
+          "body": "staff",
+          "label": "City notice",
+          "date": "2026-11-06",
+          "result": null,
+          "result_claim": null,
+          "can_speak": false
+        }
+      ],
+      "say": {
+        "deadline": null,
+        "deadline_claim": null,
+        "meeting": null,
+        "meeting_claim": null,
+        "guidance_claim": null,
+        "contact_email": null,
+        "methods": [],
+        "meeting_from": null
+      },
+      "claims": [],
+      "votes": [],
+      "heard": [],
+      "heard_note": "",
+      "unknowns": [
+        "This notice is not linked to a Council agenda item number, so later decisions and votes are not added to this page automatically."
+      ],
+      "notice_excerpt": "The application proposes to amend the Official Plan and Zoning By-law 569-2013 to facilitate the development of two mixed-use towers with heights of 55 and 40 storeys.",
+      "updates": [
+        {
+          "date": "2026-11-13",
+          "notes": [
+            "Added from the City's public notices (Open Data). The plain-language explanation is not written yet."
+          ]
+        }
+      ],
+      "facts_only": true
+    },
+    {
+      "id": "notice-8007",
+      "source": "opendata",
+      "notice_id": "8007",
+      "notice_date": "2026-11-03",
+      "title_plain": "Notice of Public Meeting - Rental Housing Demolition - 411 and 415 Kennedy Road and 636-646 Danforth Road",
+      "title_official": "Notice of Public Meeting - Rental Housing Demolition - 411 and 415 Kennedy Road and 636-646 Danforth Road",
+      "topic": "Meetings",
+      "ward": null,
+      "place": null,
+      "official_url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7998",
+      "drafted_by": "Rules, no AI: read from the City's public notice (Open Data)",
+      "application_numbers": [
+        "20 211279 ECS 20 OZ",
+        "20 211505 ESC 20 RH"
+      ],
+      "documents": [
+        {
+          "id": "n1",
+          "type": "notice",
+          "notice_id": "8007",
+          "title": "Notice of Public Meeting - Rental Housing Demolition - 411 and 415 Kennedy Road and 636-646 Danforth Road",
+          "url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7998",
+          "snapshot": "snapshots/notice-8007.txt",
+          "retrieved": "2026-11-13"
+        },
+        {
+          "id": "g1",
+          "title": "City of Toronto guidance on speaking and writing to committees (excerpts)",
+          "type": "guidance",
+          "url": "https://www.toronto.ca/legdocs/tmmis/have-your-say.htm",
+          "snapshot": "snapshots/toronto-guidance-excerpts.txt",
+          "retrieved": "2026-11-13"
+        }
+      ],
+      "stages": [
+        {
+          "key": "notice",
+          "body": "staff",
+          "label": "City notice",
+          "date": "2026-11-03",
+          "result": null,
+          "result_claim": null,
+          "can_speak": false
+        },
+        {
+          "key": "meeting",
+          "body": "committee",
+          "label": "Scarborough Community Council",
+          "date": "2026-11-25",
+          "result": null,
+          "result_claim": null,
+          "can_speak": true
+        }
+      ],
+      "say": {
+        "deadline": "2026-11-24T12:00:00-05:00",
+        "deadline_claim": "r1",
+        "meeting": "2026-11-25T09:30:00-05:00",
+        "meeting_claim": "r2",
+        "guidance_claim": null,
+        "contact_email": null,
+        "methods": [],
+        "meeting_from": "sentence"
+      },
+      "claims": [
+        {
+          "id": "r1",
+          "section": "say",
+          "stage": "notice",
+          "lenses": [],
+          "text": "The City's notice gives this deadline to comment or ask to speak.",
+          "drafted_by": "rule",
+          "sources": [
+            {
+              "doc": "n1",
+              "quote": "If you wish to address the Scarborough Community Council directly, please register by e-mail to scc@toronto.ca or by phone at 416-397-4579 , no later than 12:00 p.m. on November 24, 2026 .",
+              "page": 1,
+              "verified": true
+            }
+          ],
+          "verified": true
+        },
+        {
+          "id": "r2",
+          "section": "say",
+          "stage": "notice",
+          "lenses": [],
+          "text": "The City's notice gives this date for the public meeting.",
+          "drafted_by": "rule",
+          "sources": [
+            {
+              "doc": "n1",
+              "quote": "Date: November 25, 2026 Time: 9:30 a.m., or as soon as possible thereafter",
+              "page": 1,
+              "verified": true
+            }
+          ],
+          "verified": true
+        }
+      ],
+      "votes": [],
+      "heard": [],
+      "heard_note": "",
+      "unknowns": [
+        "This notice is not linked to a Council agenda item number, so later decisions and votes are not added to this page automatically.",
+        "The address in the City's data is outside the area of the community council named in the notice, so this card shows no map pin or ward."
+      ],
+      "notice_excerpt": "The application proposes to demolish eight existing rental dwelling units at 636-646 Danforth Road and build a 23-storey mixed-use building with 276 residential units, including eight replacement rental dwelling units.",
+      "updates": [
+        {
+          "date": "2026-11-13",
+          "notes": [
+            "Added from the City's public notices (Open Data). The plain-language explanation is not written yet."
+          ]
+        }
+      ],
+      "facts_only": true
     }
   ]
 }
