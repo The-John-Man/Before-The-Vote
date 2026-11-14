@@ -20,7 +20,8 @@ export function renderPoster(view, decision) {
     <article class="poster">
       <p class="poster-kicker">The City of ${esc(state.data.municipality.short)} is deciding</p>
       <h1>${esc(decision.title_plain)}</h1>
-      <p class="poster-where">${decision.place ? esc(decision.place.label) + ". " : ""}${decision.ward ? `Ward ${Number(decision.ward.code)} ${esc(decision.ward.name)}` : "All of Toronto"}</p>
+      <p class="poster-where">${decision.place ? esc(decision.place.label) + ". " : ""}${decision.ward ? `Ward ${Number(decision.ward.code)} ${esc(decision.ward.name)}`
+        : decision.id.startsWith("notice-") ? "See the City's notice for the location" : "All of Toronto"}</p>
       ${main.map((c) => `<p class="poster-text">${esc(c.text)}</p>`).join("")}
       <p class="poster-status">${esc(status.text)}</p>
       ${act.open ? `

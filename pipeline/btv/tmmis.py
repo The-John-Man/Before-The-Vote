@@ -48,6 +48,8 @@ class _ItemParser(HTMLParser):
         self.link = None         # href of the <a> we are inside, in a Background section
         self.doc_title = []      # text seen since the last document link
         self.meta_key = None
+        self.accordion_depth = 0  # how many <div>s deep we are inside the accordion
+        self.in_script = 0        # inside <script> or <style>, whose text is code, not words
 
     # -- helpers -------------------------------------------------------------
     def _in(self, prefix: str) -> bool:
@@ -60,8 +62,16 @@ class _ItemParser(HTMLParser):
 
     # -- HTMLParser hooks ----------------------------------------------------
     def handle_starttag(self, tag, attrs):
+        if tag in ("script", "style"):
+            self.in_script += 1
+            return
         attrs = dict(attrs)
         classes = (attrs.get("class") or "").split()
+        # Track the accordion that holds the considerations, so we know when it ends.
+        # Without this, the page footer (Jobs, Contact us, social media...) was read as
+        # part of the last section and its links as background documents.
+        if tag == "div" and (self.accordion_depth or "accordion" in classes):
+            self.accordion_depth += 1
         if "accordin-heading" in classes:
             self.capture, self.buffer = "heading", []
         elif "accordion" in classes or "accordion__controls" in classes:
@@ -72,14 +82,25 @@ class _ItemParser(HTMLParser):
             self.capture, self.buffer = "title", []
         elif self.current is not None and tag in ("dt", "dd", "h4"):
             self.capture, self.buffer = tag, []
-        elif tag == "a" and self._in("Background Information"):
-            self.link = attrs.get("href")
+        elif tag == "a" and self._in("Background Information") and "/legdocs/" in (attrs.get("href") or ""):
+            self.link = attrs.get("href")   # only the City's agenda documents, never site links
         elif tag == "span" and "rpt-text" in classes and self._in("Communications"):
             self.current["counts"][self.section] = self.current["counts"].get(self.section, 0) + 1
         if tag in BLOCK_TAGS:
             self._add_text("\n")
 
     def handle_endtag(self, tag):
+        if tag in ("script", "style"):
+            self.in_script = max(0, self.in_script - 1)
+            return
+        if tag == "div" and self.accordion_depth:
+            self.accordion_depth -= 1
+            if self.accordion_depth == 0:
+                # The accordion is closed. Stop adding text to the last consideration.
+                # We keep reading, so if the City's HTML closed it early by mistake, a
+                # later consideration heading still starts a new block.
+                self.current, self.section = None, None
+                return
         if self.capture and CAPTURE_END[self.capture] == tag:
             text = _tidy(" ".join(self.buffer)).replace("\n", " ")
             kind, self.capture = self.capture, None
@@ -107,6 +128,8 @@ class _ItemParser(HTMLParser):
             self.link, self.doc_title = None, []
 
     def handle_data(self, data):
+        if self.in_script:
+            return
         data = re.sub(r"\s+", " ", data)
         if self.capture:
             self.buffer.append(data)

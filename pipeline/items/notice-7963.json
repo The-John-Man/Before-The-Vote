@@ -1,0 +1,127 @@
+{
+  "id": "notice-7963",
+  "source": "opendata",
+  "notice_id": "7963",
+  "notice_date": "2026-10-09",
+  "title_plain": "Plan to combine lots for two towers on Weston Road",
+  "title_official": "Notice of Application - Under the Planning Act - 1956-1986 Weston Road and 1-5 Little Avenue",
+  "topic": "Planning",
+  "ward": {
+    "code": "05",
+    "name": "York South-Weston"
+  },
+  "place": {
+    "label": "1956 Weston Road",
+    "lat": 43.700474895,
+    "lon": -79.518505404,
+    "approx": false
+  },
+  "official_url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7954",
+  "drafted_by": "openrouter deepseek/deepseek-chat (AI), 2026-11-13, every quote checked word for word",
+  "application_numbers": [
+    "21 220069 WET 05 SB"
+  ],
+  "documents": [
+    {
+      "id": "n1",
+      "type": "notice",
+      "notice_id": "7963",
+      "title": "Notice of Application - Under the Planning Act - 1956-1986 Weston Road and 1-5 Little Avenue",
+      "url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7954",
+      "snapshot": "snapshots/notice-7963.txt",
+      "retrieved": "2026-11-13"
+    }
+  ],
+  "stages": [
+    {
+      "key": "notice",
+      "body": "staff",
+      "label": "City notice",
+      "date": "2026-10-09",
+      "result": null,
+      "result_claim": null,
+      "can_speak": false
+    }
+  ],
+  "say": {
+    "deadline": null,
+    "deadline_claim": null,
+    "meeting": null,
+    "meeting_claim": null,
+    "guidance_claim": null,
+    "contact_email": null,
+    "methods": []
+  },
+  "claims": [
+    {
+      "id": "c1",
+      "section": "what",
+      "stage": "notice",
+      "lenses": [
+        "nearby",
+        "rent"
+      ],
+      "text": "The city has received an application to combine several lots into one block for a mixed-use development with two towers on a shared base.",
+      "sources": [
+        {
+          "doc": "n1",
+          "quote": "Application to Amend the Draft Plan of Subdivision to consolidate existing lots into one consolidated block to implement a mixed-use development containing two towers on a shared podium."
+        }
+      ],
+      "ai_drafted": true
+    },
+    {
+      "id": "c2",
+      "section": "what",
+      "stage": "notice",
+      "lenses": [
+        "nearby"
+      ],
+      "text": "The proposed development is for the properties at 1956-1986 Weston Road and 1-5 Little Avenue in Ward 5.",
+      "sources": [
+        {
+          "doc": "n1",
+          "quote": "1956-1986 Weston Road and 1-5 Little Avenue Ward 5 – York South-Weston"
+        }
+      ],
+      "ai_drafted": true
+    },
+    {
+      "id": "c3",
+      "section": "why",
+      "stage": null,
+      "lenses": [
+        "business"
+      ],
+      "text": "Residents can ask to be notified about future steps in the application process, which may include changes to zoning rules or official plans.",
+      "sources": [
+        {
+          "doc": "n1",
+          "quote": "If you wish to receive notice regarding the progression of any of the proposed applications above, which include Official Plan amendment, proposed Draft Plan of Subdivision, Draft Plan of Common Elements Condominium, Vacant Land Condominium Application and/or proposed Zoning By-law amendment, you may make a request to the City Clerk"
+        }
+      ],
+      "ai_drafted": true
+    }
+  ],
+  "votes": [],
+  "heard": [],
+  "heard_note": "",
+  "unknowns": [
+    "This notice is not linked to a Council agenda item number, so later decisions and votes are not added to this page automatically.",
+    "When the decision about this application will be made",
+    "How tall the towers will be",
+    "What types of businesses or housing will be in the development",
+    "How this will affect traffic or parking in the area"
+  ],
+  "notice_excerpt": "Background information and materials regarding the above-listed proposals are available at www.toronto.ca/city-government/planning-development/application-information-centre/ .",
+  "updates": [
+    {
+      "date": "2026-11-13",
+      "notes": [
+        "Added from the City's public notices (Open Data).",
+        "Plain-language explanation drafted by AI: 3 of 3 sentences passed the word-for-word check."
+      ]
+    }
+  ],
+  "ai_drafted_on": "2026-11-13"
+}

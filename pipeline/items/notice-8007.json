@@ -1,0 +1,203 @@
+{
+  "id": "notice-8007",
+  "source": "opendata",
+  "notice_id": "8007",
+  "notice_date": "2026-11-03",
+  "title_plain": "Meeting about plan to replace rental units with a tall building",
+  "title_official": "Notice of Public Meeting - Rental Housing Demolition - 411 and 415 Kennedy Road and 636-646 Danforth Road",
+  "topic": "Meetings",
+  "ward": null,
+  "place": null,
+  "official_url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7998",
+  "drafted_by": "openrouter deepseek/deepseek-chat (AI), 2026-11-13, every quote checked word for word",
+  "application_numbers": [
+    "20 211279 ECS 20 OZ",
+    "20 211505 ESC 20 RH"
+  ],
+  "documents": [
+    {
+      "id": "n1",
+      "type": "notice",
+      "notice_id": "8007",
+      "title": "Notice of Public Meeting - Rental Housing Demolition - 411 and 415 Kennedy Road and 636-646 Danforth Road",
+      "url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7998",
+      "snapshot": "snapshots/notice-8007.txt",
+      "retrieved": "2026-11-13"
+    }
+  ],
+  "stages": [
+    {
+      "key": "notice",
+      "body": "staff",
+      "label": "City notice",
+      "date": "2026-11-03",
+      "result": null,
+      "result_claim": null,
+      "can_speak": false
+    },
+    {
+      "key": "meeting",
+      "body": "committee",
+      "label": "Scarborough Community Council",
+      "date": "2026-11-25",
+      "result": null,
+      "result_claim": null,
+      "can_speak": true
+    }
+  ],
+  "say": {
+    "deadline": "2026-11-24T12:00:00-05:00",
+    "deadline_claim": "r1",
+    "meeting": "2026-11-25T09:30:00-05:00",
+    "meeting_claim": "r2",
+    "guidance_claim": null,
+    "contact_email": null,
+    "methods": []
+  },
+  "claims": [
+    {
+      "id": "c1",
+      "section": "what",
+      "stage": null,
+      "lenses": [
+        "rent",
+        "nearby"
+      ],
+      "text": "A developer wants to tear down 8 rental units and build a 23-storey building with 276 homes, including 8 replacement rental units.",
+      "sources": [
+        {
+          "doc": "n1",
+          "quote": "demolish eight existing rental dwelling units at 636-646 Danforth Road and build a 23-storey mixed-use building with 276 residential units, including eight replacement rental dwelling units"
+        }
+      ],
+      "ai_drafted": true
+    },
+    {
+      "id": "c2",
+      "section": "what",
+      "stage": null,
+      "lenses": [
+        "rent"
+      ],
+      "text": "The application proposes help for the tenants who would have to move.",
+      "sources": [
+        {
+          "doc": "n1",
+          "quote": "Tenant relocation and assistance is proposed to lessen hardship for impacted tenants"
+        }
+      ],
+      "ai_drafted": true,
+      "edited_by_person": true
+    },
+    {
+      "id": "c3",
+      "section": "why",
+      "stage": null,
+      "lenses": [
+        "rent"
+      ],
+      "text": "The city must approve tearing down rental buildings with 6 or more units.",
+      "sources": [
+        {
+          "doc": "n1",
+          "quote": "Under the City of Toronto Act, 2006, the demolition of a rental property with six or more dwelling units is prohibited without obtaining a permit from the City"
+        }
+      ],
+      "ai_drafted": true
+    },
+    {
+      "id": "c4",
+      "section": "changed",
+      "stage": null,
+      "lenses": [
+        "nearby"
+      ],
+      "text": "Part of this project already got approval for zoning changes from a provincial tribunal.",
+      "sources": [
+        {
+          "doc": "n1",
+          "quote": "A related Zoning By-law Amendment application (20 211279 ECS 20 OZ) has been approved by the Ontario Land Tribunal for the lands at 646-646 Danforth Road and 411 and 415 Kennedy Road"
+        }
+      ],
+      "ai_drafted": true
+    },
+    {
+      "id": "c5",
+      "section": "what",
+      "stage": "meeting",
+      "lenses": [],
+      "text": "A public meeting will be held on November 25, 2026, where residents can share their views.",
+      "sources": [
+        {
+          "doc": "n1",
+          "quote": "Date: November 25, 2026 Time: 9:30 a.m., or as soon as possible thereafter"
+        }
+      ],
+      "ai_drafted": true
+    },
+    {
+      "id": "c6",
+      "section": "what",
+      "stage": "meeting",
+      "lenses": [],
+      "text": "You can speak at the meeting if you register by noon on November 24, 2026.",
+      "sources": [
+        {
+          "doc": "n1",
+          "quote": "please register by e-mail to scc@toronto.ca or by phone at 416-397-4579 , no later than 12:00 p.m. on November 24, 2026"
+        }
+      ],
+      "ai_drafted": true
+    },
+    {
+      "id": "r1",
+      "section": "say",
+      "stage": "notice",
+      "lenses": [],
+      "text": "The City's notice gives this deadline to comment or ask to speak.",
+      "drafted_by": "rule",
+      "sources": [
+        {
+          "doc": "n1",
+          "quote": "If you wish to address the Scarborough Community Council directly, please register by e-mail to scc@toronto.ca or by phone at 416-397-4579 , no later than 12:00 p.m. on November 24, 2026 ."
+        }
+      ]
+    },
+    {
+      "id": "r2",
+      "section": "say",
+      "stage": "notice",
+      "lenses": [],
+      "text": "The City's notice gives this date for the public meeting.",
+      "drafted_by": "rule",
+      "sources": [
+        {
+          "doc": "n1",
+          "quote": "Date: November 25, 2026 Time: 9:30 a.m., or as soon as possible thereafter"
+        }
+      ]
+    }
+  ],
+  "votes": [],
+  "heard": [],
+  "heard_note": "",
+  "unknowns": [
+    "This notice is not linked to a Council agenda item number, so later decisions and votes are not added to this page automatically.",
+    "The address in the City's data is outside the area of the community council named in the notice, so this card shows no map pin or ward.",
+    "What will the new rental units cost?",
+    "How long will current tenants have to move out?",
+    "What exact help will tenants get to move?",
+    "When will construction start if approved?"
+  ],
+  "notice_excerpt": "The application proposes to demolish eight existing rental dwelling units at 636-646 Danforth Road and build a 23-storey mixed-use building with 276 residential units, including eight replacement rental dwelling units.",
+  "updates": [
+    {
+      "date": "2026-11-13",
+      "notes": [
+        "Added from the City's public notices (Open Data).",
+        "Plain-language explanation drafted by AI: 6 of 6 sentences passed the word-for-word check."
+      ]
+    }
+  ],
+  "ai_drafted_on": "2026-11-13"
+}

@@ -10,7 +10,7 @@
 //   Have your say      countdown, official link, calendar, print, share
 
 import { state } from "./state.js";
-import { esc, statusAt, actBy, shownClaims, claimText } from "./util.js";
+import { esc, statusAt, actBy, shownClaims, claimText, lastCheck } from "./util.js";
 import { formatWhen, reached, endOfDay } from "./time.js";
 import { downloadReminder } from "./ics.js";
 import { canSpeak, toggleSpeech } from "./speak.js";
@@ -105,8 +105,8 @@ function heard(decision, at) {
       <ul>
         ${shown.map((h) => {
           const stage = decision.stages.find((s) => s.key === h.stage);
-          const parts = [`${h.written} letters or e-mails`];
-          if (h.speakers !== null) parts.push(`${h.speakers} people spoke`);
+          const parts = [h.written === 1 ? "1 letter or e-mail" : `${h.written} letters or e-mails`];
+          if (h.speakers !== null) parts.push(h.speakers === 1 ? "1 person spoke" : `${h.speakers} people spoke`);
           return `<li>${esc(stage.label)}: ${esc(parts.join(", "))}.</li>`;
         }).join("")}
       </ul>
@@ -115,26 +115,107 @@ function heard(decision, at) {
     </section>`;
 }
 
+// What changed on the City's page recently, written by refresh.py from plain rules.
+function updates(decision) {
+  if (!decision.updates?.length) return "";
+  return `
+    <section class="updates">
+      <h2>What changed recently</h2>
+      <ul>${decision.updates.slice(0, 3).map((u) =>
+        `<li><strong>${esc(formatWhen(u.date))}.</strong> ${u.notes.map(esc).join(" ")}</li>`).join("")}</ul>
+    </section>`;
+}
+
+const isNotice = (decision) => decision.id.startsWith("notice-");
+
+// A card with no checked explanation yet. Say so plainly, then give what rules could read.
+function factsOnly(decision) {
+  if (!decision.facts_only) return "";
+  const read = isNotice(decision)
+    ? "straight from the City's public notice (City open data) by fixed rules, without AI: the dates, the address and ward, and the deadline when the notice gives one"
+    : "straight from the City's page by fixed rules, without AI: the stops, dates, ward, documents and how many people wrote in or spoke";
+  return `
+    <section class="facts-only">
+      <h2>The plain-language explanation is not written yet</h2>
+      <p>No sentence explaining this item has been written and checked yet. Everything on this page was read ${read}.</p>
+    </section>`;
+}
+
+// The City's own sentence about what is proposed, copied exactly and never shortened.
+function noticeExcerpt(decision) {
+  if (!decision.notice_excerpt) return "";
+  const doc = decision.documents.find((d) => d.type === "notice");
+  return `
+    <section><h2>In the City's words</h2>
+      <blockquote lang="en">“${esc(decision.notice_excerpt)}”</blockquote>
+      ${doc ? `<p class="small-note">From the City's public notice, copied ${esc(formatWhen(doc.retrieved))}.
+        <a href="${esc(doc.url)}" target="_blank" rel="noopener">Open the notice</a></p>` : ""}
+    </section>`;
+}
+
+// Votes from the City's open voting record: counts only, and the City's own words for
+// the motion and the result. "Carried" on "Adopt Item" can mean a refusal was adopted
+// (1875 Steeles), so we never turn it into "approved".
+function recordedVotes(decision, at) {
+  const record = decision.votes_from_record;
+  const shown = (record?.motions ?? []).filter((m) => reached(m.date, at));
+  if (!shown.length) return "";
+  return `
+    <section><h2>Recorded votes (City open data)</h2>
+      <ul class="votes">
+        ${shown.map((m) => {
+          const counted = m.yes + m.no > 0;
+          const share = counted ? Math.round((m.yes / (m.yes + m.no)) * 100) : 0;
+          return `<li>
+            <strong>${esc(m.committee)}, ${esc(formatWhen(m.date))}: ${esc(m.motion)}</strong>
+            ${counted ? `<span class="vote-bar" aria-hidden="true"><span style="width:${share}%"></span></span>` : ""}
+            <span>${esc(m.result)}. ${m.yes} yes, ${m.no} no.</span>
+          </li>`;
+        }).join("")}
+      </ul>
+      <p class="small-note">Motion and result in the City's words, counted from the
+        <a href="https://open.toronto.ca/dataset/members-of-toronto-city-council-voting-record/" target="_blank" rel="noopener">Members of Toronto City Council voting record</a>,
+        copied ${esc(formatWhen(record.retrieved))}. "Carried" means the motion passed, not that the proposal was approved:
+        check what the motion said on the official record.</p>
+    </section>`;
+}
+
+function documentList(decision) {
+  const docs = decision.documents.filter((d) => d.type !== "guidance" && d.type !== "item_page");
+  if (!docs.length) return "";
+  return `
+    <section><h2>Documents on the City's page</h2>
+      <ul>${docs.map((d) => `<li><a href="${esc(d.url)}" target="_blank" rel="noopener">${esc(d.title)}</a></li>`).join("")}</ul>
+    </section>`;
+}
+
 function sayPanel(decision) {
   const act = actBy(decision, state.now); // always today: you cannot act in the past
   const guidance = decision.claims.find((c) => c.id === decision.say.guidance_claim && c.verified);
   const sourceId = decision.say.deadline_claim ?? decision.say.meeting_claim;
+  // No date yet and not decided: the chance to comment has not passed, it has not been scheduled.
+  const notYet = act.kind === "none" && statusAt(decision, state.now).level !== "decided";
   return `
     <aside class="say ${act.open ? "" : "is-closed"}" aria-label="Have your say">
       <h2>Have your say</h2>
       <p class="say-big">${esc(act.big)}</p>
       <p class="say-small">${esc(act.small)}</p>
       ${act.value ? `<p>${act.kind === "deadline" ? "Deadline in the City's notice" : "Meeting"}:
-        <strong>${esc(formatWhen(act.value))}</strong> ${sourceId ? sourceButton(sourceId, true) : ""}</p>` : ""}
+        <strong>${esc(formatWhen(act.value))}</strong> ${sourceId ? sourceButton(sourceId, true) : ""}
+        ${decision.say.meeting_from === "page" && act.kind === "meeting" ? `<br><small>Date as listed on the City's page. The time is not posted.</small>` : ""}</p>` : ""}
       ${act.open && guidance ? `<p class="say-guidance">${esc(claimText(guidance, state.lang))} ${sourceButton(guidance.id, true)}</p>` : ""}
       ${act.open ? `<ul>${decision.say.methods.map((m) => `<li>${esc(m)}</li>`).join("")}</ul>` : ""}
       <a class="btn" href="${esc(decision.official_url)}" target="_blank" rel="noopener">
-        ${act.open ? "Open the official page to comment or ask to speak" : "Open the official record"}</a>
+        ${isNotice(decision)
+          ? (act.open ? "Open the City's notice to see how to comment or speak"
+            : notYet ? "Open the City's notice to see who to contact" : "Open the City's notice")
+          : (act.open ? "Open the official page to comment or ask to speak" : "Open the official record")}</a>
       ${act.open ? `<button class="btn btn-quiet" id="remind">Add this date to my calendar</button>` : ""}
       <a class="btn btn-quiet" href="#/poster/${encodeURIComponent(decision.id)}">Make a notice to print</a>
       <button class="btn btn-quiet" id="share">Send this to a neighbour</button>
       <p class="say-privacy" id="share-note">${act.open
         ? "Good to know: if you write or speak to a committee, the City publishes your name with the item, and search engines may list it."
+        : notYet ? "No meeting is set yet, so there is no date to count down to. The City's notice names who to contact in the meantime."
         : "The time to comment on this item has passed."}</p>
     </aside>`;
 }
@@ -175,6 +256,7 @@ export function renderDecision(view, decision) {
   const status = statusAt(decision, at);
   const claims = shownClaims(decision, at);
   const hasFrench = decision.claims.some((c) => c.fr);
+  const check = lastCheck(decision);
 
   view.innerHTML = `
     <article class="decision">
@@ -191,25 +273,36 @@ export function renderDecision(view, decision) {
 
       <p class="status level-${status.level}">${esc(status.text)}</p>
       <h1>${esc(decision.title_plain)}</h1>
-      <p class="official">Official title: ${esc(decision.title_official)} (item ${esc(decision.id)}).
-        ${decision.place ? `${esc(decision.place.label)}, ` : ""}${decision.ward ? `Ward ${Number(decision.ward.code)} ${esc(decision.ward.name)}` : "All of Toronto"}.</p>
+      <p class="official">Official title: ${esc(decision.title_official)}
+        (${isNotice(decision) ? `City notice ${esc(decision.notice_id)}` : `item ${esc(decision.id)}`}).
+        ${decision.place ? `${esc(decision.place.label)}${decision.place.approx !== false ? " (approximate location)" : ""}, ` : ""}${decision.ward
+          ? `Ward ${Number(decision.ward.code)} ${esc(decision.ward.name)}`
+          : isNotice(decision) ? "Ward not known" : "All of Toronto"}.</p>
+      ${check ? `<p class="checked ${check.ok ? "" : "is-stale"}">${esc(check.text)}</p>` : ""}
+      ${decision.claims.some((c) => c.ai_drafted && c.verified)
+        ? `<p class="official">The plain-language sentences were drafted by AI. Each one was checked word for word against the City's ${isNotice(decision) ? "notice" : "page"}: use its Source button to see the City's words.</p>` : ""}
 
       ${line(decision, at)}
       <p class="line-hint">Press a stop that has passed to see what was known then.</p>
 
       <div class="decision-grid">
         <div class="decision-main">
+          ${factsOnly(decision)}
+          ${noticeExcerpt(decision)}
+          ${updates(decision)}
           ${lensChips(claims)}
           ${SECTIONS.map((section) => {
             const list = claims.filter((c) => c.section === section.key);
             return list.length ? `<section><h2>${section.heading}</h2>${list.map(sentence).join("")}</section>` : "";
           }).join("")}
           ${votes(decision, at)}
+          ${recordedVotes(decision, at)}
           ${heard(decision, at)}
-          <section class="unknowns">
+          ${documentList(decision)}
+          ${decision.unknowns.length ? `<section class="unknowns">
             <h2>What the record does not say</h2>
             <ul>${decision.unknowns.map((u) => `<li>${esc(u)}</li>`).join("")}</ul>
-          </section>
+          </section>` : ""}
         </div>
         ${sayPanel(decision)}
       </div>

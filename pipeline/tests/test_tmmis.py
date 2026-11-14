@@ -39,6 +39,14 @@ class ParseTests(unittest.TestCase):
         self.assertEqual(titles[1], "Notice of Public Meeting")
         self.assertTrue(self.council["documents"][0]["url"].endswith("246991.pdf"))
 
+    def test_page_footer_is_ignored(self):
+        # Seen on the live page for 2027.PB1.6: footer links became "background documents".
+        urls = [d["url"] for c in self.record["considerations"] for d in c["documents"]]
+        self.assertTrue(all("/legdocs/" in u for u in urls))
+        text = str(self.record)
+        for junk in ("Connect", "footer.loaded", "Jobs", "Text after the accordion"):
+            self.assertNotIn(junk, text)
+
     def test_motion_text_stays_on_one_line(self):
         self.assertIn("Motion to Adopt Item (Carried)", self.council["sections"]["Motions (City Council)"])
 

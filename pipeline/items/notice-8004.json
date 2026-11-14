@@ -1,0 +1,125 @@
+{
+  "id": "notice-8004",
+  "source": "opendata",
+  "notice_id": "8004",
+  "notice_date": "2026-11-06",
+  "title_plain": "Hotel and restaurant zoning change proposed",
+  "title_official": "Notice of Application - Under the Planning Act - 309 and 311 Augusta Avenue",
+  "topic": "Planning",
+  "ward": {
+    "code": "11",
+    "name": "University-Rosedale"
+  },
+  "place": {
+    "label": "309 Augusta Avenue",
+    "lat": 43.656760386,
+    "lon": -79.402494753,
+    "approx": false
+  },
+  "official_url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7995",
+  "drafted_by": "openrouter deepseek/deepseek-chat (AI), 2026-11-13, every quote checked word for word",
+  "application_numbers": [
+    "26 206718 STE 11 OZ"
+  ],
+  "documents": [
+    {
+      "id": "n1",
+      "type": "notice",
+      "notice_id": "8004",
+      "title": "Notice of Application - Under the Planning Act - 309 and 311 Augusta Avenue",
+      "url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7995",
+      "snapshot": "snapshots/notice-8004.txt",
+      "retrieved": "2026-11-13"
+    }
+  ],
+  "stages": [
+    {
+      "key": "notice",
+      "body": "staff",
+      "label": "City notice",
+      "date": "2026-11-06",
+      "result": null,
+      "result_claim": null,
+      "can_speak": false
+    }
+  ],
+  "say": {
+    "deadline": null,
+    "deadline_claim": null,
+    "meeting": null,
+    "meeting_claim": null,
+    "guidance_claim": null,
+    "contact_email": null,
+    "methods": []
+  },
+  "claims": [
+    {
+      "id": "c1",
+      "section": "what",
+      "stage": "notice",
+      "lenses": [
+        "business",
+        "nearby"
+      ],
+      "text": "A developer has applied to change the zoning rules to allow a six-storey hotel with a restaurant at 309 and 311 Augusta Avenue.",
+      "sources": [
+        {
+          "doc": "n1",
+          "quote": "amend Zoning By-law 569-2013 to allow a six-storey hotel with a restaurant component"
+        }
+      ],
+      "ai_drafted": true
+    },
+    {
+      "id": "c2",
+      "section": "what",
+      "stage": "notice",
+      "lenses": [
+        "business"
+      ],
+      "text": "The hotel would have 2,194 square metres of space for non-residential use.",
+      "sources": [
+        {
+          "doc": "n1",
+          "quote": "containing 2,194 square metres of non-residential gross floor area"
+        }
+      ],
+      "ai_drafted": true
+    },
+    {
+      "id": "c3",
+      "section": "why",
+      "stage": null,
+      "lenses": [],
+      "text": "The city has received the application, but no decision has been made yet.",
+      "sources": [
+        {
+          "doc": "n1",
+          "quote": "The City has received the following application under the Planning Act"
+        }
+      ],
+      "ai_drafted": true
+    }
+  ],
+  "votes": [],
+  "heard": [],
+  "heard_note": "",
+  "unknowns": [
+    "This notice is not linked to a Council agenda item number, so later decisions and votes are not added to this page automatically.",
+    "When the decision will be made",
+    "How the hotel will affect traffic or parking in the area",
+    "What the restaurant will be like",
+    "How the community can give input on the proposal"
+  ],
+  "notice_excerpt": "The application proposes to amend Zoning By-law 569-2013 to allow a six-storey hotel with a restaurant component, containing 2,194 square metres of non-residential gross floor area.",
+  "updates": [
+    {
+      "date": "2026-11-13",
+      "notes": [
+        "Added from the City's public notices (Open Data).",
+        "Plain-language explanation drafted by AI: 3 of 3 sentences passed the word-for-word check."
+      ]
+    }
+  ],
+  "ai_drafted_on": "2026-11-13"
+}

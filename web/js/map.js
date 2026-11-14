@@ -28,9 +28,13 @@ export function mapSvg(wards, decisions, openIds) {
       aria-pressed="${state.ward === ward.code}" aria-label="${esc(label)}"><title>${esc(label)}</title></path>`;
   });
 
+  // A solid dot is the exact address from the City's data. A ring is a place we
+  // marked by hand (approx: true), close but not exact.
   const pins = decisions.filter((d) => d.place).map((d) => {
     const [x, y] = project(d.place.lon, d.place.lat);
-    return `<circle class="pin ${openIds.has(d.id) ? "is-open" : ""}" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="5"></circle>`;
+    const approx = d.place.approx !== false;
+    return `<circle class="pin ${openIds.has(d.id) ? "is-open" : ""} ${approx ? "is-approx" : ""}"
+      cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${approx ? 7 : 5}"></circle>`;
   });
 
   let you = "";

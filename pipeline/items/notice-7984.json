@@ -1,0 +1,113 @@
+{
+  "id": "notice-7984",
+  "source": "opendata",
+  "notice_id": "7984",
+  "notice_date": "2026-10-23",
+  "title_plain": "Proposed tall building on Jarvis Street",
+  "title_official": "Notice of Application - Under the Planning Act - 207, 209, 211, 213, 215, 217, and 219 Jarvis Street",
+  "topic": "Planning",
+  "ward": {
+    "code": "13",
+    "name": "Toronto Centre"
+  },
+  "place": {
+    "label": "207 Jarvis Street",
+    "lat": 43.655781263,
+    "lon": -79.373791102,
+    "approx": false
+  },
+  "official_url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7975",
+  "drafted_by": "openrouter deepseek/deepseek-chat (AI), 2026-11-13, every quote checked word for word",
+  "application_numbers": [
+    "26 136937 STE 13 OZ"
+  ],
+  "documents": [
+    {
+      "id": "n1",
+      "type": "notice",
+      "notice_id": "7984",
+      "title": "Notice of Application - Under the Planning Act - 207, 209, 211, 213, 215, 217, and 219 Jarvis Street",
+      "url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7975",
+      "snapshot": "snapshots/notice-7984.txt",
+      "retrieved": "2026-11-13"
+    }
+  ],
+  "stages": [
+    {
+      "key": "notice",
+      "body": "staff",
+      "label": "City notice",
+      "date": "2026-10-23",
+      "result": null,
+      "result_claim": null,
+      "can_speak": false
+    }
+  ],
+  "say": {
+    "deadline": null,
+    "deadline_claim": null,
+    "meeting": null,
+    "meeting_claim": null,
+    "guidance_claim": null,
+    "contact_email": null,
+    "methods": []
+  },
+  "claims": [
+    {
+      "id": "c1",
+      "section": "what",
+      "stage": "notice",
+      "lenses": [
+        "nearby",
+        "rent"
+      ],
+      "text": "A developer wants to build a 102.8-meter mixed-use building with mostly residential units and some commercial space at 207-219 Jarvis Street.",
+      "sources": [
+        {
+          "doc": "n1",
+          "quote": "amend the Official Plan and Zoning By-law 569-2013 to allow for a 102.8-metre mixed-use building containing 23,000 square metres of gross floor area comprising a maximum of 22,800 square metres of residential gross floor area and a minimum of 200 square metres of non-residential gross floor area."
+        }
+      ],
+      "ai_drafted": true
+    },
+    {
+      "id": "c2",
+      "section": "why",
+      "stage": null,
+      "lenses": [
+        "nearby"
+      ],
+      "text": "The application asks the City to change its Official Plan and zoning rules for this site.",
+      "sources": [
+        {
+          "doc": "n1",
+          "quote": "amend the Official Plan and Zoning By-law 569-2013"
+        }
+      ],
+      "ai_drafted": true,
+      "edited_by_person": true
+    }
+  ],
+  "votes": [],
+  "heard": [],
+  "heard_note": "",
+  "unknowns": [
+    "This notice is not linked to a Council agenda item number, so later decisions and votes are not added to this page automatically.",
+    "How many residential units the building will have",
+    "When construction might start if approved",
+    "How the building will look (design details)",
+    "What specific types of businesses might occupy the commercial space",
+    "How this will affect traffic or parking in the area"
+  ],
+  "notice_excerpt": "Background information and materials regarding the above-listed proposals are available at www.toronto.ca/city-government/planning-development/application-information-centre/ .",
+  "updates": [
+    {
+      "date": "2026-11-13",
+      "notes": [
+        "Added from the City's public notices (Open Data).",
+        "Plain-language explanation drafted by AI: 2 of 2 sentences passed the word-for-word check."
+      ]
+    }
+  ],
+  "ai_drafted_on": "2026-11-13"
+}

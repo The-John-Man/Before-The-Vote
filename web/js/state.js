@@ -9,7 +9,10 @@ export const state = {
   me: null,          // { lat, lon } from the device, only if the resident asked
   lens: null,        // "rent", "drive"... which sentences to bring forward
   lang: "en",        // "en" or "fr"
+  onlyOpen: false,   // board filter: only decisions where a resident can still have a say
+  showAll: false,    // board: show every closed decision, not just the latest 8
   data: null,        // decisions.json
+  status: null,      // status.json: when each item and each data source was last checked (optional)
   wards: [],         // parsed wards.txt
 };
 

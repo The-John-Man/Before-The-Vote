@@ -1,0 +1,110 @@
+{
+  "id": "notice-8006",
+  "source": "opendata",
+  "notice_id": "8006",
+  "notice_date": "2026-11-06",
+  "title_plain": "Proposal for two tall mixed-use towers at York Mills",
+  "title_official": "Notice of Application - Under the Planning Act - 10, 20 and 36 York Mills Road",
+  "topic": "Planning",
+  "ward": {
+    "code": "15",
+    "name": "Don Valley West"
+  },
+  "place": {
+    "label": "10 York Mills Road",
+    "lat": 43.744498916,
+    "lon": -79.406014636,
+    "approx": false
+  },
+  "official_url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7997",
+  "drafted_by": "openrouter deepseek/deepseek-chat (AI), 2026-11-13, every quote checked word for word",
+  "application_numbers": [
+    "26 215914 NNY 15 OZ"
+  ],
+  "documents": [
+    {
+      "id": "n1",
+      "type": "notice",
+      "notice_id": "8006",
+      "title": "Notice of Application - Under the Planning Act - 10, 20 and 36 York Mills Road",
+      "url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7997",
+      "snapshot": "snapshots/notice-8006.txt",
+      "retrieved": "2026-11-13"
+    }
+  ],
+  "stages": [
+    {
+      "key": "notice",
+      "body": "staff",
+      "label": "City notice",
+      "date": "2026-11-06",
+      "result": null,
+      "result_claim": null,
+      "can_speak": false
+    }
+  ],
+  "say": {
+    "deadline": null,
+    "deadline_claim": null,
+    "meeting": null,
+    "meeting_claim": null,
+    "guidance_claim": null,
+    "contact_email": null,
+    "methods": []
+  },
+  "claims": [
+    {
+      "id": "c1",
+      "section": "what",
+      "stage": "notice",
+      "lenses": [
+        "nearby"
+      ],
+      "text": "The city has received an application to build two mixed-use towers, one 55 and one 40 storeys tall, at 10, 20, and 36 York Mills Road.",
+      "sources": [
+        {
+          "doc": "n1",
+          "quote": "The application proposes to amend the Official Plan and Zoning By-law 569-2013 to facilitate the development of two mixed-use towers with heights of 55 and 40 storeys."
+        }
+      ],
+      "ai_drafted": true
+    },
+    {
+      "id": "c2",
+      "section": "what",
+      "stage": "notice",
+      "lenses": [
+        "nearby"
+      ],
+      "text": "The application asks to change the Official Plan and Zoning By-law to allow the towers.",
+      "sources": [
+        {
+          "doc": "n1",
+          "quote": "The application proposes to amend the Official Plan and Zoning By-law 569-2013 to facilitate the development of two mixed-use towers with heights of 55 and 40 storeys."
+        }
+      ],
+      "ai_drafted": true
+    }
+  ],
+  "votes": [],
+  "heard": [],
+  "heard_note": "",
+  "unknowns": [
+    "This notice is not linked to a Council agenda item number, so later decisions and votes are not added to this page automatically.",
+    "What the towers will be used for (e.g., how much housing, retail, office space)",
+    "When construction might start if approved",
+    "How this might affect traffic or local services",
+    "What the next steps are in the approval process"
+  ],
+  "notice_excerpt": "The application proposes to amend the Official Plan and Zoning By-law 569-2013 to facilitate the development of two mixed-use towers with heights of 55 and 40 storeys.",
+  "updates": [
+    {
+      "date": "2026-11-13",
+      "notes": [
+        "Added from the City's public notices (Open Data).",
+        "Plain-language explanation drafted by AI: 2 of 2 sentences passed the word-for-word check."
+      ]
+    }
+  ],
+  "ai_drafted_on": "2026-11-13"
+}

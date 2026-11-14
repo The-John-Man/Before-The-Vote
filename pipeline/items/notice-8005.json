@@ -1,0 +1,128 @@
+{
+  "id": "notice-8005",
+  "source": "opendata",
+  "notice_id": "8005",
+  "notice_date": "2026-11-06",
+  "title_plain": "Proposal for a six-storey apartment building on Bayview",
+  "title_official": "Notice of Application - Under the Planning Act - 3057-3067 Bayview Avenue and 1 Burleigh Heights Drive",
+  "topic": "Planning",
+  "ward": {
+    "code": "17",
+    "name": "Don Valley North"
+  },
+  "place": {
+    "label": "1 Burleigh Heights Drive",
+    "lat": 43.77924698,
+    "lon": -79.390478486,
+    "approx": false
+  },
+  "official_url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7996",
+  "drafted_by": "openrouter deepseek/deepseek-chat (AI), 2026-11-13, every quote checked word for word",
+  "application_numbers": [
+    "26 185171 NNY 17 OZ"
+  ],
+  "documents": [
+    {
+      "id": "n1",
+      "type": "notice",
+      "notice_id": "8005",
+      "title": "Notice of Application - Under the Planning Act - 3057-3067 Bayview Avenue and 1 Burleigh Heights Drive",
+      "url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7996",
+      "snapshot": "snapshots/notice-8005.txt",
+      "retrieved": "2026-11-13"
+    }
+  ],
+  "stages": [
+    {
+      "key": "notice",
+      "body": "staff",
+      "label": "City notice",
+      "date": "2026-11-06",
+      "result": null,
+      "result_claim": null,
+      "can_speak": false
+    }
+  ],
+  "say": {
+    "deadline": null,
+    "deadline_claim": null,
+    "meeting": null,
+    "meeting_claim": null,
+    "guidance_claim": null,
+    "contact_email": null,
+    "methods": []
+  },
+  "claims": [
+    {
+      "id": "c1",
+      "section": "what",
+      "stage": "notice",
+      "lenses": [
+        "nearby",
+        "rent"
+      ],
+      "text": "A developer has applied to build a six-storey apartment building with 155 units of one, two, and three bedrooms at 3057-3067 Bayview Avenue and 1 Burleigh Heights Drive.",
+      "sources": [
+        {
+          "doc": "n1",
+          "quote": "The application proposes to amend the Zoning By-law to permit a six-storey (22 metres) residential building. The proposal includes a total of 155 residential units being a mix of one-bedroom, two-bedroom, and three-bedrooms."
+        }
+      ],
+      "ai_drafted": true
+    },
+    {
+      "id": "c2",
+      "section": "why",
+      "stage": null,
+      "lenses": [
+        "nearby"
+      ],
+      "text": "The application asks the City to change the zoning rules to allow this building.",
+      "sources": [
+        {
+          "doc": "n1",
+          "quote": "The application proposes to amend the Zoning By-law to permit a six-storey (22 metres) residential building."
+        }
+      ],
+      "ai_drafted": true,
+      "edited_by_person": true
+    },
+    {
+      "id": "c3",
+      "section": "changed",
+      "stage": null,
+      "lenses": [
+        "nearby"
+      ],
+      "text": "If approved, the zoning rules would change to allow the six-storey building with 155 units.",
+      "sources": [
+        {
+          "doc": "n1",
+          "quote": "The application proposes to amend the Zoning By-law to permit a six-storey (22 metres) residential building. The proposal includes a total of 155 residential units being a mix of one-bedroom, two-bedroom, and three-bedrooms."
+        }
+      ],
+      "ai_drafted": true
+    }
+  ],
+  "votes": [],
+  "heard": [],
+  "heard_note": "",
+  "unknowns": [
+    "This notice is not linked to a Council agenda item number, so later decisions and votes are not added to this page automatically.",
+    "When the decision will be made",
+    "How this will affect traffic or parking in the area",
+    "What the new building will look like",
+    "When construction might start if approved"
+  ],
+  "notice_excerpt": "The application proposes to amend the Zoning By-law to permit a six-storey (22 metres) residential building.",
+  "updates": [
+    {
+      "date": "2026-11-13",
+      "notes": [
+        "Added from the City's public notices (Open Data).",
+        "Plain-language explanation drafted by AI: 3 of 3 sentences passed the word-for-word check."
+      ]
+    }
+  ],
+  "ai_drafted_on": "2026-11-13"
+}

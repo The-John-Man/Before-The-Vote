@@ -56,11 +56,21 @@ flowchart LR
 ```mermaid
 flowchart TB
   subgraph City["City of Toronto (public)"]
-    PAGE[Item page, HTML]
+    OD[Open Data portal, CKAN API: public notices, voting record]
+    PAGE[Item page, HTML, saved by a person]
     PDF[Notices and reports, PDF]
     FORM[Comment / speak form]
   end
   subgraph Pipeline["pipeline/ (Python, run by staff)"]
+    GHA[GitHub Actions, every 3 hours] --> REF[refresh.py --source opendata: read, note changes]
+    REF --> ODP[btv/opendata.py: fetch rows, clean notices, count votes, no names]
+    REF --> NOT[btv/notices.py: choose notices, build cards, merge by application number]
+    NOT --> EXT[btv/extract.py: proposal, deadline and meeting sentences]
+    NOT --> GEO[btv/geo.py: ward from the address]
+    REF -. "--source tmmis --html-dir" .-> TM
+    REF --> SNAP
+    REF --> ITEM
+    REF --> BUILD
     NEW[new_item.py] --> TM[btv/tmmis.py: read page, drop names]
     NEW --> TL[btv/timeline.py: stops, ward, documents, counts]
     NEW --> SNAP[(snapshots/*.txt, dated)]
@@ -74,6 +84,7 @@ flowchart TB
     CITY[(city.json)] --> BUILD
     WARDS[fetch_wards.py]
   end
+  OD --> ODP
   PAGE --> TM
   PDF --> SRC
   BUILD --> JSON[(web/data/decisions.json)]
@@ -91,6 +102,17 @@ flowchart TB
   DEC --> FORM
 ```
 
+## Data sources
+
+| Source | Read by | How | Kept | Left out |
+|---|---|---|---|---|
+| [Public notices](https://open.toronto.ca/dataset/public-notices/), City open data | `btv/opendata.py`, `btv/notices.py` | CKAN `package_show`, then `datastore_search` 1000 rows a page, 1 s pause, 60 s timeout, User-Agent naming the project | Title, date, notice words (as a dated snapshot), first address and its coordinates, application numbers, notice link | Contact person, signer |
+| [Council voting record](https://open.toronto.ca/dataset/members-of-toronto-city-council-voting-record/), 2022 to 2026 term, City open data | `btv/opendata.py` | Same API, one query filtered to our agenda item numbers | Committee, date, motion type, the City's result words, yes and no counts | Every councillor's name, vote descriptions |
+| Agenda item pages (secure.toronto.ca) | `btv/tmmis.py` | Only from pages a person saved in their own browser (`refresh.py --source tmmis --html-dir`). The site blocks automated downloads and we do not get around it | Stops, dates, ward, documents, counts of letters and speakers | Names of people who wrote in or spoke |
+| [City Wards](https://open.toronto.ca/dataset/city-wards/), City open data | `fetch_wards.py` | Once, by hand | Simplified outlines in `web/data/wards.txt` | |
+
+Everything in this table is read by fixed rules. No AI is used to fetch, choose, match, extract, check or write change notes.
+
 ## Data model (one decision card)
 
 ```mermaid
@@ -104,6 +126,7 @@ classDiagram
   class Source { doc; page; quote; verified }
   class Document { id; title; type; url; snapshot; retrieved }
   class Vote { stage; motion; result; yes; no; claim }
+  class RecordedVote { committee; date; motion; result; yes; no }
   class Heard { stage; written; speakers }
   Decision "1" --> "0..1" Ward
   Decision "1" --> "0..1" Place
@@ -113,6 +136,7 @@ classDiagram
   Decision "1" --> "1..*" Document
   Decision "1" --> "*" Vote
   Decision "1" --> "*" Heard
+  Decision "1" --> "*" RecordedVote : votes_from_record
   Claim "1" --> "1..*" Source
   Source "*" --> "1" Document
   Stage ..> Claim : result_claim
@@ -161,15 +185,19 @@ sequenceDiagram
 | Visitors | Static files on a CDN | No change needed |
 | Items | One JSON file, fine into the low hundreds | One file per item plus a small index |
 | Staff effort | Minutes per item to draft and review | Model drafts by default; staff review only what the check or a reviewer flags |
-| Freshness | Staff run two commands | Scheduled job on agenda publishing days: re-copy each open item, rebuild, and alert staff when a previously passing sentence fails (the record changed) |
+| Freshness | Built: a scheduled GitHub Actions job reads City open data every 3 hours, adds new notice cards, attaches recorded votes, notes what changed, hides sentences that stop matching, and republishes | Ask the City for agenda item numbers in the notices dataset; alert staff by e-mail when a sentence is hidden |
 | Cities | Toronto reader in `tmmis.py` | One reader per agenda system (eSCRIBE, Legistar, CivicWeb) producing the same record shape; everything after that is shared |
 | Languages | English, unreviewed French | Reviewed translations stored per sentence; quotes stay in the original language |
 
 ## Known limits
 
 - The check passes a real quote attached to a misleading sentence. A person must still review.
-- Record copies were made by hand through a browser on 13 Nov 2026; the download code has not yet run against the live site.
-- Vote counts and place coordinates are typed by hand.
+- Agenda item pages cannot be downloaded automatically (the City blocks it). The three hand-made cards refresh only when a person saves their pages from a browser.
+- Public notices in City open data carry no agenda item number. A notice is matched to another item only by a shared planning application number, and only when exactly one item has it. So a notice card does not show the later committee or Council decision, and its votes are not attached.
+- Notice cards use the notice's first address. If the City's data places it outside the community council named in the notice (seen once: "411 Kennedy Avenue" for "Kennedy Road", Scarborough), the card shows no pin or ward rather than a wrong one.
+- Deadline and meeting rules read English sentence patterns found in real notices. A notice worded differently gives no deadline (the card then shows "No date"), never a guessed one.
+- Recorded votes come from the 2022 to 2026 term's voting record only. Items from the next term need the next resource name in `btv/opendata.py`.
+- Hand-made cards: claim-backed vote counts and approximate place coordinates are typed by hand.
 - Ward outlines are simplified; location-to-ward can be wrong near a boundary.
 - Only item pages and one notice excerpt are used. Long staff reports (PDF) are linked but not yet summarised.
 - `summarize.py` has never been run against a model.

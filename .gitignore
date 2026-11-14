@@ -3,3 +3,6 @@ __pycache__/
 *.pyc
 .venv/
 .DS_Store
+.env
+# Written by refresh.py at publish time; not kept in the repo
+web/data/status.json

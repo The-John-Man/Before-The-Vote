@@ -8,57 +8,175 @@
   "official_url": "https://secure.toronto.ca/council/agenda-item.do?item=2026.PH31.6",
   "drafted_by": "Claude (AI), 13 Nov 2026, from the item page snapshot",
   "documents": [
-    { "id": "d1", "title": "Official item page, 2026.PH31.6", "type": "item_page",
+    {
+      "id": "d1",
+      "title": "Official item page, 2026.PH31.6",
+      "type": "item_page",
       "url": "https://secure.toronto.ca/council/agenda-item.do?item=2026.PH31.6",
-      "snapshot": "snapshots/2026.PH31.6.txt", "retrieved": "2026-11-13" },
-    { "id": "d2", "title": "Public notice, City Clerk, 4 June 2026 (one-sentence excerpt)", "type": "public_notice",
+      "snapshot": "snapshots/2026.PH31.6.txt",
+      "retrieved": "2026-11-13"
+    },
+    {
+      "id": "d2",
+      "title": "Public notice, City Clerk, 4 June 2026 (one-sentence excerpt)",
+      "type": "public_notice",
       "url": "https://www.toronto.ca/legdocs/mmis/2026/ph/bgrd/backgroundfile-287491.pdf",
-      "snapshot": "snapshots/2026.PH31.6-notice-excerpt.txt", "retrieved": "2026-11-13" }
+      "snapshot": "snapshots/2026.PH31.6-notice-excerpt.txt",
+      "retrieved": "2026-11-13"
+    }
   ],
   "stages": [
-    { "key": "staff", "body": "staff", "label": "Staff report", "date": "2026-05-28",
-      "result": null, "result_claim": null, "can_speak": false },
-    { "key": "committee", "body": "committee", "label": "Planning and Housing Committee", "date": "2026-06-11",
-      "result": "adopted it with no changes", "result_claim": "c4", "can_speak": true },
-    { "key": "council", "body": "council", "label": "City Council", "date": "2026-06-24",
-      "result": "adopted it with no changes", "result_claim": "c3", "can_speak": false }
+    {
+      "key": "staff",
+      "body": "staff",
+      "label": "Staff report",
+      "date": "2026-05-28",
+      "result": null,
+      "result_claim": null,
+      "can_speak": false
+    },
+    {
+      "key": "committee",
+      "body": "committee",
+      "label": "Planning and Housing Committee",
+      "date": "2026-06-11",
+      "result": "adopted it with no changes",
+      "result_claim": "c4",
+      "can_speak": true
+    },
+    {
+      "key": "council",
+      "body": "council",
+      "label": "City Council",
+      "date": "2026-06-24",
+      "result": "adopted it with no changes",
+      "result_claim": "c3",
+      "can_speak": false
+    }
   ],
   "say": {
-    "deadline": "2026-06-10T12:00:00-04:00", "deadline_claim": "c5",
-    "meeting": "2026-06-11", "meeting_claim": "c4",
-    "guidance_claim": null, "contact_email": null,
-    "methods": ["Written comments and speaking to the committee, both now closed"]
+    "deadline": "2026-06-10T12:00:00-04:00",
+    "deadline_claim": "c5",
+    "meeting": "2026-06-11",
+    "meeting_claim": "c4",
+    "guidance_claim": null,
+    "contact_email": null,
+    "methods": [
+      "Written comments and speaking to the committee, both now closed"
+    ]
   },
   "claims": [
-    { "id": "c1", "section": "what", "stage": "staff", "lenses": ["drive"],
+    {
+      "id": "c1",
+      "section": "what",
+      "stage": "staff",
+      "lenses": [
+        "drive"
+      ],
       "text": "This changes who decides when people at certain addresses cannot get on-street permit parking. Community Councils no longer make those changes for addresses in the area the City calls the Excluded Area, or for addresses tied to rezoning applications.",
-      "sources": [ { "doc": "d1", "quote": "the authority delegated to Community Council does not include amendments to City of Toronto Municipal Code Chapter 925, Permit Parking, that exclude from eligibility residents of, visitors to, or tradepersons at addresses located within the Excluded Area" } ] },
-    { "id": "c2", "section": "what", "stage": "staff", "lenses": ["drive"],
+      "sources": [
+        {
+          "doc": "d1",
+          "quote": "the authority delegated to Community Council does not include amendments to City of Toronto Municipal Code Chapter 925, Permit Parking, that exclude from eligibility residents of, visitors to, or tradepersons at addresses located within the Excluded Area"
+        }
+      ]
+    },
+    {
+      "id": "c2",
+      "section": "what",
+      "stage": "staff",
+      "lenses": [
+        "drive"
+      ],
       "text": "The excluded addresses are gathered into one new list, called a schedule, in the permit parking chapter of the Municipal Code.",
-      "sources": [ { "doc": "d1", "quote": "consolidate the excluded addresses into a new Schedule to the Chapter" } ] },
-    { "id": "c4", "section": "changed", "stage": "committee", "lenses": [],
+      "sources": [
+        {
+          "doc": "d1",
+          "quote": "consolidate the excluded addresses into a new Schedule to the Chapter"
+        }
+      ]
+    },
+    {
+      "id": "c4",
+      "section": "changed",
+      "stage": "committee",
+      "lenses": [],
       "text": "The Planning and Housing Committee considered it on 11 June 2026 and adopted it with no changes.",
-      "sources": [ { "doc": "d1", "quote": "This item was considered by the Planning and Housing Committee on June 11, 2026 and adopted without amendment." } ] },
-    { "id": "c3", "section": "changed", "stage": "council", "lenses": [],
+      "sources": [
+        {
+          "doc": "d1",
+          "quote": "This item was considered by the Planning and Housing Committee on June 11, 2026 and adopted without amendment."
+        }
+      ]
+    },
+    {
+      "id": "c3",
+      "section": "changed",
+      "stage": "council",
+      "lenses": [],
       "text": "City Council adopted it on 24 and 25 June 2026 with no changes.",
-      "sources": [ { "doc": "d1", "quote": "City Council adopted this item on June 24 and 25, 2026 without amendments." } ] },
-    { "id": "c5", "section": "say", "stage": null, "lenses": [],
+      "sources": [
+        {
+          "doc": "d1",
+          "quote": "City Council adopted this item on June 24 and 25, 2026 without amendments."
+        }
+      ]
+    },
+    {
+      "id": "c5",
+      "section": "say",
+      "stage": null,
+      "lenses": [],
       "text": "The public notice asked people to contact the committee by 12 noon on Wednesday 10 June 2026 to comment or to speak.",
-      "sources": [ { "doc": "d2", "quote": "please contact the Committee no later than 12:00 p.m. on Wednesday, June 10, 2026" } ] },
-    { "id": "v1", "section": "vote", "stage": "council", "lenses": [],
+      "sources": [
+        {
+          "doc": "d2",
+          "quote": "please contact the Committee no later than 12:00 p.m. on Wednesday, June 10, 2026"
+        }
+      ]
+    },
+    {
+      "id": "v1",
+      "section": "vote",
+      "stage": "council",
+      "lenses": [],
       "text": "City Council: motion to adopt the item carried. The item page shows no recorded count for this vote.",
-      "sources": [ { "doc": "d1", "quote": "Motions (City Council) Motion to Adopt Item (Carried)" } ] }
+      "sources": [
+        {
+          "doc": "d1",
+          "quote": "Motions (City Council) Motion to Adopt Item (Carried)"
+        }
+      ]
+    }
   ],
   "votes": [
-    { "stage": "council", "motion": "Adopt the item", "result": "Carried", "yes": null, "no": null, "claim": "v1" }
+    {
+      "stage": "council",
+      "motion": "Adopt the item",
+      "result": "Carried",
+      "yes": null,
+      "no": null,
+      "claim": "v1"
+    }
   ],
   "heard": [
-    { "stage": "committee", "written": 4, "speakers": null }
+    {
+      "stage": "committee",
+      "written": 4,
+      "speakers": null
+    }
   ],
   "heard_note": "Counted by hand from the list on the item page on 13 Nov 2026. Names are not stored. The committee part of the page was not expanded, so speakers are unknown.",
   "unknowns": [
     "Which addresses are on the new list. The item page does not list them. It points to By-law 621-2026.",
     "Why the City made this change. The staff report has not been loaded.",
     "Whether anyone spoke at the committee meeting. That part of the record has not been loaded."
-  ]
+  ],
+  "votes_from_record": {
+    "dataset": "members-of-toronto-city-council-voting-record",
+    "resource": "member-voting-record-2022-2026",
+    "url": "https://open.toronto.ca/dataset/members-of-toronto-city-council-voting-record/",
+    "retrieved": "2026-11-13",
+    "motions": []
+  }
 }

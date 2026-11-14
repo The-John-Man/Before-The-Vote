@@ -1,0 +1,109 @@
+{
+  "id": "notice-7962",
+  "source": "opendata",
+  "notice_id": "7962",
+  "notice_date": "2026-10-09",
+  "title_plain": "New apartment building proposed near Neilson Road",
+  "title_official": "Notice of Application - Under the Planning Act - 1333 Neilson Road",
+  "topic": "Planning",
+  "ward": {
+    "code": "25",
+    "name": "Scarborough-Rouge Park"
+  },
+  "place": {
+    "label": "1333 Neilson Road",
+    "lat": 43.808497212,
+    "lon": -79.219626949,
+    "approx": false
+  },
+  "official_url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7953",
+  "drafted_by": "openrouter deepseek/deepseek-chat (AI), 2026-11-13, every quote checked word for word",
+  "application_numbers": [
+    "26 116598 ESC 25 OZ"
+  ],
+  "documents": [
+    {
+      "id": "n1",
+      "type": "notice",
+      "notice_id": "7962",
+      "title": "Notice of Application - Under the Planning Act - 1333 Neilson Road",
+      "url": "https://secure.toronto.ca/nm/api/individual/fileSpace.do?f=7953",
+      "snapshot": "snapshots/notice-7962.txt",
+      "retrieved": "2026-11-13"
+    }
+  ],
+  "stages": [
+    {
+      "key": "notice",
+      "body": "staff",
+      "label": "City notice",
+      "date": "2026-10-09",
+      "result": null,
+      "result_claim": null,
+      "can_speak": false
+    }
+  ],
+  "say": {
+    "deadline": null,
+    "deadline_claim": null,
+    "meeting": null,
+    "meeting_claim": null,
+    "guidance_claim": null,
+    "contact_email": null,
+    "methods": []
+  },
+  "claims": [
+    {
+      "id": "c1",
+      "section": "what",
+      "stage": "notice",
+      "lenses": [
+        "nearby",
+        "rent"
+      ],
+      "text": "A developer wants to build a six-story apartment building behind an existing medical office at 1333 Neilson Road.",
+      "sources": [
+        {
+          "doc": "n1",
+          "quote": "develop a six-storey L-shaped residential building plus a rooftop mechanical penthouse on the rear portion of the lands, while maintaining the existing three-storey medical building in the front portion."
+        }
+      ],
+      "ai_drafted": true
+    },
+    {
+      "id": "c2",
+      "section": "why",
+      "stage": null,
+      "lenses": [],
+      "text": "The developer needs a zoning change to allow the new building.",
+      "sources": [
+        {
+          "doc": "n1",
+          "quote": "Application to Amend the Zoning By-law to develop a six-storey L-shaped residential building"
+        }
+      ],
+      "ai_drafted": true
+    }
+  ],
+  "votes": [],
+  "heard": [],
+  "heard_note": "",
+  "unknowns": [
+    "This notice is not linked to a Council agenda item number, so later decisions and votes are not added to this page automatically.",
+    "How many apartments the new building would have",
+    "When construction might start if approved",
+    "If there will be parking for residents",
+    "How tall the rooftop mechanical penthouse will be"
+  ],
+  "notice_excerpt": "Background information and materials regarding the above-listed proposals are available at www.toronto.ca/city-government/planning-development/application-information-centre/ .",
+  "updates": [
+    {
+      "date": "2026-11-13",
+      "notes": [
+        "Added from the City's public notices (Open Data).",
+        "Plain-language explanation drafted by AI: 2 of 2 sentences passed the word-for-word check."
+      ]
+    }
+  ],
+  "ai_drafted_on": "2026-11-13"
+}
