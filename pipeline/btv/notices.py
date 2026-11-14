@@ -20,7 +20,7 @@ sentences for it.
 import copy
 from datetime import date
 
-from btv.extract import proposal_excerpt
+from btv.extract import notice_say, proposal_excerpt
 from btv.geo import ward_at
 
 PREFIXES = ("notice of public meeting", "notice of application", "notice of a request", "notice of intention")
@@ -84,6 +84,12 @@ def notice_card(notice: dict, wards: list[dict], today: str) -> dict:
         place, ward = None, None
         unknowns.append(NO_PLACE)
     doc = notice_document(notice, "n1", f"snapshots/{card_id(notice)}.txt", today)
+    claims, say = notice_say(notice["text"], notice["date"])
+    stages = [{"key": "notice", "body": "staff", "label": "City notice", "date": notice["date"],
+               "result": None, "result_claim": None, "can_speak": False}]
+    if say["meeting"]:
+        stages.append({"key": "meeting", "body": "committee", "label": notice["body"] or "Public meeting",
+                       "date": say["meeting"][:10], "result": None, "result_claim": None, "can_speak": True})
     return {
         "id": card_id(notice),
         "source": "opendata",
@@ -98,11 +104,9 @@ def notice_card(notice: dict, wards: list[dict], today: str) -> dict:
         "drafted_by": "Rules, no AI: read from the City's public notice (Open Data)",
         "application_numbers": notice["application_numbers"],
         "documents": [doc],
-        "stages": [{"key": "notice", "body": "staff", "label": "City notice", "date": notice["date"],
-                    "result": None, "result_claim": None, "can_speak": False}],
-        "say": {"deadline": None, "deadline_claim": None, "meeting": None, "meeting_claim": None,
-                "guidance_claim": None, "contact_email": None, "methods": []},
-        "claims": [],
+        "stages": stages,
+        "say": {**say, "guidance_claim": None, "contact_email": None, "methods": []},
+        "claims": claims,
         "votes": [],
         "heard": [],
         "heard_note": "",

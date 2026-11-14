@@ -3,7 +3,8 @@
 Run from the pipeline folder:   python build_cards.py
 
 An item file (pipeline/items/<id>.json) is a DRAFT. It may be written by a person,
-by an AI model (see btv/summarize.py), or both. This script does not trust it.
+by an AI model (see btv/summarize.py), by fixed rules (btv/extract.py), or a mix.
+This script does not trust it.
 For every item it:
 
   1. loads the text of each source document           (btv/sources.py)
@@ -13,7 +14,7 @@ For every item it:
          (a time of day is dropped too unless the record states one)
        - a stage result ("refused", "adopted") whose sentence failed
        - a vote whose sentence failed
-  4. marks an item with no checked sentence as "facts only"
+  4. marks an item with no checked explanation (what / why / what changed) as "facts only"
   5. writes web/data/decisions.json and web/data/calendar.ics
 
 refresh.py runs this after copying the City's pages again.
@@ -28,7 +29,7 @@ from pathlib import Path
 
 from btv.calendar import build_feed
 from btv.sources import load_pages
-from btv.verify import deadline_supported, supported_moment, verify_claim
+from btv.verify import deadline_supported, find_quote, supported_moment, verify_claim
 
 HERE = Path(__file__).resolve().parent
 WEB_DATA = HERE.parent / "web" / "data"
@@ -82,9 +83,17 @@ def build_card(item: dict, city: dict) -> dict:
             stage["result"], stage["result_claim"] = None, None
     item["votes"] = [vote for vote in item.get("votes", []) if vote.get("claim") in good]
 
-    # 4. a card with no checked sentence yet is "facts only": the site shows what rules
-    #    read from the City's page and says the explanation is not written yet.
-    item["facts_only"] = not any(claim["verified"] for claim in item["claims"])
+    # 3d. the City's own "proposes" sentence, shown word for word, must be in the saved notice
+    excerpt = item.get("notice_excerpt")
+    if excerpt:
+        notice_pages = [p for doc in documents if doc.get("type") == "notice" for p in load_pages(doc)]
+        item["notice_excerpt"] = excerpt if find_quote(excerpt, notice_pages) else None
+
+    # 4. a card with no checked explanation yet is "facts only": the site shows what rules
+    #    read from the City's record and says the explanation is not written yet.
+    #    Rule-made "Have your say" sentences (a deadline, a meeting) do not count.
+    item["facts_only"] = not any(claim["verified"] for claim in item["claims"]
+                                 if claim.get("section") in ("what", "why", "changed"))
     if not item.get("title_plain"):
         item["title_plain"] = item["title_official"]
     if not item.get("topic"):
