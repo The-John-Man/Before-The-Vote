@@ -193,6 +193,8 @@ function sayPanel(decision) {
   const act = actBy(decision, state.now); // always today: you cannot act in the past
   const guidance = decision.claims.find((c) => c.id === decision.say.guidance_claim && c.verified);
   const sourceId = decision.say.deadline_claim ?? decision.say.meeting_claim;
+  // No date yet and not decided: the chance to comment has not passed, it has not been scheduled.
+  const notYet = act.kind === "none" && statusAt(decision, state.now).level !== "decided";
   return `
     <aside class="say ${act.open ? "" : "is-closed"}" aria-label="Have your say">
       <h2>Have your say</h2>
@@ -205,13 +207,15 @@ function sayPanel(decision) {
       ${act.open ? `<ul>${decision.say.methods.map((m) => `<li>${esc(m)}</li>`).join("")}</ul>` : ""}
       <a class="btn" href="${esc(decision.official_url)}" target="_blank" rel="noopener">
         ${isNotice(decision)
-          ? (act.open ? "Open the City's notice to see how to comment or speak" : "Open the City's notice")
+          ? (act.open ? "Open the City's notice to see how to comment or speak"
+            : notYet ? "Open the City's notice to see who to contact" : "Open the City's notice")
           : (act.open ? "Open the official page to comment or ask to speak" : "Open the official record")}</a>
       ${act.open ? `<button class="btn btn-quiet" id="remind">Add this date to my calendar</button>` : ""}
       <a class="btn btn-quiet" href="#/poster/${encodeURIComponent(decision.id)}">Make a notice to print</a>
       <button class="btn btn-quiet" id="share">Send this to a neighbour</button>
       <p class="say-privacy" id="share-note">${act.open
         ? "Good to know: if you write or speak to a committee, the City publishes your name with the item, and search engines may list it."
+        : notYet ? "No meeting is set yet, so there is no date to count down to. The City's notice names who to contact in the meantime."
         : "The time to comment on this item has passed."}</p>
     </aside>`;
 }

@@ -83,6 +83,20 @@ class RefreshFromOpenDataTests(unittest.TestCase):
         self.assertTrue(status["sources"]["notices"]["ok"])
         self.assertEqual(status["items"]["notice-8007"]["source"], "City open data")
 
+    def test_not_written_yet_note_goes_once_ai_sentences_pass(self):
+        def fake_draft(item, today):
+            if item["id"] != "notice-8007":
+                return 0
+            item["claims"].append({"id": "a1", "section": "what", "ai_drafted": True,
+                                   "text": "Eight rental homes would be torn down.",
+                                   "sources": [{"doc": "n1", "quote": "The application proposes to demolish eight existing rental dwelling units"}]})
+            return 1
+        with contextlib.redirect_stdout(io.StringIO()):
+            refresh.main([], fetch=fake_fetch, draft=fake_draft)
+        notes = " ".join(n for u in self.read("items/notice-8007.json")["updates"] for n in u["notes"])
+        self.assertIn("1 of 1 sentences passed", notes)
+        self.assertNotIn("not written yet", notes)
+
     def test_an_identical_second_run_writes_nothing(self):
         self.run_refresh()
         files = list((self.root / "items").glob("*")) + list((self.root / "snapshots").glob("*"))

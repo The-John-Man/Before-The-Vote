@@ -63,6 +63,7 @@ KEEP_UPDATES = 5      # how many "what changed" entries each item keeps
 AGENDA_ITEM = re.compile(r"^\d{4}\.[A-Z]+\d+\.\d+$")    # e.g. 2024.NY15.4
 OPEN_DATA = "City open data"
 SAVED_PAGE = "Saved City page"
+NOT_WRITTEN = " The plain-language explanation is not written yet."   # removed once AI sentences pass
 
 
 # ---------------------------------------------------------------- small helpers
@@ -493,6 +494,9 @@ def draft_explanations(run: Run, draft):
         passed = sum(1 for c in card["claims"] if c.get("ai_drafted") and c["verified"])
         note = (f"Plain-language explanation drafted by AI: {passed} of {drafted} sentences passed "
                 f"the word-for-word check" + (f", {drafted - passed} held back." if drafted > passed else "."))
+        if passed:   # the earlier "not written yet" note is no longer true
+            for update in item.get("updates", []):
+                update["notes"] = [n.replace(NOT_WRITTEN, "").strip() for n in update["notes"]]
         add_note(item, run.today, note)
         save_json(path, item)
         run.report.append(f"{path.stem}: {note}")

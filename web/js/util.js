@@ -42,7 +42,9 @@ export function statusAt(decision, at) {
 export function actBy(decision, now) {
   const say = decision.say;
   const value = say.deadline ?? say.meeting;
-  if (!value) return { open: false, big: "No date", small: "No date found in the record", kind: "none" };
+  // No date at all: usually a notice of application, before any meeting is set.
+  // That is "not scheduled yet", never "closed".
+  if (!value) return { open: false, big: "No date yet", small: "No meeting date is set yet", kind: "none" };
   const left = countdown(value, now);
   const kind = say.deadline ? "deadline" : "meeting";
   if (!left.open) return { ...left, kind, value, small: "since " + formatWhen(value) };

@@ -10,7 +10,10 @@ import { mapSvg, wireMap } from "./map.js";
 
 // City-wide decisions (ward = null) always show, whichever ward is picked.
 function inPickedWard(decision) {
-  return !state.ward || !decision.ward || decision.ward.code === state.ward;
+  if (!state.ward) return true;
+  // A notice whose address could not be placed is not city-wide: show it only under "All of the city".
+  if (!decision.ward) return !decision.id.startsWith("notice-");
+  return decision.ward.code === state.ward;
 }
 
 function whereText(decision) {
