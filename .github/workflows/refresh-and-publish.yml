@@ -5,8 +5,10 @@
 #   - on demand: Actions tab > "Refresh from the City and publish" > Run workflow
 #   - after every push to main, so the published site always matches the code
 #
-# What it does: run the tests, re-copy every tracked item (pipeline/refresh.py), save the
-# new copies to the repo ONLY if the City's record changed, then publish web/ to GitHub Pages.
+# What it does: run the tests, read the City of Toronto's Open Data portal (public notices
+# and the Council voting record, pipeline/refresh.py), save changed cards to the repo ONLY
+# if the City's data changed (including old notice cards that were removed), then publish
+# web/ to GitHub Pages. It never downloads secure.toronto.ca pages.
 #
 # One-time setup: Settings > Pages > Build and deployment > Source: "GitHub Actions".
 # No API key or secret is needed. Nothing here uses AI.
@@ -49,19 +51,20 @@ jobs:
         working-directory: pipeline
         run: python -m unittest -v
 
-      - name: Re-copy every tracked item from the City and rebuild
+      - name: Read the City's Open Data and rebuild
         working-directory: pipeline
-        run: python refresh.py
+        run: python refresh.py --source opendata
 
-      - name: Save to the repo if the City's record changed
+      - name: Save to the repo if the City's data changed
         run: |
           if [ -z "$(git status --porcelain pipeline/items pipeline/snapshots)" ]; then
-            echo "The City's pages have not changed. Nothing to save."
+            echo "The City's data has not changed. Nothing to save."
           else
             git config user.name "before-the-vote-refresh"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add pipeline/items pipeline/snapshots web/data/decisions.json web/data/calendar.ics
-            git commit -m "Refresh from the City of Toronto's pages"
+            git add -A pipeline/items pipeline/snapshots
+            git add web/data/decisions.json web/data/calendar.ics
+            git commit -m "Refresh from the City of Toronto's Open Data"
             git push
           fi
 
