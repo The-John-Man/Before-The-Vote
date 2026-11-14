@@ -71,6 +71,8 @@ button, select { font: inherit; color: inherit; }
 .ward:focus-visible { outline: none; stroke: var(--ink); stroke-width: 3; }
 .pin { fill: #8a97ab; stroke: #fff; stroke-width: 1.5; pointer-events: none; vector-effect: non-scaling-stroke; }
 .pin.is-open { fill: var(--signal); stroke: var(--ink); stroke-width: 2; }
+.pin.is-approx { fill: none; stroke: #8a97ab; stroke-width: 2.5; }
+.pin.is-approx.is-open { stroke: var(--ink); fill: rgba(255, 203, 5, 0.45); }
 .you { fill: none; stroke: var(--stop); stroke-width: 2.5; pointer-events: none; vector-effect: non-scaling-stroke; }
 
 /* Departures board */
@@ -90,6 +92,8 @@ button, select { font: inherit; color: inherit; }
 .board-flags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.35rem; }
 .board-flag { font-size: 0.78rem; font-weight: 700; padding: 0.05rem 0.55rem; border-radius: 4px; border: 1px solid #6f84a3; color: #dbe4f0; }
 .board-flag.is-new { border-color: var(--signal); color: var(--signal); }
+.board-filter { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; padding: 0.6rem 1.5rem 0.9rem; font-size: 0.9rem; color: #dbe4f0; }
+.board-more { margin: 0; padding: 0.9rem 1.5rem; border-top: 1px solid #2a3d5a; }
 
 /* How decided is it? Same three looks on the board and on the decision page */
 .level-proposed { background: var(--signal); color: var(--ink); }

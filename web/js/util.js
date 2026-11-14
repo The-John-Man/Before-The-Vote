@@ -19,6 +19,9 @@ export function esc(text) {
 export function statusAt(decision, at) {
   const happened = decision.stages.filter((s) => reached(s.date, at));
   const last = happened[happened.length - 1];
+  if (last?.key === "notice") {
+    return { level: "proposed", short: "City notice", text: "The City has posted a public notice. Nothing is decided yet." };
+  }
   if (!last || last.body === "staff") {
     const what = last?.result ? `City staff ${last.result}.` : "City staff have reported.";
     return { level: "proposed", short: "Staff recommendation", text: `${what} Nothing is decided yet.` };
@@ -59,15 +62,18 @@ export function shownClaims(decision, at) {
   });
 }
 
-// When this item was last compared with the City's page, from status.json.
+// When this item was last compared with the City's record, from status.json.
+// "checked" says what was compared: a saved item page, a public notice, or recorded votes.
 // Returns null when no automatic check has run (for example, a local build).
 export function lastCheck(decision) {
   const check = state.status?.items?.[decision.id];
   if (!check) return null;
   const when = formatWhen(check.checked_at).replace(/\.$/, ""); // "6:34 p.m." would end in two dots
+  const what = { notice: "the City's public notice (open data)", votes: "the City's voting record (open data)" }[check.checked]
+    ?? "the City's page";
   return check.ok
-    ? { ok: true, text: `Checked against the City's page ${when}.` }
-    : { ok: false, text: `The latest automatic check could not reach the City's page (${when}). What you see is from the last copy that worked.` };
+    ? { ok: true, text: `${check.checked === "votes" ? "Recorded votes checked" : "Checked"} against ${what} ${when}.` }
+    : { ok: false, text: `The latest automatic check could not reach ${what} (${when}). What you see is from the last copy that worked.` };
 }
 
 // The newest "what changed" entry, if it is from the last 7 days.
