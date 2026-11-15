@@ -17,7 +17,7 @@ Why that matters: Toronto item 2024.NY15.4 is titled "...Decision Report - **App
 | Press a past stop to see what was known then, and what changed after | Deadlines shown only when the date is written in the record |
 | "I rent", "I live nearby": bring forward the sentences that matter to you | Residents' names from letters and speaker lists are counted, never stored |
 | How they voted; how many people wrote in or spoke | Calendar feed residents can subscribe to, with no accounts |
-| Read aloud, French (machine translation, labelled), printable notice, send to a neighbour | Scheduled refresh: every 3 hours the City's pages are copied again and every sentence re-checked (`refresh.py`) |
+| Read aloud, French (machine translation, labelled), printable notice, send to a neighbour | Scheduled refresh: every 2 days the City's pages are copied again and every sentence re-checked (`refresh.py`) |
 | "Checked against the City's page" time and "What changed recently" on each decision | New item numbers in `tracked.txt` appear as "facts only" cards until an explanation is written |
 
 ## Folder map
@@ -67,7 +67,7 @@ python refresh.py --source tmmis --html-dir saved_pages
 
 ## Live updates
 
-`.github/workflows/refresh-and-publish.yml` runs `python refresh.py --source opendata` every 3 hours, on demand, and after every push to `main`, then publishes `web/` to GitHub Pages. It saves changed cards to the repo only when the City's data actually changed, including removing old notice cards. No API key or AI is involved in fetching, selecting, matching, extracting, checking or writing change notes.
+`.github/workflows/refresh-and-publish.yml` runs `python refresh.py --source opendata` every 2 days, on demand, and after every push to `main`, then publishes `web/` to GitHub Pages. It saves changed cards to the repo only when the City's data actually changed, including removing old notice cards. No API key or AI is involved in fetching, selecting, matching, extracting, checking or writing change notes.
 
 Plain-language explanations: a card with no explanation is drafted once by an AI model if a key is set up (`OPENROUTER_API_KEY` in `pipeline/.env` locally, or as a GitHub Actions secret for the scheduled job; see `pipeline/.env.example`). Only sentences whose quotes pass the word-for-word check are shown, and the page says they were drafted by AI. A person should still read them: the check proves the words exist, not that the sentence is a fair reading.
 
@@ -75,8 +75,8 @@ The City's agenda item pages (secure.toronto.ca) block automated downloads. We d
 
 | Source | What we take | How often | Shown as |
 |---|---|---|---|
-| [Public notices](https://open.toronto.ca/dataset/public-notices/) (City open data) | Notices of public meetings and applications from the last 45 days, at most 40: title, date, the notice's words, address, application numbers, notice link. Contact person and signer are left out | Every 3 hours, one read | A card per notice, `items/notice-<id>.json` |
-| [Members of Toronto City Council voting record](https://open.toronto.ca/dataset/members-of-toronto-city-council-voting-record/), 2022 to 2026 (City open data) | For items with an agenda item number: committee, date, motion, result, yes and no counts. Councillors' names are never kept | Every 3 hours, one read filtered to our items | "Recorded votes (City open data)" on the decision page |
+| [Public notices](https://open.toronto.ca/dataset/public-notices/) (City open data) | Notices of public meetings and applications from the last 45 days, at most 40: title, date, the notice's words, address, application numbers, notice link. Contact person and signer are left out | Every 2 days, one read | A card per notice, `items/notice-<id>.json` |
+| [Members of Toronto City Council voting record](https://open.toronto.ca/dataset/members-of-toronto-city-council-voting-record/), 2022 to 2026 (City open data) | For items with an agenda item number: committee, date, motion, result, yes and no counts. Councillors' names are never kept | Every 2 days, one read filtered to our items | "Recorded votes (City open data)" on the decision page |
 | Saved City page (agenda item page) | Stops, dates, ward, documents, counts of letters and speakers | Only when a person saves the page from their browser and runs `--source tmmis --html-dir` | The hand-made cards |
 
 | Step | What happens |

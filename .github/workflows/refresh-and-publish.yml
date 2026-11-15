@@ -1,7 +1,8 @@
 # Keeps Before the Vote in step with the City of Toronto's record, then publishes the site.
 #
 # When it runs:
-#   - every 3 hours (times are UTC; 17 minutes past, to avoid the busy top of the hour)
+#   - every 2 days at 09:17 UTC (4:17 a.m. in Toronto in winter), on odd days of the month,
+#     so after the 31st it runs again on the 1st. 17 minutes past avoids the busy top of the hour.
 #   - on demand: Actions tab > "Refresh from the City and publish" > Run workflow
 #   - after every push to main, so the published site always matches the code
 #
@@ -18,7 +19,7 @@ name: Refresh from the City and publish
 
 on:
   schedule:
-    - cron: "17 */3 * * *"
+    - cron: "17 9 */2 * *"
   workflow_dispatch:
   push:
     branches: [main]
